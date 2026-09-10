@@ -6,6 +6,7 @@ from pathlib import Path
 
 from opcua import Client
 from random import randint, randrange
+from mdb_parser import MDBParser, MDBTable
 
 # ns=2 Exposed Tags (user-defined)
 # i=   Integer
@@ -41,6 +42,10 @@ def get_mdb_filename() -> str:
     return mdb_filename
 
 
+
+
+
+
 def main() -> None:
 
 
@@ -70,13 +75,38 @@ def main() -> None:
         modified_time = os.stat(MDB_DIR_PATH + "test_file.txt").st_mtime
         if modified_time != last_modified_time:
             last_modified_time = modified_time
-            write_detected = client.get_node(WRITE_DETECTED_NODE)
-            opcua_write(write_detected, 1)
+            #write_detected = client.get_node(WRITE_DETECTED_NODE)
+            #opcua_write(write_detected, 1)
 
 
         print(MDB_DIR_PATH + "test_file.txt", modified_time)
 
-        time.sleep(5)
+        time.sleep(2)
+        print("test1")
+        db = MDBParser(file_path="test_mdb.mdb")
+        print(db)
+        print("test2")
+        # Get and print the database tables
+        #print(db.tables)
+        print("test3")
+        # Get a table from the DB.
+        table = db.get_table("Data")
+        print("test4")
+        # Or you can use the MDBTable class.
+        #table = MDBTable(file_path="test_mdb.mdb", table="Data")
+        print("test5")
+        # Get and print the table columns.
+        print(table.columns)
+        print("test6")
+        # Iterate the table rows.
+
+        for row in table:
+            print(row[0:11])
+            print(len(row))
+            break
+
+
+
 
         # "nt" means windows otherwise use "-"
 

@@ -14,7 +14,7 @@
 
 -figure out how to use pyinstaller - so can make executable and dont have to install python on the servo logging computer.
 
--even if reading file modified time works out - see if can actually read lines of mdb file.  probly have to get a microsoft access subscription for a month or 2. then instead of time stamps can read if and what presses are actually writing the data to mdb file. then can tell plc if theres an issue.
+-even if reading file modified time works out - see if can actually read lines of mdb file.  probly have to get a microsoft access subscription for a month or 2. then instead of time stamps can read if and what presses are actually writing the data to mdb file. then can tell plc if theres an issue. ******look into mdb parser. looks like it shoudl do what i need... *** on linux use mdb-parser and mdbtools.  On windows we need pyodbc https://discuss.python.org/t/whats-the-best-way-to-read-a-mdb-file/60145, https://github.com/mkleehammer/pyodbc  and we also need Microsoft Access Database Engine 2016 Redistributable driver thing.
 
 - try and make it so if plc power cycle will reconnect. also maybe make it autostart on windows pc incase computer reboots. should hopefully be able to reconnect on its own no matter what.
 

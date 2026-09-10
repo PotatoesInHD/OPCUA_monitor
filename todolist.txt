@@ -1,0 +1,21 @@
+ 1 -check out bookbot and ai agent I think for examples of the path instructsions
+    for combining the paths to create the filename path
+
+2 -get click - plc talking to opcua
+- maybe bring home sysmac plc for testing too since thats what i connecting to at work.
+
+- note for future me - need to make sure "conn_monitor" val goes to 0 in plc when disconnected
+
+3 -create log file to keeps a small history of write completes with time etc.
+
+4 -create an error log file for maybe failing to connect.  and maybe the error before program crashes if possible?
+
+-think about if dst will affect me at all
+
+-figure out how to use pyinstaller - so can make executable and dont have to install python on the servo logging computer.
+
+-even if reading file modified time works out - see if can actually read lines of mdb file.  probly have to get a microsoft access subscription for a month or 2. then instead of time stamps can read if and what presses are actually writing the data to mdb file. then can tell plc if theres an issue.
+
+- try and make it so if plc power cycle will reconnect. also maybe make it autostart on windows pc incase computer reboots. should hopefully be able to reconnect on its own no matter what.
+
+-not sure ill need a gui but maybe worth trying out tkinkter and maybe could display recent lines of mdb and logs and like conn status, write bit statuses etc.

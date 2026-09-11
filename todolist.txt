@@ -1,6 +1,10 @@
  1 -check out bookbot and ai agent I think for examples of the path instructsions
     for combining the paths to create the filename path
 
+5-https://pyinstaller.org/en/stable/runtime-information.html
+look into this when using pyinstaller for determining path of where the exe is can use it to get path to mdb files if in same folder
+
+
 2 -get click - plc talking to opcua
 - maybe bring home sysmac plc for testing too since thats what i connecting to at work.
 
@@ -15,6 +19,14 @@
 -figure out how to use pyinstaller - so can make executable and dont have to install python on the servo logging computer.
 
 -even if reading file modified time works out - see if can actually read lines of mdb file.  probly have to get a microsoft access subscription for a month or 2. then instead of time stamps can read if and what presses are actually writing the data to mdb file. then can tell plc if theres an issue. ******look into mdb parser. looks like it shoudl do what i need... *** on linux use mdb-parser and mdbtools.  On windows we need pyodbc https://discuss.python.org/t/whats-the-best-way-to-read-a-mdb-file/60145, https://github.com/mkleehammer/pyodbc  and we also need Microsoft Access Database Engine 2016 Redistributable driver thing.
+---------------
+-when reading files need to use rb'''"rb" stands for Read Binary.
+It is the mode passed to Python's open() function:
+r = Read (opens the file for reading only; cannot modify or write).
+b = Binary (reads raw bytes directly from disk without trying to interpret them as text or decode them with an encoding like UTF-8).
+When inspecting or reading non-text files (like .mdb databases, images, .exe files, or PDFs), you always use binary mode ("rb") so Python doesn't crash or alter line endings (\r\n vs \n).'''''-------------------
+**also need to do try except blocks when opening for reading incase it is locked out.
+**need to make sure having file open doesnt mess up press. if so may need to detect when its not writing and make a copy or something along those lines.
 
 - try and make it so if plc power cycle will reconnect. also maybe make it autostart on windows pc incase computer reboots. should hopefully be able to reconnect on its own no matter what.
 

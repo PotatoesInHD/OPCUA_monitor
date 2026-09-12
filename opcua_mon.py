@@ -7,34 +7,9 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 from opcua import Client
-from random import randint, randrange
+# if I decide to read file contents when going to windows will have to
+# use pyodbc and Microsoft Access Database Engine
 from mdb_parser import MDBParser, MDBTable
-
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-
-formatter = logging.Formatter('%(asctime)s %(message)s')
-info_handler = RotatingFileHandler(
-    'Info_Logs.log',
-    maxBytes=10000,
-    backupCount=1,
-    encoding='utf-8',
-)
-info_handler.setLevel(logging.INFO)
-info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
-info_handler.setFormatter(formatter)
-logger.addHandler(info_handler)
-
-err_handler = RotatingFileHandler(
-    'Error_Logs.log',
-    maxBytes=10000,
-    backupCount=1,
-    encoding='utf-8',
-)
-err_handler.setFormatter(formatter)
-err_handler.addFilter(lambda record: record.levelno >= logging.WARNING)
-logger.addHandler(err_handler)
-
 
 # ns=2 Exposed Tags (user-defined)
 # i=   Integer
@@ -44,6 +19,32 @@ FROM_PLC_WRITE_CMPLT_NODE = "ns=2;i=6"
 MDB_DIR_PATH  = "."
 OPCUA_URL = "opc.tcp://10.0.0.114:4840"
 
+# setup logging
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s %(message)s')
+info_handler = RotatingFileHandler(
+    'Info_Logs.log',
+    maxBytes=10000,
+    backupCount=1,
+    encoding='utf-8',
+)
+# info handler - logs anything less than WARNING
+info_handler.setLevel(logging.INFO)
+info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
+info_handler.setFormatter(formatter)
+logger.addHandler(info_handler)
+
+# err handler - logs anything >= WARNING
+err_handler = RotatingFileHandler(
+    'Error_Logs.log',
+    maxBytes=10000,
+    backupCount=1,
+    encoding='utf-8',
+)
+err_handler.setFormatter(formatter)
+err_handler.addFilter(lambda record: record.levelno >= logging.WARNING)
+logger.addHandler(err_handler)
 
 
 def opcua_connect(url: str)-> "Client":
@@ -58,17 +59,21 @@ def opcua_connect(url: str)-> "Client":
     except Exception as err:
         logging.warning(f"opcua_connect() - Unexpected Error: %s...Retrying connection", err)
 
+
 def opcua_read(node) -> int:
     return node.get_value()
 
+
 def opcua_write(node, value: int) -> None:
     node.set_value()
+
 
 def get_mdb_filename() -> str:
     pad = "#" if os.name == "nt" else "-"
     date = datetime.date.today()
     mdb_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")
     return mdb_filename
+
 
 def get_file_path(directory: str, file_name: str) -> str:
     #https://pyinstaller.org/en/stable/runtime-information.html
@@ -128,6 +133,7 @@ def main() -> None:
         modified_time = os.stat(file_path).st_mtime
         if modified_time != last_modified_time:
             last_modified_time = modified_time
+            logging.info("File: %s, last modified %s", mdb_filename, last_modified_time)
             #write_detected = client.get_node(WRITE_DETECTED_NODE)
             #opcua_write(write_detected, 1)
 

@@ -1,0 +1,4 @@
+2026-09-12 17:21:14,378 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-12 17:57:24,877 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-12 17:58:08,376 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-12 17:59:02,876 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection

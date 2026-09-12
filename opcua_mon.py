@@ -11,17 +11,29 @@ from random import randint, randrange
 from mdb_parser import MDBParser, MDBTable
 
 logger = logging.getLogger()
-logger.setLevel(logging.WARNING)
+logger.setLevel(logging.DEBUG)
+
 formatter = logging.Formatter('%(asctime)s %(message)s')
-handler = RotatingFileHandler(
+info_handler = RotatingFileHandler(
+    'Info_Logs.log',
+    maxBytes=10000,
+    backupCount=1,
+    encoding='utf-8',
+)
+info_handler.setLevel(logging.INFO)
+info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
+info_handler.setFormatter(formatter)
+logger.addHandler(info_handler)
+
+err_handler = RotatingFileHandler(
     'Error_Logs.log',
     maxBytes=10000,
     backupCount=1,
     encoding='utf-8',
 )
-
-handler.setFormatter(formatter)
-logger.addHandler(handler)
+err_handler.setFormatter(formatter)
+err_handler.addFilter(lambda record: record.levelno >= logging.WARNING)
+logger.addHandler(err_handler)
 
 
 # ns=2 Exposed Tags (user-defined)
@@ -38,15 +50,13 @@ def opcua_connect(url: str)-> "Client":
     try:
         client = Client(url)
         client.connect()
-        print("Client connected")
         logging.warning("Client connected")
+        logging.info("Client connected")
         return client
     except TimeoutError as err:
-        print(f"Error: {err}...Retrying connection")
         logging.warning(f"Error: %s...Retrying connection", err)
     except Exception as err:
-        print(f"Unexpected Error: {err}...Retrying connection")
-        logging.warning(f"Unexpected Error: %s...Retrying connection", err)
+        logging.warning(f"opcua_connect() - Unexpected Error: %s...Retrying connection", err)
 
 def opcua_read(node) -> int:
     return node.get_value()
@@ -70,14 +80,17 @@ def get_file_path(directory: str, file_name: str) -> str:
 
         valid_target_dir = os.path.commonpath([working_dir_abs, target_path]) == working_dir_abs
         if not valid_target_dir:
+            logging.warning("Error: Cannot read %s as it is outside the permitted working directory", file_name)
             return f'Error: Cannot read "{file_name}" as it is outside the permitted working directory'
 
         target_isfile = os.path.isfile(target_path)
         if not target_isfile:
+            logging.warning("Error: %s is not a file", file_name)
             return f'Error: "{file_name}" is not a file'
 
         return target_path
     except Exception as e:
+        logging.warning("get_file_path() - Error: %s", e)
         return f"Error: {e}"
 
 

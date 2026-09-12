@@ -2,11 +2,27 @@ import time
 import json
 import os
 import datetime
+import logging
+from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 from opcua import Client
 from random import randint, randrange
 from mdb_parser import MDBParser, MDBTable
+
+logger = logging.getLogger()
+logger.setLevel(logging.WARNING)
+formatter = logging.Formatter('%(asctime)s %(message)s')
+handler = RotatingFileHandler(
+    'Error_Logs.log',
+    maxBytes=10000,
+    backupCount=1,
+    encoding='utf-8',
+)
+
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+
 
 # ns=2 Exposed Tags (user-defined)
 # i=   Integer
@@ -23,11 +39,14 @@ def opcua_connect(url: str)-> "Client":
         client = Client(url)
         client.connect()
         print("Client connected")
+        logging.warning("Client connected")
         return client
     except TimeoutError as err:
         print(f"Error: {err}...Retrying connection")
+        logging.warning(f"Error: %s...Retrying connection", err)
     except Exception as err:
         print(f"Unexpected Error: {err}...Retrying connection")
+        logging.warning(f"Unexpected Error: %s...Retrying connection", err)
 
 def opcua_read(node) -> int:
     return node.get_value()
@@ -63,8 +82,10 @@ def get_file_path(directory: str, file_name: str) -> str:
 
 
 def main() -> None:
+
     mdb_filename: str = get_mdb_filename()
-    #file_path = get_file_path(MDB_DIR_PATH, mdb_filename)
+    # file_path = get_file_path(MDB_DIR_PATH, mdb_filename)
+    # swap these file_path = later.
     file_path: str = get_file_path(MDB_DIR_PATH, "test_file.txt")
     print(file_path, "filepathtest------------------------")
 

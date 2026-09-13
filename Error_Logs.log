@@ -1,4 +1,123 @@
-2026-09-12 17:21:14,378 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
-2026-09-12 17:57:24,877 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
-2026-09-12 17:58:08,376 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
-2026-09-12 17:59:02,876 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-12 22:44:05,832 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:07,972 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:10,105 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:12,242 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:14,376 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:16,507 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:18,644 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:20,776 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:22,911 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:25,044 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:27,175 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:29,308 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:31,444 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:33,579 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:35,714 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:37,851 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:39,984 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:42,119 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:44,251 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:46,382 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:48,520 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:50,659 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:52,791 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:44:54,928 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:35,261 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 22:45:35,265 Client connected
+2026-09-12 22:45:35,271 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:37,409 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:39,544 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:41,680 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:43,812 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:45,953 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:48,085 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:50,224 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:52,358 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:54,489 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:45:56,624 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:46:30,896 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 22:46:30,908 Client connected
+2026-09-12 22:46:30,922 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:46:33,074 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:46:35,221 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:46:37,352 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:16,754 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 22:47:16,759 Client connected
+2026-09-12 22:47:16,766 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:18,907 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:21,047 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:23,179 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:25,311 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:27,442 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:29,572 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:31,702 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:33,836 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:35,972 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:38,107 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:40,246 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:42,386 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:44,518 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:47:46,655 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:49:44,158 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 22:49:44,162 Client connected
+2026-09-12 22:49:44,171 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:49:46,316 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:49:48,449 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:49:50,592 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:49:52,730 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:49:54,864 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:49:56,996 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:49:59,127 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:01,264 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:03,394 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:05,529 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:07,661 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:09,791 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:11,924 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:14,055 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:16,185 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:18,316 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:20,451 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:22,585 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:24,716 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:26,848 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:28,979 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:31,112 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:50:33,246 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:55:09,595 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 22:55:09,599 Client connected
+2026-09-12 22:55:09,603 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:55:11,754 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:55:13,897 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:55:16,031 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:55:18,164 "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-12 22:55:40,478 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 22:55:40,485 Client connected
+2026-09-12 22:57:34,153 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 22:57:34,160 Client connected
+2026-09-12 23:01:07,461 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:01:07,468 Client connected
+2026-09-12 23:05:25,921 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:05:25,950 Client connected
+2026-09-12 23:22:40,139 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:22:40,143 Client connected
+2026-09-12 23:32:06,893 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:32:06,901 Client connected
+2026-09-12 23:39:30,065 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:39:30,069 Client connected
+2026-09-12 23:40:29,403 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:40:29,409 Client connected
+2026-09-12 23:41:04,189 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:41:04,194 Client connected
+2026-09-12 23:44:04,195 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:44:04,199 Client connected
+2026-09-12 23:53:26,728 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:53:26,732 Client connected
+2026-09-12 23:57:31,867 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:57:31,873 Client connected
+2026-09-12 23:58:49,807 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:58:49,813 Client connected
+2026-09-12 23:59:38,863 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-12 23:59:38,867 Client connected
+2026-09-13 00:12:01,734 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-13 00:12:01,739 Client connected

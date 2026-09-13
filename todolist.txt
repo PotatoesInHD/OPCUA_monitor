@@ -1,19 +1,14 @@
+2- maybe try and write some unit tests for logging etc. make sure all works and for file path and everything.
 
 5-https://pyinstaller.org/en/stable/runtime-information.html
 look into this when using pyinstaller for determining path of where the exe is can use it to get path to mdb files if in same folder
 
+3-opcua seems to write to my logs. try and create another separate one for those to go to?
 
-2 -get click - plc talking to opcua
+6-got opcua can send and receive values. values maintain after dfisconnection.
+so had to do heartbeat for connection monitor.
+for telling plc that the file was updated will have to use diff up in plc so see it off to on.
 - maybe bring home sysmac plc for testing too since thats what i connecting to at work.
-
-- note for future me - need to make sure "conn_monitor" val goes to 0 in plc when disconnected
-
-3 -create log file to keeps a small history of write completes with time etc.
-**log files started.  need to still add a second handler and a filter to one
-
-4 -create an error log file for maybe failing to connect.  and maybe the error before program crashes if possible?
-
--think about if dst will affect me at all
 
 -figure out how to use pyinstaller - so can make executable and dont have to install python on the servo logging computer.
 

@@ -1,0 +1,40 @@
+2026-09-13 12:08:56,303 opening connection
+2026-09-13 12:08:56,404 Thread started
+2026-09-13 12:08:56,405 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-13 12:08:56,406 open_secure_channel
+2026-09-13 12:08:56,407 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:22)
+2026-09-13 12:08:56,407 create_session
+2026-09-13 12:08:56,533 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:22)
+2026-09-13 12:08:56,533 activate_session
+2026-09-13 12:08:56,536 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:22)
+2026-09-13 12:08:56,536 Client connected
+2026-09-13 12:08:56,537 read
+2026-09-13 12:08:56,537 read
+2026-09-13 12:08:56,541 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:22)
+2026-09-13 12:08:56,558 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:22)
+2026-09-13 12:08:58,680 read
+2026-09-13 12:08:58,683 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:22)
+2026-09-13 12:08:59,558 read
+2026-09-13 12:08:59,562 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:22)
+2026-09-13 12:09:00,809 read
+2026-09-13 12:09:00,812 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:22)
+2026-09-13 12:09:02,562 read
+2026-09-13 12:09:02,565 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:22)
+2026-09-13 12:09:02,942 read
+2026-09-13 12:09:02,945 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:22)
+2026-09-13 12:09:05,069 read
+2026-09-13 12:09:05,073 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:22)
+2026-09-13 12:09:05,566 read
+2026-09-13 12:09:05,570 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:22)
+2026-09-13 12:09:07,198 read
+2026-09-13 12:09:07,201 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:22)
+2026-09-13 12:09:08,570 read
+2026-09-13 12:09:08,575 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:22)
+2026-09-13 12:09:09,325 read
+2026-09-13 12:09:09,329 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:22)
+2026-09-13 12:09:11,454 read
+2026-09-13 12:09:11,457 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:22)
+2026-09-13 12:09:11,575 read
+2026-09-13 12:09:11,579 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:22)
+2026-09-13 12:09:13,582 read
+2026-09-13 12:09:13,584 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:22)

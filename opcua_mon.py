@@ -4,7 +4,6 @@ import datetime
 import threading
 import logging
 from logging.handlers import RotatingFileHandler
-from pathlib import Path
 
 from opcua import Client, Node
 # if I decide to read file contents when going to windows will have to
@@ -18,7 +17,7 @@ FROM_PLC_WRITE_CMPLT_NODE = "ns=1;i=2000"
 MDB_DIR_PATH  = "."
 OPCUA_URL = "opc.tcp://10.0.0.129:4840"
 
-# background thread
+# -------------background thread-----------
 def heartbeat_opcua(node: Node, interval=3.0):
     state = False
     while True:
@@ -28,14 +27,27 @@ def heartbeat_opcua(node: Node, interval=3.0):
         except Exception as err:
             logging.warning("heartbeat_opcua() - Error: ", err)
         time.sleep(interval)
+# ------------------------------------------
 
 
-# setup logging
+# setup logging and make log directory
+working_directory = os.path.abspath(os.getcwd())
+target_path = os.path.normpath(os.path.join(working_directory, "logs"))
+try:
+    os.mkdir(target_path)
+except FileExistsError as err:
+    pass
+except FileNotFoundError as err:
+    print(f"Error: {err}")
+except Exception as err:
+    print(f"Unexpected Error: {err}")
+
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s %(message)s')
+log_file_path = os.path.normpath(os.path.join(target_path, "Info_Logs.log"))
 info_handler = RotatingFileHandler(
-    'Info_Logs.log',
+    log_file_path,
     maxBytes=1_000_000,
     backupCount=1,
     encoding='utf-8',
@@ -47,8 +59,9 @@ info_handler.setFormatter(formatter)
 logger.addHandler(info_handler)
 
 # err handler - logs anything >= WARNING
+err_log_file_path = os.path.normpath(os.path.join(target_path, "Error_Logs.log"))
 err_handler = RotatingFileHandler(
-    'Error_Logs.log',
+    err_log_file_path,
     maxBytes=1_000_000,
     backupCount=1,
     encoding='utf-8',
@@ -83,6 +96,7 @@ def opcua_write(node: Node, value: int | bool) -> None:
 
 
 def get_mdb_filename() -> str:
+    # "nt" means windows otherwise use "-"
     pad = "#" if os.name == "nt" else "-"
     date = datetime.date.today()
     mdb_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")
@@ -132,21 +146,19 @@ def main() -> None:
 
     press_write_complete_node = client.get_node(FROM_PLC_WRITE_CMPLT_NODE)
     heartbeat_node = client.get_node(HEARTBEAT_NODE)
-    # Start heartbeatr thread in the background:
+
+    # -------Start heartbeat thread in the background------
     t = threading.Thread(target=heartbeat_opcua, args=(heartbeat_node, 3.0), daemon=True)
     t.start()
+    # ------------------------------------------------------
 
     while True:
         # creates mdb database file name based on date.
         mdb_filename = get_mdb_filename()
 
-        # Sends val 1 to PLC while connected.
-        # note for future me - need to make sure this val goes to 0 in plc when disconnected
-
-
-
         press_write_complete = opcua_read(press_write_complete_node)
 
+        prev_val = press_write_complete
         modified_time = os.stat(file_path).st_mtime
         if modified_time != last_modified_time:
             last_modified_time = modified_time
@@ -175,8 +187,6 @@ def main() -> None:
             print(row[0:11])
             print(len(row))
             break
-
-        # "nt" means windows otherwise use "-"
 
         #while True:
 

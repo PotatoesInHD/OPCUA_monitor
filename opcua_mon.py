@@ -11,7 +11,7 @@ from opcua import Client, Node
 from mdb_parser import MDBParser, MDBTable
 
 
-HEARTBEAT_NODE = "ns=1;i=2003"
+HEARTBEAT_NODE = "ns=1;i=20039"
 WRITE_DETECTED_NODE = "ns=1;i=2002"
 FROM_PLC_WRITE_CMPLT_NODE = "ns=1;i=2000"
 MDB_DIR_PATH  = "."
@@ -25,7 +25,7 @@ def heartbeat_opcua(node: Node, interval=3.0):
             state = not state
             node.set_value(state)
         except Exception as err:
-            logging.warning("heartbeat_opcua() - Error: ", err)
+            logging.warning(f"heartbeat_opcua() - Error: {err}")
         time.sleep(interval)
 # ------------------------------------------
 
@@ -42,21 +42,28 @@ except FileNotFoundError as err:
 except Exception as err:
     print(f"Unexpected Error: {err}")
 
+def inspect_filter(record: logging.LogRecord) -> bool:
+    print(f"Logger: {record.name} | Level: {record.levelname} ({record.levelno}) | Message: {record.getMessage()}")
+    return True  # Let it pass through
+
 logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s %(message)s')
+
+# my info handler - logs anything less than WARNING
 log_file_path = os.path.normpath(os.path.join(target_path, "Info_Logs.log"))
-info_handler = RotatingFileHandler(
+my_info_handler = RotatingFileHandler(
     log_file_path,
     maxBytes=1_000_000,
     backupCount=1,
     encoding='utf-8',
 )
-# info handler - logs anything less than WARNING
-info_handler.setLevel(logging.INFO)
-info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
-info_handler.setFormatter(formatter)
-logger.addHandler(info_handler)
+my_info_handler.setLevel(logging.INFO)
+my_info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
+my_info_handler.addFilter(lambda record: "opcua" not in record.name)
+#my_info_handler.addFilter(inspect_filter)
+my_info_handler.setFormatter(formatter)
+logger.addHandler(my_info_handler)
 
 # err handler - logs anything >= WARNING
 err_log_file_path = os.path.normpath(os.path.join(target_path, "Error_Logs.log"))
@@ -67,21 +74,34 @@ err_handler = RotatingFileHandler(
     encoding='utf-8',
 )
 err_handler.setFormatter(formatter)
+#err_handler.addFilter(inspect_filter)
 err_handler.addFilter(lambda record: record.levelno >= logging.WARNING)
 logger.addHandler(err_handler)
 
+# opcua info handler - logs anything less than WARNING
+opcua_log_file_path = os.path.normpath(os.path.join(target_path, "OPCUA_Info_Logs.log"))
+opcua_info_handler = RotatingFileHandler(
+    opcua_log_file_path,
+    maxBytes=1_000_000,
+    backupCount=1,
+    encoding='utf-8',
+)
+opcua_info_handler.setLevel(logging.INFO)
+opcua_info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
+opcua_info_handler.addFilter(lambda record: "opcua" in record.name)
+opcua_info_handler.setFormatter(formatter)
+logger.addHandler(opcua_info_handler)
 
 def opcua_connect(url: str)-> "Client":
     try:
         client = Client(url)
         client.connect()
-        logging.warning("Client connected")
         logging.info("Client connected")
         return client
     except TimeoutError as err:
-        logging.warning("opcua_connect() - Error: %s...Retrying connection", err)
+        logging.warning(f"opcua_connect() - Error: {err}...Retrying connection")
     except Exception as err:
-        logging.warning("opcua_connect() - Unexpected Error: %s...Retrying connection", err)
+        logging.warning(f"opcua_connect() - Unexpected Error: {err}...Retrying connection")
 
 
 def opcua_read(node: Node) -> int:
@@ -92,7 +112,7 @@ def opcua_write(node: Node, value: int | bool) -> None:
     try:
         node.set_value(value)
     except Exception as err:
-        logging.warning("opcua_write() - Error: ",err)
+        logging.warning(f"opcua_write() - Error: {err}")
 
 
 def get_mdb_filename() -> str:
@@ -113,18 +133,18 @@ def get_file_path(directory: str, file_name: str) -> str:
 
         valid_target_dir = os.path.commonpath([working_dir_abs, target_path]) == working_dir_abs
         if not valid_target_dir:
-            logging.warning("Error: Cannot read %s as it is outside the permitted working directory", file_name)
+            logging.warning(f"Error: Cannot read {file_name} as it is outside the permitted working directory")
             return f'Error: Cannot read "{file_name}" as it is outside the permitted working directory'
 
         target_isfile = os.path.isfile(target_path)
         if not target_isfile:
-            logging.warning("Error: %s is not a file", file_name)
+            logging.warning(f"Error: {file_name} is not a file")
             return f'Error: "{file_name}" is not a file'
 
         return target_path
-    except Exception as e:
-        logging.warning("get_file_path() - Error: %s", e)
-        return f"Error: {e}"
+    except Exception as err:
+        logging.warning(f"get_file_path() - Error: {err}")
+        return f"Error: {err}"
 
 
 def main() -> None:
@@ -163,10 +183,9 @@ def main() -> None:
         if modified_time != last_modified_time:
             last_modified_time = modified_time
             date_st_mtime = datetime.datetime.fromtimestamp(last_modified_time)
-            logging.info("File: %s, last modified = %s", mdb_filename, date_st_mtime)
+            logging.info(f"File: {mdb_filename}, last modified = {date_st_mtime}")
             #write_detected = client.get_node(WRITE_DETECTED_NODE)
             #opcua_write(write_detected, 1)
-
 
         #print(file_path, modified_time)
 

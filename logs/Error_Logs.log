@@ -1,2 +1,123 @@
-2026-09-13 12:08:56,533 Requested session timeout to be 3600000ms, got 120000ms instead
-2026-09-13 12:08:56,536 Client connected
+2026-09-13 14:41:18,176 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-13 14:43:14,723 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-13 14:46:25,540 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-13 14:46:25,561 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:46:28,566 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:46:31,570 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:46:34,575 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:46:37,578 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:46:40,583 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:46:43,588 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:46:46,591 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:50:52,261 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-13 14:50:52,288 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:50:55,292 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:50:58,296 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:51:01,299 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:51:04,302 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 14:51:11,303 heartbeat_opcua() - Error: 
+2026-09-13 14:51:18,307 heartbeat_opcua() - Error: 
+2026-09-13 14:51:25,308 heartbeat_opcua() - Error: 
+2026-09-13 14:51:32,311 heartbeat_opcua() - Error: 
+2026-09-13 14:51:39,313 heartbeat_opcua() - Error: 
+2026-09-13 14:51:46,315 heartbeat_opcua() - Error: 
+2026-09-13 14:51:53,315 heartbeat_opcua() - Error: 
+2026-09-13 14:52:00,317 heartbeat_opcua() - Error: 
+2026-09-13 14:52:07,318 heartbeat_opcua() - Error: 
+2026-09-13 14:52:14,321 heartbeat_opcua() - Error: 
+2026-09-13 14:52:21,322 heartbeat_opcua() - Error: 
+2026-09-13 14:52:28,323 heartbeat_opcua() - Error: 
+2026-09-13 14:52:35,324 heartbeat_opcua() - Error: 
+2026-09-13 14:52:42,327 heartbeat_opcua() - Error: 
+2026-09-13 14:52:49,328 heartbeat_opcua() - Error: 
+2026-09-13 14:52:56,329 heartbeat_opcua() - Error: 
+2026-09-13 14:53:03,331 heartbeat_opcua() - Error: 
+2026-09-13 14:53:10,335 heartbeat_opcua() - Error: 
+2026-09-13 14:53:17,338 heartbeat_opcua() - Error: 
+2026-09-13 14:53:24,338 heartbeat_opcua() - Error: 
+2026-09-13 14:53:31,339 heartbeat_opcua() - Error: 
+2026-09-13 14:53:38,341 heartbeat_opcua() - Error: 
+2026-09-13 14:53:45,342 heartbeat_opcua() - Error: 
+2026-09-13 14:53:52,344 heartbeat_opcua() - Error: 
+2026-09-13 14:53:59,345 heartbeat_opcua() - Error: 
+2026-09-13 14:54:06,346 heartbeat_opcua() - Error: 
+2026-09-13 14:54:13,347 heartbeat_opcua() - Error: 
+2026-09-13 14:54:20,350 heartbeat_opcua() - Error: 
+2026-09-13 14:54:27,351 heartbeat_opcua() - Error: 
+2026-09-13 14:54:34,351 heartbeat_opcua() - Error: 
+2026-09-13 14:54:41,353 heartbeat_opcua() - Error: 
+2026-09-13 14:54:48,353 heartbeat_opcua() - Error: 
+2026-09-13 14:54:55,355 heartbeat_opcua() - Error: 
+2026-09-13 14:55:02,356 heartbeat_opcua() - Error: 
+2026-09-13 14:55:09,357 heartbeat_opcua() - Error: 
+2026-09-13 14:55:16,359 heartbeat_opcua() - Error: 
+2026-09-13 14:55:23,361 heartbeat_opcua() - Error: 
+2026-09-13 14:55:30,363 heartbeat_opcua() - Error: 
+2026-09-13 14:55:37,364 heartbeat_opcua() - Error: 
+2026-09-13 14:55:44,366 heartbeat_opcua() - Error: 
+2026-09-13 14:55:51,367 heartbeat_opcua() - Error: 
+2026-09-13 14:55:58,368 heartbeat_opcua() - Error: 
+2026-09-13 14:56:05,368 heartbeat_opcua() - Error: 
+2026-09-13 14:56:15,344 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:56:18,355 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:56:25,901 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:56:33,441 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:56:41,342 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:56:49,349 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:56:56,893 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:57:04,445 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:57:12,354 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:57:20,344 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:57:29,390 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:57:32,410 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 14:58:52,330 opcua_connect() - Unexpected Error: [Errno 113] No route to host...Retrying connection
+2026-09-13 15:00:18,718 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-13 15:00:18,739 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:00:21,743 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:00:24,747 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:00:27,751 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:00:30,755 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:00:33,759 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:00:36,763 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:00:39,768 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:19,460 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-13 15:07:19,487 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:22,491 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:25,494 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:28,498 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:31,502 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:34,506 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:37,509 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:40,515 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:43,518 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:46,522 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:49,527 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:52,532 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:55,536 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:07:58,540 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:01,543 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:04,549 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:07,554 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:10,600 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:13,604 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:16,610 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:19,617 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:22,624 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:25,628 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:28,631 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:08:31,635 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:10:05,633 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-13 15:10:05,657 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:10:08,663 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:10:11,667 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:10:14,671 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:11:13,793 Requested session timeout to be 3600000ms, got 120000ms instead
+2026-09-13 15:11:13,834 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:11:16,838 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:11:19,842 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:11:22,846 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:11:25,850 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:11:28,854 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:11:31,858 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:11:34,862 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)
+2026-09-13 15:11:37,867 heartbeat_opcua() - Error: "The node id refers to a node that does not exist in the server address space."(BadNodeIdUnknown)

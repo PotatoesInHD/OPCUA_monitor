@@ -12,26 +12,21 @@ from mdb_parser import MDBParser, MDBTable
 
 
 HEARTBEAT_NODE = "ns=1;i=2003"
-TO_PLC_WRITE_DETECTED_NODE = "ns=1;i=2002"
+WRITE_DETECTED_NODE = "ns=1;i=2002"
 FROM_PLC_WRITE_CMPLT_NODE = "ns=1;i=2000"
-OPCUA_SERVER_STATE = "ns=0;i=2259"
 MDB_DIR_PATH  = "."
 OPCUA_URL = "opc.tcp://10.0.0.129:4840"
 
 # -------------background thread-----------
-def heartbeat_opcua(node: Node, interval=3.0, opcua_server_state_node: str="") -> None:
+def heartbeat_opcua(node: Node, interval=3.0):
     state = False
     while True:
-        opcua_server_state = opcua_read(opcua_server_state_node)
-        time.sleep(5)
-        while opcua_server_state is not None:
-            try:
-                state = not state
-                node.set_value(state)
-            except Exception as err:
-                logging.warning(f"heartbeat_opcua() - Error: {err}")
-            time.sleep(interval)
-            opcua_server_state = opcua_read(opcua_server_state_node)
+        try:
+            state = not state
+            node.set_value(state)
+        except Exception as err:
+            logging.warning(f"heartbeat_opcua() - Error: {err}")
+        time.sleep(interval)
 # ------------------------------------------
 
 
@@ -100,7 +95,6 @@ logger.addHandler(opcua_info_handler)
 def opcua_connect(url: str)-> "Client":
     try:
         client = Client(url)
-        client.session_timeout = 10_000  # milliseconds (10 seconds)
         client.connect()
         return client
     except TimeoutError as err:
@@ -108,25 +102,10 @@ def opcua_connect(url: str)-> "Client":
     except Exception as err:
         logging.warning(f"opcua_connect() - Unexpected Error: {err}...Retrying connection")
 
-def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
-   opcua_server_state = None
-   while opcua_server_state is None:
-        time.sleep(5)
-        try:
-            client.connect()
-            print(opcua_server_state)
-            opcua_server_state = opcua_read(opcua_server_state_node)
-        except TimeoutError as err:
-            logging.warning(f"opcua_reconnect() - Error: {err}...Retrying connection")
-        except Exception as err:
-            logging.warning(f"opcua_reconnect() - Unexpected Error: {err}...Retrying connection")
 
+def opcua_read(node: Node) -> int:
+    return node.get_value()
 
-def opcua_read(node: Node) -> int | None:
-    try:
-        return node.get_value()
-    except Exception as err:
-        logging.warning(f"opcua_read() - Error: {err}")
 
 def opcua_write(node: Node, value: int | bool) -> None:
     try:
@@ -153,15 +132,12 @@ def get_file_path(directory: str, file_name: str) -> str:
 
         valid_target_dir = os.path.commonpath([working_dir_abs, target_path]) == working_dir_abs
         if not valid_target_dir:
-            logging.warning(
-                f"get_file_path() - Error: Cannot read {file_name} as it is outside"
-                f"the permitted working directory"
-            )
+            logging.warning(f"Error: Cannot read {file_name} as it is outside the permitted working directory")
             return f'Error: Cannot read "{file_name}" as it is outside the permitted working directory'
 
         target_isfile = os.path.isfile(target_path)
         if not target_isfile:
-            logging.warning(f"get_file_path() - Error: {file_name} is not a file")
+            logging.warning(f"Error: {file_name} is not a file")
             return f'Error: "{file_name}" is not a file'
 
         return target_path
@@ -171,17 +147,18 @@ def get_file_path(directory: str, file_name: str) -> str:
 
 
 def main() -> None:
-
+    process_time = 0
+    last_time = 0
+    skip = False
     mdb_filename: str = get_mdb_filename()
     # file_path = get_file_path(MDB_DIR_PATH, mdb_filename)
     # swap these file_path = later.
     file_path: str = get_file_path(MDB_DIR_PATH, "test_file.txt")
     #print(file_path, "filepathtest------------------------")
 
-    # initialize time variables for monitoring file modified time
+    # initialize time variables
     last_modified_time: float = os.stat(file_path).st_mtime
     modified_time: float = last_modified_time
-
 
     client: Client = opcua_connect(OPCUA_URL)
     while client is None:
@@ -190,26 +167,13 @@ def main() -> None:
 
     press_write_complete_node = client.get_node(FROM_PLC_WRITE_CMPLT_NODE)
     heartbeat_node = client.get_node(HEARTBEAT_NODE)
-    write_detected_node = client.get_node(TO_PLC_WRITE_DETECTED_NODE)
-    opcua_server_state_node = client.get_node(OPCUA_SERVER_STATE)
 
     # -------Start heartbeat thread in the background------
-    t = threading.Thread(target=heartbeat_opcua, args=(heartbeat_node, 3.0, opcua_server_state_node), daemon=True)
+    t = threading.Thread(target=heartbeat_opcua, args=(heartbeat_node, 3.0), daemon=True)
     t.start()
     # ------------------------------------------------------
 
     while True:
-
-        # get server state and reconnect if required
-        opcua_server_state = opcua_read(opcua_server_state_node)
-        while opcua_server_state is None:
-            opcua_server_state = opcua_read(opcua_server_state_node)
-            opcua_reconnect(client, opcua_server_state_node)
-            print(opcua_server_state)
-            print("test--------------3")
-        print("test--------------4")
-        print(opcua_server_state)
-
         # creates mdb database file name based on date.
         mdb_filename = get_mdb_filename()
 
@@ -221,10 +185,47 @@ def main() -> None:
             last_modified_time = modified_time
             date_st_mtime = datetime.datetime.fromtimestamp(last_modified_time)
             logging.info(f"File: {mdb_filename}, last modified = {date_st_mtime}")
-            opcua_write(write_detected_node, True)
+            #write_detected = client.get_node(WRITE_DETECTED_NODE)
+            #opcua_write(write_detected, 1)
+
+        #print(file_path, modified_time)
+
+        #time.sleep(0)
+
+        db = MDBParser(file_path="test_mdb.mdb")
+        # Get and print the database tables
+        ##print(db.tables)
+        # Get a table from the DB.
+        table = db.get_table("Data")
+        # Or you can use the MDBTable class.
+        #table = MDBTable(file_path="test_mdb.mdb", table="Data")
+        # Get and print the table columns.
+        #print(table.columns)
+        # Iterate the table rows.
+        for row in table:
+            break
+            print(row[0:11])
+            print(len(row))
+            break
+
+        #while True:
+
+            #print(str(date)[0:11])
+            #print(day_of_week)
+            #print(date)
+        # print(bs_filename)
+            #time.sleep(5)
 
 
-        time.sleep(2)
+
+        if skip == False:
+            last_time = time.perf_counter_ns()
+
+        if skip == True:
+            process_time = time.perf_counter_ns() - last_time
+        print(process_time)
+        skip = not skip
+
 
 
 if __name__ == "__main__":

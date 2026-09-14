@@ -1,1926 +1,298 @@
-2026-09-14 15:38:13,136 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,141 read
-2026-09-14 15:38:13,149 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,152 read
-2026-09-14 15:38:13,162 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,166 read
-2026-09-14 15:38:13,175 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,179 read
-2026-09-14 15:38:13,182 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,186 read
-2026-09-14 15:38:13,190 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,194 read
-2026-09-14 15:38:13,199 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,203 read
-2026-09-14 15:38:13,207 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,210 read
-2026-09-14 15:38:13,216 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,220 read
-2026-09-14 15:38:13,226 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,229 read
-2026-09-14 15:38:13,237 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,241 read
-2026-09-14 15:38:13,247 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,251 read
-2026-09-14 15:38:13,254 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,259 read
-2026-09-14 15:38:13,262 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,267 read
-2026-09-14 15:38:13,272 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,276 read
-2026-09-14 15:38:13,279 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,283 read
-2026-09-14 15:38:13,288 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,292 read
-2026-09-14 15:38:13,295 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,298 read
-2026-09-14 15:38:13,303 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,307 read
-2026-09-14 15:38:13,311 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,314 read
-2026-09-14 15:38:13,319 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,323 read
-2026-09-14 15:38:13,328 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,332 read
-2026-09-14 15:38:13,336 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,340 read
-2026-09-14 15:38:13,343 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,347 read
-2026-09-14 15:38:13,351 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,355 read
-2026-09-14 15:38:13,358 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,363 read
-2026-09-14 15:38:13,366 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,370 read
-2026-09-14 15:38:13,373 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,377 read
-2026-09-14 15:38:13,381 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,385 read
-2026-09-14 15:38:13,397 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,401 read
-2026-09-14 15:38:13,404 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,408 read
-2026-09-14 15:38:13,412 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,415 read
-2026-09-14 15:38:13,418 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,422 read
-2026-09-14 15:38:13,426 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,430 read
-2026-09-14 15:38:13,433 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,437 read
-2026-09-14 15:38:13,441 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,446 read
-2026-09-14 15:38:13,452 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,456 read
-2026-09-14 15:38:13,460 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,463 read
-2026-09-14 15:38:13,467 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,471 read
-2026-09-14 15:38:13,474 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,478 read
-2026-09-14 15:38:13,487 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,490 read
-2026-09-14 15:38:13,496 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,500 read
-2026-09-14 15:38:13,504 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,507 read
-2026-09-14 15:38:13,512 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,515 read
-2026-09-14 15:38:13,519 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,522 read
-2026-09-14 15:38:13,525 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,529 read
-2026-09-14 15:38:13,533 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,536 read
-2026-09-14 15:38:13,541 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,544 read
-2026-09-14 15:38:13,547 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,551 read
-2026-09-14 15:38:13,557 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,561 read
-2026-09-14 15:38:13,564 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,567 read
-2026-09-14 15:38:13,572 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,575 read
-2026-09-14 15:38:13,579 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,583 read
-2026-09-14 15:38:13,586 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,589 read
-2026-09-14 15:38:13,594 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,598 read
-2026-09-14 15:38:13,601 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,605 read
-2026-09-14 15:38:13,608 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,613 read
-2026-09-14 15:38:13,616 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,619 read
-2026-09-14 15:38:13,623 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,626 read
-2026-09-14 15:38:13,630 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,634 read
-2026-09-14 15:38:13,642 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,645 read
-2026-09-14 15:38:13,651 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,654 read
-2026-09-14 15:38:13,660 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,664 read
-2026-09-14 15:38:13,669 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,673 read
-2026-09-14 15:38:13,677 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,681 read
-2026-09-14 15:38:13,685 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,689 read
-2026-09-14 15:38:13,692 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,696 read
-2026-09-14 15:38:13,700 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,704 read
-2026-09-14 15:38:13,707 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,710 read
-2026-09-14 15:38:13,715 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,718 read
-2026-09-14 15:38:13,721 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,726 read
-2026-09-14 15:38:13,731 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,734 read
-2026-09-14 15:38:13,738 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,741 read
-2026-09-14 15:38:13,745 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,749 read
-2026-09-14 15:38:13,752 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,756 read
-2026-09-14 15:38:13,764 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,768 read
-2026-09-14 15:38:13,774 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,778 read
-2026-09-14 15:38:13,781 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,785 read
-2026-09-14 15:38:13,787 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,791 read
-2026-09-14 15:38:13,794 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,798 read
-2026-09-14 15:38:13,802 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,806 read
-2026-09-14 15:38:13,810 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,814 read
-2026-09-14 15:38:13,821 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,825 read
-2026-09-14 15:38:13,828 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,832 read
-2026-09-14 15:38:13,835 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,838 read
-2026-09-14 15:38:13,843 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,846 read
-2026-09-14 15:38:13,850 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,853 read
-2026-09-14 15:38:13,858 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,861 read
-2026-09-14 15:38:13,866 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,869 read
-2026-09-14 15:38:13,876 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,880 read
-2026-09-14 15:38:13,884 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,888 read
-2026-09-14 15:38:13,892 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,895 read
-2026-09-14 15:38:13,900 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,903 read
-2026-09-14 15:38:13,907 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,910 read
-2026-09-14 15:38:13,914 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,918 read
-2026-09-14 15:38:13,922 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,925 read
-2026-09-14 15:38:13,929 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,933 read
-2026-09-14 15:38:13,937 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,940 read
-2026-09-14 15:38:13,944 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,947 read
-2026-09-14 15:38:13,951 close_session
-2026-09-14 15:38:13,951 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:47)
-2026-09-14 15:38:13,994 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:47)
-2026-09-14 15:38:13,995 close_secure_channel
-2026-09-14 15:38:13,995 Request to close socket received
-2026-09-14 15:38:13,995 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 15:38:13,995 Socket has closed connection
-2026-09-14 15:38:13,995 Cancelling request 1603
-2026-09-14 15:38:13,995 Thread ended
-2026-09-14 15:38:13,995 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 15:38:49,777 opening connection
-2026-09-14 15:38:49,802 Thread started
-2026-09-14 15:38:49,804 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 15:38:49,804 open_secure_channel
-2026-09-14 15:38:49,805 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:48)
-2026-09-14 15:38:49,805 create_session
-2026-09-14 15:38:50,126 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:48)
-2026-09-14 15:38:50,127 activate_session
-2026-09-14 15:38:50,131 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:48)
-2026-09-14 15:38:50,131 read
-2026-09-14 15:38:50,139 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:48)
-2026-09-14 15:38:50,340 read
-2026-09-14 15:38:50,345 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:48)
-2026-09-14 15:38:50,842 read
-2026-09-14 15:38:50,858 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:51,157 read
-2026-09-14 15:38:51,160 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:51,453 read
-2026-09-14 15:38:51,456 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:51,750 read
-2026-09-14 15:38:51,754 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:52,050 read
-2026-09-14 15:38:52,055 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:52,351 read
-2026-09-14 15:38:52,356 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:52,649 read
-2026-09-14 15:38:52,652 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:52,948 read
-2026-09-14 15:38:52,952 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:53,245 read
-2026-09-14 15:38:53,249 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:53,340 read
-2026-09-14 15:38:53,344 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:48)
-2026-09-14 15:38:53,549 read
-2026-09-14 15:38:53,553 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:53,849 read
-2026-09-14 15:38:53,852 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:54,149 read
-2026-09-14 15:38:54,153 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:54,450 read
-2026-09-14 15:38:54,453 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:54,748 read
-2026-09-14 15:38:54,751 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:55,044 read
-2026-09-14 15:38:55,048 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:55,342 read
-2026-09-14 15:38:55,346 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:55,643 read
-2026-09-14 15:38:55,646 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:55,941 read
-2026-09-14 15:38:55,945 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:56,238 read
-2026-09-14 15:38:56,243 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:56,541 read
-2026-09-14 15:38:56,544 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:56,545 read
-2026-09-14 15:38:56,549 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:48)
-2026-09-14 15:38:56,839 read
-2026-09-14 15:38:56,843 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:57,138 read
-2026-09-14 15:38:57,141 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:57,437 read
-2026-09-14 15:38:57,441 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:57,734 read
-2026-09-14 15:38:57,739 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:58,032 read
-2026-09-14 15:38:58,036 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:58,329 read
-2026-09-14 15:38:58,332 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:57,830 read
-2026-09-14 15:38:57,835 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:58,132 read
-2026-09-14 15:38:58,135 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:58,428 read
-2026-09-14 15:38:58,431 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:58,723 read
-2026-09-14 15:38:58,727 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:58,951 read
-2026-09-14 15:38:58,955 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:48)
-2026-09-14 15:38:59,156 read
-2026-09-14 15:38:59,159 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:59,453 read
-2026-09-14 15:38:59,458 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:38:59,750 read
-2026-09-14 15:38:59,754 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:00,046 read
-2026-09-14 15:39:00,050 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:00,345 read
-2026-09-14 15:39:00,349 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:00,660 read
-2026-09-14 15:39:00,664 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:00,956 read
-2026-09-14 15:39:00,959 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:01,254 read
-2026-09-14 15:39:01,258 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:01,549 read
-2026-09-14 15:39:01,553 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:01,849 read
-2026-09-14 15:39:01,853 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:02,148 read
-2026-09-14 15:39:02,152 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:02,156 read
-2026-09-14 15:39:02,159 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:48)
-2026-09-14 15:39:02,448 read
-2026-09-14 15:39:02,451 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:02,746 read
-2026-09-14 15:39:02,750 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:03,046 read
-2026-09-14 15:39:03,062 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:03,360 read
-2026-09-14 15:39:03,364 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:03,658 read
-2026-09-14 15:39:03,661 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:03,956 read
-2026-09-14 15:39:03,960 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:04,252 read
-2026-09-14 15:39:04,255 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:04,548 read
-2026-09-14 15:39:04,553 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:04,852 read
-2026-09-14 15:39:04,855 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:05,148 read
-2026-09-14 15:39:05,151 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:05,361 read
-2026-09-14 15:39:05,366 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:48)
-2026-09-14 15:39:05,566 read
-2026-09-14 15:39:05,570 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:05,865 read
-2026-09-14 15:39:05,868 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:06,159 read
-2026-09-14 15:39:06,163 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:06,459 read
-2026-09-14 15:39:06,462 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:06,761 read
-2026-09-14 15:39:06,764 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:07,064 read
-2026-09-14 15:39:07,068 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:07,364 read
-2026-09-14 15:39:07,368 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:48)
-2026-09-14 15:39:07,397 close_session
-2026-09-14 15:39:07,437 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:48)
-2026-09-14 15:39:07,437 close_secure_channel
-2026-09-14 15:39:07,437 Request to close socket received
-2026-09-14 15:39:07,438 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 15:39:07,438 Socket has closed connection
-2026-09-14 15:39:07,438 Cancelling request 70
-2026-09-14 15:39:07,438 Thread ended
-2026-09-14 15:39:07,438 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 15:46:21,562 opening connection
-2026-09-14 15:46:21,702 Thread started
-2026-09-14 15:46:21,703 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 15:46:21,703 open_secure_channel
-2026-09-14 15:46:21,704 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:49)
-2026-09-14 15:46:21,705 create_session
-2026-09-14 15:46:21,875 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:49)
-2026-09-14 15:46:21,875 activate_session
-2026-09-14 15:46:21,879 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:49)
-2026-09-14 15:46:21,879 read
-2026-09-14 15:46:21,884 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:49)
-2026-09-14 15:46:22,084 read
-2026-09-14 15:46:22,089 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:49)
-2026-09-14 15:46:22,290 opening connection
-2026-09-14 15:46:22,452 Thread started
-2026-09-14 15:46:22,453 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 15:46:22,453 open_secure_channel
-2026-09-14 15:46:22,454 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:50)
-2026-09-14 15:46:22,454 create_session
-2026-09-14 15:46:22,639 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:50)
-2026-09-14 15:46:22,640 activate_session
-2026-09-14 15:46:22,645 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:50)
-2026-09-14 15:46:22,645 read
-2026-09-14 15:46:22,651 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:50)
-2026-09-14 15:46:25,085 read
-2026-09-14 15:46:25,090 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:50)
-2026-09-14 15:46:27,631 close_session
-2026-09-14 15:46:27,682 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:50)
-2026-09-14 15:46:27,682 close_secure_channel
-2026-09-14 15:46:27,682 Request to close socket received
-2026-09-14 15:46:27,683 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 15:46:27,683 Socket has closed connection
-2026-09-14 15:46:27,683 Cancelling request 7
-2026-09-14 15:46:27,683 Thread ended
-2026-09-14 15:46:27,683 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 15:46:28,291 read
-2026-09-14 15:47:23,650 opening connection
-2026-09-14 15:47:23,723 Thread started
-2026-09-14 15:47:23,724 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 15:47:23,724 open_secure_channel
-2026-09-14 15:47:23,726 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:51)
-2026-09-14 15:47:23,726 create_session
-2026-09-14 15:47:24,110 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:51)
-2026-09-14 15:47:24,111 activate_session
-2026-09-14 15:47:24,117 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:51)
-2026-09-14 15:47:24,117 read
-2026-09-14 15:47:24,127 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:51)
-2026-09-14 15:47:24,328 read
-2026-09-14 15:47:24,332 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:51)
-2026-09-14 15:47:24,532 read
-2026-09-14 15:47:24,536 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,537 read
-2026-09-14 15:47:24,540 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,540 read
-2026-09-14 15:47:24,544 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,545 read
-2026-09-14 15:47:24,548 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,548 read
-2026-09-14 15:47:24,552 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,553 read
-2026-09-14 15:47:24,556 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,557 read
-2026-09-14 15:47:24,560 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,560 read
-2026-09-14 15:47:24,565 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,566 read
-2026-09-14 15:47:24,569 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,570 read
-2026-09-14 15:47:24,573 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,573 read
-2026-09-14 15:47:24,578 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,579 read
-2026-09-14 15:47:24,583 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,583 read
-2026-09-14 15:47:24,590 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,590 read
-2026-09-14 15:47:24,594 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,594 read
-2026-09-14 15:47:24,598 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,598 read
-2026-09-14 15:47:24,601 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,601 read
-2026-09-14 15:47:24,606 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,606 read
-2026-09-14 15:47:24,610 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,610 read
-2026-09-14 15:47:24,613 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,613 read
-2026-09-14 15:47:24,617 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,617 read
-2026-09-14 15:47:24,622 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,622 read
-2026-09-14 15:47:24,626 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,627 read
-2026-09-14 15:47:24,630 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,630 read
-2026-09-14 15:47:24,636 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,636 read
-2026-09-14 15:47:24,640 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,640 read
-2026-09-14 15:47:24,643 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,644 read
-2026-09-14 15:47:24,648 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,648 read
-2026-09-14 15:47:24,652 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,653 read
-2026-09-14 15:47:24,656 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,656 read
-2026-09-14 15:47:24,659 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,659 read
-2026-09-14 15:47:24,663 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,663 read
-2026-09-14 15:47:24,668 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,668 read
-2026-09-14 15:47:24,673 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,673 read
-2026-09-14 15:47:24,677 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,677 read
-2026-09-14 15:47:24,683 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,684 read
-2026-09-14 15:47:24,687 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,688 read
-2026-09-14 15:47:24,691 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,691 read
-2026-09-14 15:47:24,695 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,695 read
-2026-09-14 15:47:24,699 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,699 read
-2026-09-14 15:47:24,703 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,703 read
-2026-09-14 15:47:24,706 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,706 read
-2026-09-14 15:47:24,709 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,710 read
-2026-09-14 15:47:24,714 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,715 read
-2026-09-14 15:47:24,720 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,720 read
-2026-09-14 15:47:24,723 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,723 read
-2026-09-14 15:47:24,727 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,727 read
-2026-09-14 15:47:24,732 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,733 read
-2026-09-14 15:47:24,737 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,737 read
-2026-09-14 15:47:24,741 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,741 read
-2026-09-14 15:47:24,744 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,744 read
-2026-09-14 15:47:24,747 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,748 read
-2026-09-14 15:47:24,752 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,752 read
-2026-09-14 15:47:24,755 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,756 read
-2026-09-14 15:47:24,759 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,759 read
-2026-09-14 15:47:24,762 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,763 read
-2026-09-14 15:47:24,767 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,767 read
-2026-09-14 15:47:24,770 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,771 read
-2026-09-14 15:47:24,775 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,775 read
-2026-09-14 15:47:24,778 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,778 read
-2026-09-14 15:47:24,782 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,782 read
-2026-09-14 15:47:24,786 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,786 read
-2026-09-14 15:47:24,789 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,790 read
-2026-09-14 15:47:24,794 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,795 read
-2026-09-14 15:47:24,799 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,799 read
-2026-09-14 15:47:24,805 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,806 read
-2026-09-14 15:47:24,809 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,810 read
-2026-09-14 15:47:24,813 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,813 read
-2026-09-14 15:47:24,816 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,817 read
-2026-09-14 15:47:24,820 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,820 read
-2026-09-14 15:47:24,825 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,825 read
-2026-09-14 15:47:24,828 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,828 read
-2026-09-14 15:47:24,832 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,832 read
-2026-09-14 15:47:24,845 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,846 read
-2026-09-14 15:47:24,850 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,850 read
-2026-09-14 15:47:24,858 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,858 read
-2026-09-14 15:47:24,864 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,865 read
-2026-09-14 15:47:24,869 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,869 read
-2026-09-14 15:47:24,877 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,877 read
-2026-09-14 15:47:24,886 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,886 read
-2026-09-14 15:47:24,891 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,891 read
-2026-09-14 15:47:24,895 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,895 read
-2026-09-14 15:47:24,900 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,900 read
-2026-09-14 15:47:24,905 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,905 read
-2026-09-14 15:47:24,909 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,909 read
-2026-09-14 15:47:24,913 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,913 read
-2026-09-14 15:47:24,916 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,916 read
-2026-09-14 15:47:24,921 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,921 read
-2026-09-14 15:47:24,925 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,925 read
-2026-09-14 15:47:24,928 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,928 read
-2026-09-14 15:47:24,932 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,932 read
-2026-09-14 15:47:24,936 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,937 read
-2026-09-14 15:47:24,941 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,941 read
-2026-09-14 15:47:24,945 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,945 read
-2026-09-14 15:47:24,948 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,948 read
-2026-09-14 15:47:24,952 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,952 read
-2026-09-14 15:47:24,959 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,959 read
-2026-09-14 15:47:24,962 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,962 read
-2026-09-14 15:47:24,966 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,966 read
-2026-09-14 15:47:24,969 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,969 read
-2026-09-14 15:47:24,973 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,973 read
-2026-09-14 15:47:24,976 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,976 read
-2026-09-14 15:47:24,981 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,981 read
-2026-09-14 15:47:24,985 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,985 read
-2026-09-14 15:47:24,988 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,988 read
-2026-09-14 15:47:24,992 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:24,992 read
-2026-09-14 15:47:24,999 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,000 read
-2026-09-14 15:47:25,005 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,005 read
-2026-09-14 15:47:25,013 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,013 read
-2026-09-14 15:47:25,020 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,021 read
-2026-09-14 15:47:25,026 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,026 read
-2026-09-14 15:47:25,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,033 read
-2026-09-14 15:47:25,039 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,039 read
-2026-09-14 15:47:25,050 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,051 read
-2026-09-14 15:47:25,064 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,065 read
-2026-09-14 15:47:25,077 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,077 read
-2026-09-14 15:47:25,087 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,087 read
-2026-09-14 15:47:25,100 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,100 read
-2026-09-14 15:47:25,110 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,111 read
-2026-09-14 15:47:25,118 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,118 read
-2026-09-14 15:47:25,123 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,123 read
-2026-09-14 15:47:25,129 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,129 read
-2026-09-14 15:47:25,135 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,135 read
-2026-09-14 15:47:25,141 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,142 read
-2026-09-14 15:47:25,148 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,148 read
-2026-09-14 15:47:25,156 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,156 read
-2026-09-14 15:47:25,171 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,172 read
-2026-09-14 15:47:25,183 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,183 read
-2026-09-14 15:47:25,194 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,195 read
-2026-09-14 15:47:25,201 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,201 read
-2026-09-14 15:47:25,207 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,207 read
-2026-09-14 15:47:25,214 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,214 read
-2026-09-14 15:47:25,219 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,219 read
-2026-09-14 15:47:25,236 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,237 read
-2026-09-14 15:47:25,247 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,247 read
-2026-09-14 15:47:25,254 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,254 read
-2026-09-14 15:47:25,266 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,267 read
-2026-09-14 15:47:25,293 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,293 read
-2026-09-14 15:47:25,299 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,300 read
-2026-09-14 15:47:25,323 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,324 read
-2026-09-14 15:47:25,335 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,336 read
-2026-09-14 15:47:25,349 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,350 read
-2026-09-14 15:47:25,354 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,354 read
-2026-09-14 15:47:25,359 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,359 read
-2026-09-14 15:47:25,367 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,367 read
-2026-09-14 15:47:25,386 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,386 read
-2026-09-14 15:47:25,400 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,400 read
-2026-09-14 15:47:25,411 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,412 read
-2026-09-14 15:47:25,418 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,418 read
-2026-09-14 15:47:25,430 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,431 read
-2026-09-14 15:47:25,435 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,435 read
-2026-09-14 15:47:25,442 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,443 read
-2026-09-14 15:47:25,452 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,452 read
-2026-09-14 15:47:25,461 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,461 read
-2026-09-14 15:47:25,465 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,466 read
-2026-09-14 15:47:25,476 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,476 read
-2026-09-14 15:47:25,480 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,481 read
-2026-09-14 15:47:25,490 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,490 read
-2026-09-14 15:47:25,496 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,496 read
-2026-09-14 15:47:25,500 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,500 read
-2026-09-14 15:47:25,506 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,507 read
-2026-09-14 15:47:25,510 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,510 read
-2026-09-14 15:47:25,517 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,517 read
-2026-09-14 15:47:25,524 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,524 read
-2026-09-14 15:47:25,529 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,529 read
-2026-09-14 15:47:25,540 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,541 read
-2026-09-14 15:47:25,547 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,547 read
-2026-09-14 15:47:25,553 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,553 read
-2026-09-14 15:47:25,557 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,557 read
-2026-09-14 15:47:25,560 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,561 read
-2026-09-14 15:47:25,564 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,565 read
-2026-09-14 15:47:25,569 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,569 read
-2026-09-14 15:47:25,573 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,573 read
-2026-09-14 15:47:25,577 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,578 read
-2026-09-14 15:47:25,582 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,583 read
-2026-09-14 15:47:25,587 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,588 read
-2026-09-14 15:47:25,591 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,591 read
-2026-09-14 15:47:25,595 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,595 read
-2026-09-14 15:47:25,600 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,600 read
-2026-09-14 15:47:25,606 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,606 read
-2026-09-14 15:47:25,609 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,610 read
-2026-09-14 15:47:25,613 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,613 read
-2026-09-14 15:47:25,617 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,617 read
-2026-09-14 15:47:25,620 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,621 read
-2026-09-14 15:47:25,624 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,624 read
-2026-09-14 15:47:25,628 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,628 read
-2026-09-14 15:47:25,632 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,632 read
-2026-09-14 15:47:25,635 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,635 read
-2026-09-14 15:47:25,639 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,639 read
-2026-09-14 15:47:25,643 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,643 read
-2026-09-14 15:47:25,647 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,647 read
-2026-09-14 15:47:25,650 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,651 read
-2026-09-14 15:47:25,655 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,656 read
-2026-09-14 15:47:25,660 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,660 read
-2026-09-14 15:47:25,666 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,667 read
-2026-09-14 15:47:25,670 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,671 read
-2026-09-14 15:47:25,674 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,674 read
-2026-09-14 15:47:25,677 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,678 read
-2026-09-14 15:47:25,683 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,683 read
-2026-09-14 15:47:25,686 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,687 read
-2026-09-14 15:47:25,690 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,690 read
-2026-09-14 15:47:25,693 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,694 read
-2026-09-14 15:47:25,698 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,698 read
-2026-09-14 15:47:25,703 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,704 read
-2026-09-14 15:47:25,709 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,709 read
-2026-09-14 15:47:25,713 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,713 read
-2026-09-14 15:47:25,717 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,717 read
-2026-09-14 15:47:25,720 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,720 read
-2026-09-14 15:47:25,724 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,724 read
-2026-09-14 15:47:25,728 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,729 read
-2026-09-14 15:47:25,732 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,732 read
-2026-09-14 15:47:25,735 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,735 read
-2026-09-14 15:47:25,739 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,739 read
-2026-09-14 15:47:25,743 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,744 read
-2026-09-14 15:47:25,749 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,749 read
-2026-09-14 15:47:25,753 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,753 read
-2026-09-14 15:47:25,759 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,759 read
-2026-09-14 15:47:25,763 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,763 read
-2026-09-14 15:47:25,767 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,767 read
-2026-09-14 15:47:25,770 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,770 read
-2026-09-14 15:47:25,775 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,775 read
-2026-09-14 15:47:25,778 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,778 read
-2026-09-14 15:47:25,782 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,782 read
-2026-09-14 15:47:25,786 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,786 read
-2026-09-14 15:47:25,791 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,791 read
-2026-09-14 15:47:25,796 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,796 read
-2026-09-14 15:47:25,799 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,800 read
-2026-09-14 15:47:25,803 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,803 read
-2026-09-14 15:47:25,811 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,811 read
-2026-09-14 15:47:25,814 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,815 read
-2026-09-14 15:47:25,818 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,818 read
-2026-09-14 15:47:25,821 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,822 read
-2026-09-14 15:47:25,825 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,825 read
-2026-09-14 15:47:25,828 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,828 read
-2026-09-14 15:47:25,832 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,832 read
-2026-09-14 15:47:25,835 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,835 read
-2026-09-14 15:47:25,839 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,839 read
-2026-09-14 15:47:25,843 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,843 read
-2026-09-14 15:47:25,846 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,847 read
-2026-09-14 15:47:25,850 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,851 read
-2026-09-14 15:47:25,854 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,854 read
-2026-09-14 15:47:25,858 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,858 read
-2026-09-14 15:47:25,862 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,862 read
-2026-09-14 15:47:25,865 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,866 read
-2026-09-14 15:47:25,870 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,871 read
-2026-09-14 15:47:25,875 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,875 read
-2026-09-14 15:47:25,881 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,882 read
-2026-09-14 15:47:25,885 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,886 read
-2026-09-14 15:47:25,890 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,890 read
-2026-09-14 15:47:25,893 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,894 read
-2026-09-14 15:47:25,898 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,898 read
-2026-09-14 15:47:25,901 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,902 read
-2026-09-14 15:47:25,905 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,905 read
-2026-09-14 15:47:25,910 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,911 read
-2026-09-14 15:47:25,916 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,916 read
-2026-09-14 15:47:25,921 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,922 read
-2026-09-14 15:47:25,926 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,926 read
-2026-09-14 15:47:25,930 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,930 read
-2026-09-14 15:47:25,934 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,934 read
-2026-09-14 15:47:25,938 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,939 read
-2026-09-14 15:47:25,942 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,942 read
-2026-09-14 15:47:25,946 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,946 read
-2026-09-14 15:47:25,949 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:51)
-2026-09-14 15:47:25,950 read
-2026-09-14 15:47:25,952 close_session
-2026-09-14 15:47:25,997 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:51)
-2026-09-14 15:47:25,998 close_secure_channel
-2026-09-14 15:47:25,998 Request to close socket received
-2026-09-14 15:47:25,998 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 15:47:25,998 Socket has closed connection
-2026-09-14 15:47:25,998 Cancelling request 268
-2026-09-14 15:47:25,998 Cancelling request 270
-2026-09-14 15:47:25,998 Thread ended
-2026-09-14 15:47:25,998 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 15:48:10,294 opening connection
-2026-09-14 15:48:10,493 Thread started
-2026-09-14 15:48:10,494 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 15:48:10,494 open_secure_channel
-2026-09-14 15:48:10,495 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:52)
-2026-09-14 15:48:10,496 create_session
-2026-09-14 15:48:10,679 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:52)
-2026-09-14 15:48:10,679 activate_session
-2026-09-14 15:48:10,684 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:52)
-2026-09-14 15:48:10,684 read
-2026-09-14 15:48:10,688 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:52)
-2026-09-14 15:48:10,889 read
-2026-09-14 15:48:10,893 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:52)
-2026-09-14 15:48:11,095 read
-2026-09-14 15:48:11,099 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,100 read
-2026-09-14 15:48:11,103 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,103 read
-2026-09-14 15:48:11,107 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,107 read
-2026-09-14 15:48:11,110 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,111 read
-2026-09-14 15:48:11,115 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,115 read
-2026-09-14 15:48:11,119 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,119 read
-2026-09-14 15:48:11,123 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,123 read
-2026-09-14 15:48:11,127 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,128 read
-2026-09-14 15:48:11,131 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,131 read
-2026-09-14 15:48:11,134 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,135 read
-2026-09-14 15:48:11,139 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,140 read
-2026-09-14 15:48:11,144 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,145 read
-2026-09-14 15:48:11,149 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,149 read
-2026-09-14 15:48:11,155 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,155 read
-2026-09-14 15:48:11,159 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,159 read
-2026-09-14 15:48:11,163 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,163 read
-2026-09-14 15:48:11,166 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,166 read
-2026-09-14 15:48:11,172 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,172 read
-2026-09-14 15:48:11,175 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,176 read
-2026-09-14 15:48:11,179 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,180 read
-2026-09-14 15:48:11,183 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,183 read
-2026-09-14 15:48:11,188 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,188 read
-2026-09-14 15:48:11,193 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,193 read
-2026-09-14 15:48:11,197 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,197 read
-2026-09-14 15:48:11,203 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,203 read
-2026-09-14 15:48:11,207 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,207 read
-2026-09-14 15:48:11,210 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,211 read
-2026-09-14 15:48:11,214 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,214 read
-2026-09-14 15:48:11,219 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,219 read
-2026-09-14 15:48:11,222 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,222 read
-2026-09-14 15:48:11,226 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,226 read
-2026-09-14 15:48:11,231 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,231 read
-2026-09-14 15:48:11,236 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,237 read
-2026-09-14 15:48:11,240 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,241 read
-2026-09-14 15:48:11,247 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,247 read
-2026-09-14 15:48:11,251 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,251 read
-2026-09-14 15:48:11,254 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,255 read
-2026-09-14 15:48:11,258 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,258 read
-2026-09-14 15:48:11,262 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,263 read
-2026-09-14 15:48:11,266 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,267 read
-2026-09-14 15:48:11,270 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,270 read
-2026-09-14 15:48:11,274 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,274 read
-2026-09-14 15:48:11,279 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,279 read
-2026-09-14 15:48:11,284 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,284 read
-2026-09-14 15:48:11,288 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,289 read
-2026-09-14 15:48:11,292 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,292 read
-2026-09-14 15:48:11,298 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,298 read
-2026-09-14 15:48:11,302 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,302 read
-2026-09-14 15:48:11,305 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,306 read
-2026-09-14 15:48:11,309 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,309 read
-2026-09-14 15:48:11,313 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,313 read
-2026-09-14 15:48:11,316 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,316 read
-2026-09-14 15:48:11,320 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,320 read
-2026-09-14 15:48:11,323 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,323 read
-2026-09-14 15:48:11,326 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,327 read
-2026-09-14 15:48:11,331 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,331 read
-2026-09-14 15:48:11,334 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,335 read
-2026-09-14 15:48:11,338 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,338 read
-2026-09-14 15:48:11,343 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,343 read
-2026-09-14 15:48:11,346 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,347 read
-2026-09-14 15:48:11,350 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,350 read
-2026-09-14 15:48:11,355 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,355 read
-2026-09-14 15:48:11,360 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,360 read
-2026-09-14 15:48:11,366 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,367 read
-2026-09-14 15:48:11,371 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,371 read
-2026-09-14 15:48:11,374 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,375 read
-2026-09-14 15:48:11,379 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,379 read
-2026-09-14 15:48:11,382 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,382 read
-2026-09-14 15:48:11,391 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,392 read
-2026-09-14 15:48:11,397 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,398 read
-2026-09-14 15:48:11,404 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,404 read
-2026-09-14 15:48:11,414 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,415 read
-2026-09-14 15:48:11,422 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,422 read
-2026-09-14 15:48:11,427 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,427 read
-2026-09-14 15:48:11,433 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,433 read
-2026-09-14 15:48:11,438 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,438 read
-2026-09-14 15:48:11,446 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,446 read
-2026-09-14 15:48:11,453 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,453 read
-2026-09-14 15:48:11,456 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,457 read
-2026-09-14 15:48:11,463 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,463 read
-2026-09-14 15:48:11,469 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,470 read
-2026-09-14 15:48:11,475 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,475 read
-2026-09-14 15:48:11,498 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,498 read
-2026-09-14 15:48:11,508 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,509 read
-2026-09-14 15:48:11,520 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,521 read
-2026-09-14 15:48:11,528 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,529 read
-2026-09-14 15:48:11,534 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,534 read
-2026-09-14 15:48:11,540 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,540 read
-2026-09-14 15:48:11,553 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,553 read
-2026-09-14 15:48:11,559 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,559 read
-2026-09-14 15:48:11,565 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,565 read
-2026-09-14 15:48:11,574 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,575 read
-2026-09-14 15:48:11,594 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,595 read
-2026-09-14 15:48:11,609 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,609 read
-2026-09-14 15:48:11,631 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,631 read
-2026-09-14 15:48:11,648 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,649 read
-2026-09-14 15:48:11,666 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,666 read
-2026-09-14 15:48:11,679 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,680 read
-2026-09-14 15:48:11,691 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,692 read
-2026-09-14 15:48:11,704 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,704 read
-2026-09-14 15:48:11,725 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,726 read
-2026-09-14 15:48:11,756 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,756 read
-2026-09-14 15:48:11,769 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,769 read
-2026-09-14 15:48:11,781 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,781 read
-2026-09-14 15:48:11,802 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,803 read
-2026-09-14 15:48:11,813 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,814 read
-2026-09-14 15:48:11,821 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,821 read
-2026-09-14 15:48:11,829 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,829 read
-2026-09-14 15:48:11,840 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,840 read
-2026-09-14 15:48:11,865 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,866 read
-2026-09-14 15:48:11,899 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,899 read
-2026-09-14 15:48:11,914 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,914 read
-2026-09-14 15:48:11,929 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,929 read
-2026-09-14 15:48:11,949 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,950 read
-2026-09-14 15:48:11,974 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,974 read
-2026-09-14 15:48:11,992 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:11,992 read
-2026-09-14 15:48:12,005 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,005 read
-2026-09-14 15:48:12,015 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,015 read
-2026-09-14 15:48:12,031 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,031 read
-2026-09-14 15:48:12,041 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,041 read
-2026-09-14 15:48:12,048 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,048 read
-2026-09-14 15:48:12,053 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,054 read
-2026-09-14 15:48:12,070 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,071 read
-2026-09-14 15:48:12,081 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,081 read
-2026-09-14 15:48:12,091 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,091 read
-2026-09-14 15:48:12,101 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,101 read
-2026-09-14 15:48:12,106 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,106 read
-2026-09-14 15:48:12,115 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,115 read
-2026-09-14 15:48:12,121 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,121 read
-2026-09-14 15:48:12,131 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,131 read
-2026-09-14 15:48:12,137 close_session
-2026-09-14 15:48:12,137 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:52)
-2026-09-14 15:48:12,207 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:52)
-2026-09-14 15:48:12,207 close_secure_channel
-2026-09-14 15:48:12,208 Request to close socket received
-2026-09-14 15:48:12,208 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 15:48:12,208 Socket has closed connection
-2026-09-14 15:48:12,208 Cancelling request 138
-2026-09-14 15:48:12,208 Thread ended
-2026-09-14 15:48:12,208 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 15:49:21,239 opening connection
-2026-09-14 15:49:21,325 Thread started
-2026-09-14 15:49:21,326 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 15:49:21,326 open_secure_channel
-2026-09-14 15:49:21,328 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:53)
-2026-09-14 15:49:21,328 create_session
-2026-09-14 15:49:21,526 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:53)
-2026-09-14 15:49:21,527 activate_session
-2026-09-14 15:49:21,533 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:53)
-2026-09-14 15:49:21,534 read
-2026-09-14 15:49:21,544 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:53)
-2026-09-14 15:49:21,745 read
-2026-09-14 15:49:21,750 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:53)
-2026-09-14 15:49:21,950 read
-2026-09-14 15:49:21,955 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:21,955 read
-2026-09-14 15:49:21,961 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:21,962 read
-2026-09-14 15:49:21,966 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:21,966 read
-2026-09-14 15:49:21,969 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:21,970 read
-2026-09-14 15:49:21,973 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:21,973 read
-2026-09-14 15:49:21,978 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:21,978 read
-2026-09-14 15:49:21,986 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:21,987 read
-2026-09-14 15:49:21,991 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:21,992 read
-2026-09-14 15:49:21,996 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:21,996 read
-2026-09-14 15:49:22,000 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,000 read
-2026-09-14 15:49:22,006 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,006 read
-2026-09-14 15:49:22,010 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,010 read
-2026-09-14 15:49:22,015 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,015 read
-2026-09-14 15:49:22,018 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,018 read
-2026-09-14 15:49:22,023 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,023 read
-2026-09-14 15:49:22,028 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,028 read
-2026-09-14 15:49:22,031 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,032 read
-2026-09-14 15:49:22,036 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,036 read
-2026-09-14 15:49:22,041 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,041 read
-2026-09-14 15:49:22,045 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,045 read
-2026-09-14 15:49:22,048 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,049 read
-2026-09-14 15:49:22,052 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,052 read
-2026-09-14 15:49:22,058 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,058 read
-2026-09-14 15:49:22,061 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,062 read
-2026-09-14 15:49:22,065 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,065 read
-2026-09-14 15:49:22,069 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,069 read
-2026-09-14 15:49:22,072 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,072 read
-2026-09-14 15:49:22,076 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,076 read
-2026-09-14 15:49:22,079 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,079 read
-2026-09-14 15:49:22,082 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,083 read
-2026-09-14 15:49:22,086 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,086 read
-2026-09-14 15:49:22,090 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,090 read
-2026-09-14 15:49:22,094 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,094 read
-2026-09-14 15:49:22,097 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,098 read
-2026-09-14 15:49:22,101 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,101 read
-2026-09-14 15:49:22,104 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,104 read
-2026-09-14 15:49:22,108 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,109 read
-2026-09-14 15:49:22,112 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,112 read
-2026-09-14 15:49:22,116 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,117 read
-2026-09-14 15:49:22,121 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,121 read
-2026-09-14 15:49:22,126 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,126 read
-2026-09-14 15:49:22,133 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,134 read
-2026-09-14 15:49:22,137 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,138 read
-2026-09-14 15:49:22,141 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,141 read
-2026-09-14 15:49:22,144 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,145 read
-2026-09-14 15:49:22,149 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,149 read
-2026-09-14 15:49:22,153 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,153 read
-2026-09-14 15:49:22,156 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,156 read
-2026-09-14 15:49:22,159 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,160 read
-2026-09-14 15:49:22,166 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,166 read
-2026-09-14 15:49:22,170 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,170 read
-2026-09-14 15:49:22,176 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,177 read
-2026-09-14 15:49:22,180 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,180 read
-2026-09-14 15:49:22,184 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,184 read
-2026-09-14 15:49:22,187 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,187 read
-2026-09-14 15:49:22,191 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,192 read
-2026-09-14 15:49:22,195 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,195 read
-2026-09-14 15:49:22,198 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,198 read
-2026-09-14 15:49:22,202 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,202 read
-2026-09-14 15:49:22,207 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,207 read
-2026-09-14 15:49:22,212 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,212 read
-2026-09-14 15:49:22,215 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,216 read
-2026-09-14 15:49:22,222 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,222 read
-2026-09-14 15:49:22,226 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,227 read
-2026-09-14 15:49:22,230 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,230 read
-2026-09-14 15:49:22,235 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,235 read
-2026-09-14 15:49:22,239 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,240 read
-2026-09-14 15:49:22,243 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,243 read
-2026-09-14 15:49:22,246 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,247 read
-2026-09-14 15:49:22,250 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,250 read
-2026-09-14 15:49:22,255 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,255 read
-2026-09-14 15:49:22,259 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,260 read
-2026-09-14 15:49:22,263 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,263 read
-2026-09-14 15:49:22,267 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,267 read
-2026-09-14 15:49:22,270 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,270 read
-2026-09-14 15:49:22,276 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,276 read
-2026-09-14 15:49:22,280 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,280 read
-2026-09-14 15:49:22,283 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,283 read
-2026-09-14 15:49:22,286 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,287 read
-2026-09-14 15:49:22,290 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,290 read
-2026-09-14 15:49:22,293 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,294 read
-2026-09-14 15:49:22,297 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,297 read
-2026-09-14 15:49:22,300 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,301 read
-2026-09-14 15:49:22,304 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,304 read
-2026-09-14 15:49:22,308 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,308 read
-2026-09-14 15:49:22,312 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,312 read
-2026-09-14 15:49:22,315 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,316 read
-2026-09-14 15:49:22,319 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,319 read
-2026-09-14 15:49:22,324 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,324 read
-2026-09-14 15:49:22,328 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,328 read
-2026-09-14 15:49:22,331 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,332 read
-2026-09-14 15:49:22,336 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,336 read
-2026-09-14 15:49:22,341 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,341 read
-2026-09-14 15:49:22,345 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,346 read
-2026-09-14 15:49:22,352 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,353 read
-2026-09-14 15:49:22,356 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,357 read
-2026-09-14 15:49:22,360 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,360 read
-2026-09-14 15:49:22,363 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,364 read
-2026-09-14 15:49:22,368 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,368 read
-2026-09-14 15:49:22,372 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,372 read
-2026-09-14 15:49:22,375 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,375 read
-2026-09-14 15:49:22,379 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,379 read
-2026-09-14 15:49:22,385 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,385 read
-2026-09-14 15:49:22,396 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,396 read
-2026-09-14 15:49:22,400 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,400 read
-2026-09-14 15:49:22,403 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,404 read
-2026-09-14 15:49:22,407 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,407 read
-2026-09-14 15:49:22,412 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,412 read
-2026-09-14 15:49:22,415 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,415 read
-2026-09-14 15:49:22,419 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,419 read
-2026-09-14 15:49:22,424 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,425 read
-2026-09-14 15:49:22,429 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,430 read
-2026-09-14 15:49:22,433 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,433 read
-2026-09-14 15:49:22,440 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,441 read
-2026-09-14 15:49:22,444 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,444 read
-2026-09-14 15:49:22,448 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,448 read
-2026-09-14 15:49:22,451 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,452 read
-2026-09-14 15:49:22,455 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,455 read
-2026-09-14 15:49:22,459 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,459 read
-2026-09-14 15:49:22,463 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,463 read
-2026-09-14 15:49:22,466 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,467 read
-2026-09-14 15:49:22,471 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,472 read
-2026-09-14 15:49:22,477 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,477 read
-2026-09-14 15:49:22,480 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,481 read
-2026-09-14 15:49:22,484 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,484 read
-2026-09-14 15:49:22,488 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,488 read
-2026-09-14 15:49:22,493 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,494 read
-2026-09-14 15:49:22,497 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,497 read
-2026-09-14 15:49:22,500 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,501 read
-2026-09-14 15:49:22,504 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,504 read
-2026-09-14 15:49:22,507 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,508 read
-2026-09-14 15:49:22,511 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,511 read
-2026-09-14 15:49:22,514 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,514 read
-2026-09-14 15:49:22,518 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,518 read
-2026-09-14 15:49:22,521 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,521 read
-2026-09-14 15:49:22,526 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,526 read
-2026-09-14 15:49:22,534 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,534 read
-2026-09-14 15:49:22,539 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,539 read
-2026-09-14 15:49:22,543 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,544 read
-2026-09-14 15:49:22,547 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,547 read
-2026-09-14 15:49:22,552 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,552 read
-2026-09-14 15:49:22,556 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,557 read
-2026-09-14 15:49:22,562 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,563 read
-2026-09-14 15:49:22,567 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,567 read
-2026-09-14 15:49:22,571 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,571 read
-2026-09-14 15:49:22,574 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,574 read
-2026-09-14 15:49:22,578 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,578 read
-2026-09-14 15:49:22,582 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,582 read
-2026-09-14 15:49:22,586 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,586 read
-2026-09-14 15:49:22,589 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,590 read
-2026-09-14 15:49:22,595 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,595 read
-2026-09-14 15:49:22,599 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,600 read
-2026-09-14 15:49:22,603 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,604 read
-2026-09-14 15:49:22,610 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,611 read
-2026-09-14 15:49:22,614 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,614 read
-2026-09-14 15:49:22,618 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,618 read
-2026-09-14 15:49:22,621 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,621 read
-2026-09-14 15:49:22,625 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,626 read
-2026-09-14 15:49:22,630 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,630 read
-2026-09-14 15:49:22,633 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,633 read
-2026-09-14 15:49:22,638 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,638 read
-2026-09-14 15:49:22,643 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,643 read
-2026-09-14 15:49:22,648 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,648 read
-2026-09-14 15:49:22,654 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,655 read
-2026-09-14 15:49:22,658 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,659 read
-2026-09-14 15:49:22,662 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,662 read
-2026-09-14 15:49:22,665 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,665 read
-2026-09-14 15:49:22,670 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,670 read
-2026-09-14 15:49:22,674 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,674 read
-2026-09-14 15:49:22,678 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,678 read
-2026-09-14 15:49:22,681 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,682 read
-2026-09-14 15:49:22,686 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,686 read
-2026-09-14 15:49:22,690 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,691 read
-2026-09-14 15:49:22,694 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,695 read
-2026-09-14 15:49:22,698 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,698 read
-2026-09-14 15:49:22,703 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,704 read
-2026-09-14 15:49:22,708 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,708 read
-2026-09-14 15:49:22,711 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,712 read
-2026-09-14 15:49:22,715 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,715 read
-2026-09-14 15:49:22,719 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,719 read
-2026-09-14 15:49:22,722 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,722 read
-2026-09-14 15:49:22,726 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,726 read
-2026-09-14 15:49:22,733 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,733 read
-2026-09-14 15:49:22,738 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,738 read
-2026-09-14 15:49:22,741 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,742 read
-2026-09-14 15:49:22,745 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,745 read
-2026-09-14 15:49:22,750 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,750 read
-2026-09-14 15:49:22,754 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,754 read
-2026-09-14 15:49:22,758 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,758 read
-2026-09-14 15:49:22,761 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,762 read
-2026-09-14 15:49:22,766 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,767 read
-2026-09-14 15:49:22,771 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,771 read
-2026-09-14 15:49:22,777 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,777 read
-2026-09-14 15:49:22,781 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,782 read
-2026-09-14 15:49:22,785 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,785 read
-2026-09-14 15:49:22,789 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,789 read
-2026-09-14 15:49:22,797 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,797 read
-2026-09-14 15:49:22,801 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,802 read
-2026-09-14 15:49:22,809 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,809 read
-2026-09-14 15:49:22,814 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,814 read
-2026-09-14 15:49:22,825 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,825 read
-2026-09-14 15:49:22,833 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,834 read
-2026-09-14 15:49:22,842 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,843 read
-2026-09-14 15:49:22,855 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:53)
-2026-09-14 15:49:22,855 read
-2026-09-14 15:49:22,862 close_session
-2026-09-14 15:49:22,968 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:53)
-2026-09-14 15:49:22,968 close_secure_channel
-2026-09-14 15:49:22,968 Request to close socket received
-2026-09-14 15:49:22,968 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 15:49:22,969 Socket has closed connection
-2026-09-14 15:49:22,969 Cancelling request 210
-2026-09-14 15:49:22,969 Cancelling request 212
-2026-09-14 15:49:22,969 Thread ended
-2026-09-14 15:49:22,969 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 15:49:52,068 opening connection
-2026-09-14 15:49:52,209 Thread started
-2026-09-14 15:49:52,211 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 15:49:52,211 open_secure_channel
-2026-09-14 15:49:52,212 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:54)
-2026-09-14 15:49:52,212 create_session
-2026-09-14 15:49:52,391 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:54)
-2026-09-14 15:49:52,392 activate_session
-2026-09-14 15:49:52,397 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:54)
-2026-09-14 15:49:52,397 read
-2026-09-14 15:49:52,402 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:54)
-2026-09-14 15:49:52,602 read
-2026-09-14 15:49:52,606 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:54)
-2026-09-14 15:49:54,254 close_session
-2026-09-14 15:49:54,293 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:54)
-2026-09-14 15:49:54,294 close_secure_channel
-2026-09-14 15:49:54,294 Request to close socket received
-2026-09-14 15:49:54,294 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 15:49:54,294 Socket has closed connection
-2026-09-14 15:49:54,294 Cancelling request 7
-2026-09-14 15:49:54,294 Thread ended
-2026-09-14 15:49:54,294 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 16:01:50,394 opening connection
-2026-09-14 16:01:50,561 Thread started
-2026-09-14 16:01:50,562 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 16:01:50,563 open_secure_channel
-2026-09-14 16:01:50,564 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:55)
-2026-09-14 16:01:50,564 create_session
-2026-09-14 16:01:51,069 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:55)
-2026-09-14 16:01:51,069 activate_session
-2026-09-14 16:01:51,074 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:55)
-2026-09-14 16:01:51,074 read
-2026-09-14 16:01:51,085 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:55)
-2026-09-14 16:01:51,285 read
-2026-09-14 16:01:51,289 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:55)
-2026-09-14 16:01:51,492 read
-2026-09-14 16:01:51,496 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:55)
-2026-09-14 16:01:52,879 close_session
-2026-09-14 16:01:52,953 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:55)
-2026-09-14 16:01:52,953 close_secure_channel
-2026-09-14 16:01:52,953 Request to close socket received
-2026-09-14 16:01:52,954 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 16:01:52,954 Socket has closed connection
-2026-09-14 16:01:52,954 Cancelling request 8
-2026-09-14 16:01:52,954 Thread ended
-2026-09-14 16:01:52,954 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 16:02:34,109 opening connection
-2026-09-14 16:02:34,122 Thread started
-2026-09-14 16:02:34,124 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 16:02:34,124 open_secure_channel
-2026-09-14 16:02:34,126 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:56)
-2026-09-14 16:02:34,126 create_session
-2026-09-14 16:02:34,440 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:56)
-2026-09-14 16:02:34,441 activate_session
-2026-09-14 16:02:34,446 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:56)
-2026-09-14 16:02:34,446 read
-2026-09-14 16:02:34,460 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:56)
-2026-09-14 16:02:34,661 read
-2026-09-14 16:02:34,666 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:56)
-2026-09-14 16:02:34,867 read
-2026-09-14 16:02:34,871 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:56)
-2026-09-14 16:02:34,665 close_session
-2026-09-14 16:02:34,703 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:56)
-2026-09-14 16:02:34,703 close_secure_channel
-2026-09-14 16:02:34,703 Request to close socket received
-2026-09-14 16:02:34,703 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 16:02:34,703 Socket has closed connection
-2026-09-14 16:02:34,703 Cancelling request 8
-2026-09-14 16:02:34,704 Thread ended
-2026-09-14 16:02:34,704 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 16:02:55,866 opening connection
-2026-09-14 16:02:55,954 Thread started
-2026-09-14 16:02:55,955 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 16:02:55,955 open_secure_channel
-2026-09-14 16:02:55,959 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:57)
-2026-09-14 16:02:55,959 create_session
-2026-09-14 16:02:56,247 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:57)
-2026-09-14 16:02:56,248 activate_session
-2026-09-14 16:02:56,262 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:57)
-2026-09-14 16:02:56,263 read
-2026-09-14 16:02:56,274 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:57)
-2026-09-14 16:02:56,475 read
-2026-09-14 16:02:56,479 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:57)
-2026-09-14 16:02:57,760 close_session
-2026-09-14 16:02:57,799 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:57)
-2026-09-14 16:02:57,799 close_secure_channel
-2026-09-14 16:02:57,799 Request to close socket received
-2026-09-14 16:02:57,799 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 16:02:57,799 Socket has closed connection
-2026-09-14 16:02:57,799 Cancelling request 7
-2026-09-14 16:02:57,800 Thread ended
-2026-09-14 16:02:57,800 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 16:03:15,174 opening connection
-2026-09-14 16:03:15,305 Thread started
-2026-09-14 16:03:15,307 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 16:03:15,307 open_secure_channel
-2026-09-14 16:03:15,310 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:58)
-2026-09-14 16:03:15,310 create_session
-2026-09-14 16:03:15,616 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:58)
-2026-09-14 16:03:15,617 activate_session
-2026-09-14 16:03:15,620 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:15,620 read
-2026-09-14 16:03:15,625 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:15,825 read
-2026-09-14 16:03:15,829 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:18,827 read
-2026-09-14 16:03:18,833 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:21,029 read
-2026-09-14 16:03:21,034 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:22,035 read
-2026-09-14 16:03:22,039 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:25,243 read
-2026-09-14 16:03:25,248 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:26,029 read
-2026-09-14 16:03:26,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:28,451 read
-2026-09-14 16:03:28,457 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:31,029 read
-2026-09-14 16:03:31,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:31,658 read
-2026-09-14 16:03:31,662 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:34,865 read
-2026-09-14 16:03:34,869 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:36,029 read
-2026-09-14 16:03:36,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:36,618 open_secure_channel
-2026-09-14 16:03:36,619 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:58)
-2026-09-14 16:03:36,620 read
-2026-09-14 16:03:36,625 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:37,304 read
-2026-09-14 16:03:37,308 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:40,509 read
-2026-09-14 16:03:40,514 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:41,029 read
-2026-09-14 16:03:41,034 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:43,715 read
-2026-09-14 16:03:43,719 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:46,030 read
-2026-09-14 16:03:46,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:46,920 read
-2026-09-14 16:03:46,924 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:50,126 read
-2026-09-14 16:03:50,130 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:51,030 read
-2026-09-14 16:03:51,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:53,334 read
-2026-09-14 16:03:53,342 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:56,029 read
-2026-09-14 16:03:56,035 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:56,544 read
-2026-09-14 16:03:56,551 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:03:57,627 open_secure_channel
-2026-09-14 16:03:57,628 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:58)
-2026-09-14 16:03:57,629 read
-2026-09-14 16:03:57,632 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:03:59,755 read
-2026-09-14 16:03:59,759 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:04:01,029 read
-2026-09-14 16:04:01,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:04:02,960 read
-2026-09-14 16:04:02,965 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:04:06,029 read
-2026-09-14 16:04:06,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:04:06,165 read
-2026-09-14 16:04:06,169 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:04:08,604 read
-2026-09-14 16:04:08,609 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:04:11,029 read
-2026-09-14 16:04:11,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:04:11,814 read
-2026-09-14 16:04:11,817 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:04:15,018 read
-2026-09-14 16:04:15,023 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:58)
-2026-09-14 16:04:16,030 read
-2026-09-14 16:04:16,035 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:58)
-2026-09-14 16:04:18,093 close_session
-2026-09-14 16:04:18,131 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:58)
-2026-09-14 16:04:18,132 close_secure_channel
-2026-09-14 16:04:18,132 Request to close socket received
-2026-09-14 16:04:18,132 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 16:04:18,132 Socket has closed connection
-2026-09-14 16:04:18,132 Cancelling request 42
-2026-09-14 16:04:18,132 Thread ended
-2026-09-14 16:04:18,132 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 16:13:45,754 opening connection
-2026-09-14 16:13:45,906 Thread started
-2026-09-14 16:13:45,907 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 16:13:45,908 open_secure_channel
-2026-09-14 16:13:45,909 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:59)
-2026-09-14 16:13:45,909 create_session
-2026-09-14 16:13:46,285 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:59)
-2026-09-14 16:13:46,286 activate_session
-2026-09-14 16:13:46,292 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:59)
-2026-09-14 16:13:46,293 read
-2026-09-14 16:13:46,297 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:59)
-2026-09-14 16:13:46,497 read
-2026-09-14 16:13:46,502 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:59)
-2026-09-14 16:13:48,086 close_session
-2026-09-14 16:13:48,121 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:59)
-2026-09-14 16:13:48,121 close_secure_channel
-2026-09-14 16:13:48,121 Request to close socket received
-2026-09-14 16:13:48,121 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 16:13:48,121 Socket has closed connection
-2026-09-14 16:13:48,121 Cancelling request 7
-2026-09-14 16:13:48,121 Thread ended
-2026-09-14 16:13:48,122 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 16:16:37,464 opening connection
-2026-09-14 16:16:37,719 Thread started
-2026-09-14 16:16:37,721 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 16:16:37,721 open_secure_channel
-2026-09-14 16:16:37,722 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:60)
-2026-09-14 16:16:37,723 create_session
-2026-09-14 16:16:38,002 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:60)
-2026-09-14 16:16:38,003 activate_session
-2026-09-14 16:16:38,006 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:60)
-2026-09-14 16:16:38,007 read
-2026-09-14 16:16:38,013 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:60)
-2026-09-14 16:16:38,216 read
-2026-09-14 16:16:38,225 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:60)
-2026-09-14 16:16:40,340 close_session
-2026-09-14 16:16:40,386 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:60)
-2026-09-14 16:16:40,387 close_secure_channel
-2026-09-14 16:16:40,387 Request to close socket received
-2026-09-14 16:16:40,387 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 16:16:40,387 Socket has closed connection
-2026-09-14 16:16:40,387 Cancelling request 7
-2026-09-14 16:16:40,387 Thread ended
-2026-09-14 16:16:40,387 Done closing socket: Receiving thread terminated, socket disconnected
-2026-09-14 16:17:01,977 opening connection
-2026-09-14 16:17:02,088 Thread started
-2026-09-14 16:17:02,090 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-14 16:17:02,090 open_secure_channel
-2026-09-14 16:17:02,092 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:61)
-2026-09-14 16:17:02,092 create_session
-2026-09-14 16:17:02,574 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:61)
-2026-09-14 16:17:02,575 activate_session
-2026-09-14 16:17:02,582 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:61)
-2026-09-14 16:17:02,582 read
-2026-09-14 16:17:02,600 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:61)
-2026-09-14 16:17:02,801 read
-2026-09-14 16:17:02,805 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:61)
-2026-09-14 16:17:05,803 read
-2026-09-14 16:17:05,807 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:61)
-2026-09-14 16:17:08,006 read
-2026-09-14 16:17:08,015 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:61)
-2026-09-14 16:17:09,010 read
-2026-09-14 16:17:09,014 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:61)
-2026-09-14 16:17:12,218 read
-2026-09-14 16:17:12,221 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:61)
-2026-09-14 16:17:13,006 read
-2026-09-14 16:17:13,009 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:61)
-2026-09-14 16:17:15,426 read
-2026-09-14 16:17:15,430 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:61)
-2026-09-14 16:17:17,217 read
-2026-09-14 16:17:17,221 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:61)
-2026-09-14 16:17:17,846 read
-2026-09-14 16:17:17,849 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:61)
-2026-09-14 16:17:21,052 read
-2026-09-14 16:17:21,058 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:61)
-2026-09-14 16:17:22,217 read
-2026-09-14 16:17:22,221 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:61)
-2026-09-14 16:17:22,360 close_session
-2026-09-14 16:17:22,395 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:61)
-2026-09-14 16:17:22,396 close_secure_channel
-2026-09-14 16:17:22,396 Request to close socket received
-2026-09-14 16:17:22,396 Socket closed, waiting for receiver thread to terminate...
-2026-09-14 16:17:22,396 Socket has closed connection
-2026-09-14 16:17:22,396 Cancelling request 17
-2026-09-14 16:17:22,396 Thread ended
-2026-09-14 16:17:22,396 Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-14 18:29:11,928 - INFO - opcua.client.ua_client.Socket - opening connection
+2026-09-14 18:29:12,036 - INFO - opcua.client.ua_client.Socket - Thread started
+2026-09-14 18:29:12,037 - INFO - opcua.uaprotocol - received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-14 18:29:12,037 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:29:12,039 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:69)
+2026-09-14 18:29:12,039 - INFO - opcua.client.ua_client - create_session
+2026-09-14 18:29:12,242 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:69)
+2026-09-14 18:29:12,242 - INFO - opcua.client.ua_client - activate_session
+2026-09-14 18:29:12,247 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:69)
+2026-09-14 18:29:12,248 - INFO - opcua.client.ua_client - read
+2026-09-14 18:29:12,264 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:69)
+2026-09-14 18:29:12,464 - INFO - opcua.client.ua_client - read
+2026-09-14 18:29:12,468 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:69)
+2026-09-14 18:29:15,465 - INFO - opcua.client.ua_client - read
+2026-09-14 18:29:15,469 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:69)
+2026-09-14 18:29:15,894 - INFO - opcua.client.ua_client - close_session
+2026-09-14 18:29:16,014 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:69)
+2026-09-14 18:29:16,014 - INFO - opcua.client.ua_client.Socket - close_secure_channel
+2026-09-14 18:29:16,014 - INFO - opcua.client.ua_client.Socket - Request to close socket received
+2026-09-14 18:29:16,014 - INFO - opcua.client.ua_client.Socket - Socket closed, waiting for receiver thread to terminate...
+2026-09-14 18:29:16,014 - INFO - opcua.client.ua_client.Socket - Socket has closed connection
+2026-09-14 18:29:16,014 - INFO - opcua.client.ua_client.Socket - Cancelling request 8
+2026-09-14 18:29:16,015 - INFO - opcua.client.ua_client.Socket - Thread ended
+2026-09-14 18:29:16,015 - INFO - opcua.client.ua_client.Socket - Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-14 18:29:24,236 - INFO - opcua.client.ua_client.Socket - opening connection
+2026-09-14 18:29:24,252 - INFO - opcua.client.ua_client.Socket - Thread started
+2026-09-14 18:29:24,253 - INFO - opcua.uaprotocol - received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-14 18:29:24,253 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:29:24,257 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:70)
+2026-09-14 18:29:24,257 - INFO - opcua.client.ua_client - create_session
+2026-09-14 18:29:24,428 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:70)
+2026-09-14 18:29:24,429 - INFO - opcua.client.ua_client - activate_session
+2026-09-14 18:29:24,432 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:70)
+2026-09-14 18:29:24,433 - INFO - opcua.client.ua_client - read
+2026-09-14 18:29:24,440 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:70)
+2026-09-14 18:29:24,640 - INFO - opcua.client.ua_client - read
+2026-09-14 18:29:24,646 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:70)
+2026-09-14 18:29:26,833 - INFO - opcua.client.ua_client - read
+2026-09-14 18:29:26,839 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:70)
+2026-09-14 18:29:29,040 - INFO - opcua.client.ua_client - read
+2026-09-14 18:29:29,057 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:70)
+2026-09-14 18:29:30,040 - INFO - opcua.client.ua_client - read
+2026-09-14 18:29:30,045 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:70)
+2026-09-14 18:29:31,705 - INFO - opcua.client.ua_client - close_session
+2026-09-14 18:29:31,745 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:70)
+2026-09-14 18:29:31,745 - INFO - opcua.client.ua_client.Socket - close_secure_channel
+2026-09-14 18:29:31,745 - INFO - opcua.client.ua_client.Socket - Request to close socket received
+2026-09-14 18:29:31,745 - INFO - opcua.client.ua_client.Socket - Socket closed, waiting for receiver thread to terminate...
+2026-09-14 18:29:31,745 - INFO - opcua.client.ua_client.Socket - Socket has closed connection
+2026-09-14 18:29:31,746 - INFO - opcua.client.ua_client.Socket - Cancelling request 10
+2026-09-14 18:29:31,746 - INFO - opcua.client.ua_client.Socket - Thread ended
+2026-09-14 18:29:31,746 - INFO - opcua.client.ua_client.Socket - Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-14 18:35:03,292 - INFO - opcua.client.ua_client.Socket - opening connection
+2026-09-14 18:35:03,533 - INFO - opcua.client.ua_client.Socket - Thread started
+2026-09-14 18:35:03,534 - INFO - opcua.uaprotocol - received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-14 18:35:03,534 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:35:03,536 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:71)
+2026-09-14 18:35:03,536 - INFO - opcua.client.ua_client - create_session
+2026-09-14 18:35:03,812 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:71)
+2026-09-14 18:35:03,812 - INFO - opcua.client.ua_client - activate_session
+2026-09-14 18:35:03,820 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:71)
+2026-09-14 18:35:03,820 - INFO - opcua.client.ua_client - read
+2026-09-14 18:35:03,829 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:71)
+2026-09-14 18:35:04,029 - INFO - opcua.client.ua_client - read
+2026-09-14 18:35:04,033 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:71)
+2026-09-14 18:35:06,596 - INFO - opcua.client.ua_client - read
+2026-09-14 18:35:06,600 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:71)
+2026-09-14 18:35:06,801 - INFO - opcua.client.ua_client - read
+2026-09-14 18:35:06,806 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:71)
+2026-09-14 18:35:07,029 - INFO - opcua.client.ua_client - read
+2026-09-14 18:35:07,034 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:71)
+2026-09-14 18:35:09,233 - INFO - opcua.client.ua_client - read
+2026-09-14 18:35:09,241 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:71)
+2026-09-14 18:35:10,027 - INFO - opcua.client.ua_client - close_session
+2026-09-14 18:35:10,153 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:71)
+2026-09-14 18:35:10,154 - INFO - opcua.client.ua_client.Socket - close_secure_channel
+2026-09-14 18:35:10,154 - INFO - opcua.client.ua_client.Socket - Request to close socket received
+2026-09-14 18:35:10,154 - INFO - opcua.client.ua_client.Socket - Socket closed, waiting for receiver thread to terminate...
+2026-09-14 18:35:10,154 - INFO - opcua.client.ua_client.Socket - Socket has closed connection
+2026-09-14 18:35:10,154 - INFO - opcua.client.ua_client.Socket - Cancelling request 11
+2026-09-14 18:35:10,154 - INFO - opcua.client.ua_client.Socket - Thread ended
+2026-09-14 18:35:10,154 - INFO - opcua.client.ua_client.Socket - Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-14 18:41:14,005 - INFO - opcua.client.ua_client.Socket - opening connection
+2026-09-14 18:41:14,164 - INFO - opcua.client.ua_client.Socket - Thread started
+2026-09-14 18:41:14,166 - INFO - opcua.uaprotocol - received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-14 18:41:14,166 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:41:14,168 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:72)
+2026-09-14 18:41:14,168 - INFO - opcua.client.ua_client - create_session
+2026-09-14 18:41:14,475 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:72)
+2026-09-14 18:41:14,475 - INFO - opcua.client.ua_client - activate_session
+2026-09-14 18:41:14,488 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:14,489 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:14,498 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:14,699 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:14,703 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:17,699 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:17,703 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:19,904 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:19,909 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:20,905 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:20,910 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:24,111 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:24,115 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:24,551 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:24,568 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:24,768 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:24,772 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:24,974 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:24,978 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:27,318 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:27,322 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:29,183 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:29,187 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:29,732 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:29,736 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:32,936 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:32,942 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:34,183 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:34,188 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:35,477 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:41:35,479 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:72)
+2026-09-14 18:41:35,480 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:35,483 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:36,144 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:36,149 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:39,183 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:39,187 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:39,350 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:39,355 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:42,565 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:42,569 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:44,183 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:44,186 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:45,771 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:45,776 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:48,977 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:48,982 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:49,183 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:49,187 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:52,184 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:52,190 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:54,183 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:54,186 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:55,394 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:55,398 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:56,493 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:41:56,494 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:72)
+2026-09-14 18:41:56,495 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:56,498 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:41:58,605 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:58,609 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:41:58,362 - INFO - opcua.client.ua_client - read
+2026-09-14 18:41:58,365 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:42:00,989 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:00,994 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:42:03,362 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:03,365 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:42:04,195 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:04,199 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:42:07,409 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:07,413 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:42:08,362 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:08,365 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:42:10,614 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:10,618 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:42:13,362 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:13,366 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:42:13,819 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:13,824 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:42:17,026 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:17,031 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:72)
+2026-09-14 18:42:17,500 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:42:17,502 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:72)
+2026-09-14 18:42:17,505 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:17,508 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:42:18,362 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:18,367 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:72)
+2026-09-14 18:42:19,062 - INFO - opcua.client.ua_client - close_session
+2026-09-14 18:42:19,099 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:72)
+2026-09-14 18:42:19,099 - INFO - opcua.client.ua_client.Socket - close_secure_channel
+2026-09-14 18:42:19,099 - INFO - opcua.client.ua_client.Socket - Request to close socket received
+2026-09-14 18:42:19,100 - INFO - opcua.client.ua_client.Socket - Socket closed, waiting for receiver thread to terminate...
+2026-09-14 18:42:19,100 - INFO - opcua.client.ua_client.Socket - Socket has closed connection
+2026-09-14 18:42:19,100 - INFO - opcua.client.ua_client.Socket - Cancelling request 48
+2026-09-14 18:42:19,100 - INFO - opcua.client.ua_client.Socket - Thread ended
+2026-09-14 18:42:19,100 - INFO - opcua.client.ua_client.Socket - Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-14 18:42:22,923 - INFO - opcua.client.ua_client.Socket - opening connection
+2026-09-14 18:42:23,061 - INFO - opcua.client.ua_client.Socket - Thread started
+2026-09-14 18:42:23,063 - INFO - opcua.uaprotocol - received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-14 18:42:23,063 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:42:23,064 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:73)
+2026-09-14 18:42:23,065 - INFO - opcua.client.ua_client - create_session
+2026-09-14 18:42:23,251 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:73)
+2026-09-14 18:42:23,251 - INFO - opcua.client.ua_client - activate_session
+2026-09-14 18:42:23,254 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:23,255 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:23,262 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:23,462 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:23,466 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:26,424 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:26,428 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:26,628 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:26,632 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:26,834 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:26,839 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:28,667 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:28,672 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:73)
+2026-09-14 18:42:29,842 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:29,846 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:32,226 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:32,230 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:32,845 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:32,848 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:73)
+2026-09-14 18:42:35,438 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:35,442 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:37,845 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:37,848 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:73)
+2026-09-14 18:42:38,645 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:38,649 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:41,851 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:41,856 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:42,845 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:42,849 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:73)
+2026-09-14 18:42:44,252 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:42:44,255 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:73)
+2026-09-14 18:42:44,255 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:44,259 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:73)
+2026-09-14 18:42:45,059 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:45,063 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:47,845 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:47,848 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:73)
+2026-09-14 18:42:48,266 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:48,273 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:51,478 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:51,482 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:73)
+2026-09-14 18:42:52,845 - INFO - opcua.client.ua_client - read
+2026-09-14 18:42:52,848 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:73)
+2026-09-14 18:42:54,365 - INFO - opcua.client.ua_client - close_session
+2026-09-14 18:42:54,409 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:73)
+2026-09-14 18:42:54,410 - INFO - opcua.client.ua_client.Socket - close_secure_channel
+2026-09-14 18:42:54,410 - INFO - opcua.client.ua_client.Socket - Request to close socket received
+2026-09-14 18:42:54,410 - INFO - opcua.client.ua_client.Socket - Socket closed, waiting for receiver thread to terminate...
+2026-09-14 18:42:54,410 - INFO - opcua.client.ua_client.Socket - Socket has closed connection
+2026-09-14 18:42:54,410 - INFO - opcua.client.ua_client.Socket - Cancelling request 26
+2026-09-14 18:42:54,410 - INFO - opcua.client.ua_client.Socket - Thread ended
+2026-09-14 18:42:54,410 - INFO - opcua.client.ua_client.Socket - Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-14 18:52:26,723 - INFO - opcua.client.ua_client.Socket - opening connection
+2026-09-14 18:52:26,886 - INFO - opcua.client.ua_client.Socket - Thread started
+2026-09-14 18:52:26,887 - INFO - opcua.uaprotocol - received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-14 18:52:26,888 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 18:52:26,889 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:74)
+2026-09-14 18:52:26,889 - INFO - opcua.client.ua_client - create_session
+2026-09-14 18:52:27,068 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:74)
+2026-09-14 18:52:27,069 - INFO - opcua.client.ua_client - activate_session
+2026-09-14 18:52:27,074 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:74)
+2026-09-14 18:52:27,075 - INFO - opcua.client.ua_client - read
+2026-09-14 18:52:27,079 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:74)
+2026-09-14 18:52:27,281 - INFO - opcua.client.ua_client - read
+2026-09-14 18:52:27,285 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:74)
+2026-09-14 18:52:29,466 - INFO - opcua.client.ua_client - close_session
+2026-09-14 18:52:29,506 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:74)
+2026-09-14 18:52:29,506 - INFO - opcua.client.ua_client.Socket - close_secure_channel
+2026-09-14 18:52:29,507 - INFO - opcua.client.ua_client.Socket - Request to close socket received
+2026-09-14 18:52:29,507 - INFO - opcua.client.ua_client.Socket - Socket closed, waiting for receiver thread to terminate...
+2026-09-14 18:52:29,507 - INFO - opcua.client.ua_client.Socket - Socket has closed connection
+2026-09-14 18:52:29,507 - INFO - opcua.client.ua_client.Socket - Cancelling request 7
+2026-09-14 18:52:29,507 - INFO - opcua.client.ua_client.Socket - Thread ended
+2026-09-14 18:52:29,507 - INFO - opcua.client.ua_client.Socket - Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-14 19:00:38,413 - INFO - opcua.client.ua_client.Socket - opening connection
+2026-09-14 19:00:38,519 - INFO - opcua.client.ua_client.Socket - Thread started
+2026-09-14 19:00:38,521 - INFO - opcua.uaprotocol - received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-14 19:00:38,521 - INFO - opcua.client.ua_client.Socket - open_secure_channel
+2026-09-14 19:00:38,522 - INFO - opcua.uaprotocol - received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:75)
+2026-09-14 19:00:38,522 - INFO - opcua.client.ua_client - create_session
+2026-09-14 19:00:38,690 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:75)
+2026-09-14 19:00:38,690 - INFO - opcua.client.ua_client - activate_session
+2026-09-14 19:00:38,696 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:75)
+2026-09-14 19:00:38,696 - INFO - opcua.client.ua_client - read
+2026-09-14 19:00:38,702 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:75)
+2026-09-14 19:00:38,903 - INFO - opcua.client.ua_client - read
+2026-09-14 19:00:38,907 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:75)
+2026-09-14 19:00:41,791 - INFO - opcua.client.ua_client - read
+2026-09-14 19:00:41,795 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:75)
+2026-09-14 19:00:41,996 - INFO - opcua.client.ua_client - read
+2026-09-14 19:00:42,001 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:75)
+2026-09-14 19:00:42,203 - INFO - opcua.client.ua_client - read
+2026-09-14 19:00:42,208 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:75)
+2026-09-14 19:00:44,107 - INFO - opcua.client.ua_client - read
+2026-09-14 19:00:44,114 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:75)
+2026-09-14 19:00:44,827 - INFO - opcua.client.ua_client - close_session
+2026-09-14 19:00:44,866 - INFO - opcua.uaprotocol - received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:75)
+2026-09-14 19:00:44,866 - INFO - opcua.client.ua_client.Socket - close_secure_channel
+2026-09-14 19:00:44,866 - INFO - opcua.client.ua_client.Socket - Request to close socket received
+2026-09-14 19:00:44,866 - INFO - opcua.client.ua_client.Socket - Socket closed, waiting for receiver thread to terminate...
+2026-09-14 19:00:44,866 - INFO - opcua.client.ua_client.Socket - Socket has closed connection
+2026-09-14 19:00:44,867 - INFO - opcua.client.ua_client.Socket - Cancelling request 11
+2026-09-14 19:00:44,867 - INFO - opcua.client.ua_client.Socket - Thread ended
+2026-09-14 19:00:44,867 - INFO - opcua.client.ua_client.Socket - Done closing socket: Receiving thread terminated, socket disconnected

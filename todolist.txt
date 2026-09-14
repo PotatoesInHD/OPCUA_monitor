@@ -1,9 +1,6 @@
-0- need to add better reconnect.  I had thread 2 cut out but thread 1 kept going.
-BrokenPipeError.  maybe need to call reconnect. and add lock to reconnect. and also handle the disconnects in there too. need to disconnect and so other thread stops then reconnect.
+
 
 -make it so we can edit a file to pass the url, opcua node name space and values into the pyinstaller. this way we can change things without having to redo pyinstaller. also pass in file path. this way we can have our exe and config file in a fodler and then logs in child folder. and we can have it on desktop or something and put the filepath in the config
-
-1-go line by line and add any missing type hints/ sweetenings.
 
 2- maybe try and write some unit tests for logging etc. make sure all works and for file path and everything.
 also unit tests that update a file for testing?

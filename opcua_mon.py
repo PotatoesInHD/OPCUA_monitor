@@ -3,26 +3,28 @@ import sys
 import time
 import logging
 import datetime
-import constants
 import threading
-import debug_tools
+
 from opcua import Client, Node
+
+import constants
 from logger import setup_logger
+
+logger = logging.getLogger(__name__)
 
 # sets up logging from logger.py
 setup_logger()
 # lock to prevent threads from read/write at same time
 threadlock = threading.Lock()
 
+
 class FatalConfigError(Exception):
-    """Raised when critical startup data is missing."""
-    pass
+    """Raised when config data is missing. Such as file path"""
 
 
 # -------------background thread-----------
-def heartbeat_opcua(node: Node, interval=3, opcua_server_state_node: str="") -> None:
+def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, interval: float=3) -> None:
     state = False
-    counter = 0
     while True:
         state = not state
         opcua_write(node, state)
@@ -30,33 +32,45 @@ def heartbeat_opcua(node: Node, interval=3, opcua_server_state_node: str="") -> 
 # ------------------------------------------
 
 def opcua_connect(url: str)-> "Client":
-    try:
-        client = Client(url)
-        client.session_timeout = constants.SESSION_TIMEOUT
-        client.connect()
-        return client
-    except TimeoutError as err:
-        logging.warning(f"opcua_connect() - Error: {err}...Retrying connection")
-    except Exception as err:
-        if "BadTooManySessions" in str(err):
-            time.sleep(constants.SESSION_TIMEOUT / 1000)
-        logging.warning(f"opcua_connect() - Unexpected Error: {err}...Retrying connection")
-    time.sleep(5)
-
-
-def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
-   opcua_server_state = None
-   while opcua_server_state is None:
         try:
+            client = Client(url)
+            client.session_timeout = constants.SESSION_TIMEOUT
             client.connect()
-            opcua_server_state = opcua_read(opcua_server_state_node)
+            return client
         except TimeoutError as err:
-            logging.warning(f"opcua_reconnect() - Error: {err}...Retrying connection")
+            logger.warning(f"opcua_connect() - Error: {err}...Retrying connection")
         except Exception as err:
             if "BadTooManySessions" in str(err):
                 time.sleep(constants.SESSION_TIMEOUT / 1000)
-            logging.warning(f"opcua_reconnect() - Unexpected Error: {err}...Retrying connection")
+            logger.warning(f"opcua_connect() - Unexpected Error: {err}...Retrying connection")
         time.sleep(5)
+
+
+def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
+        opcua_server_state: int | None = opcua_read(opcua_server_state_node)
+        if opcua_server_state:
+            opcua_disconnect(client)
+
+        while opcua_server_state is None:
+            try:
+                client.connect()
+                opcua_server_state = opcua_read(opcua_server_state_node)
+            except TimeoutError as err:
+                logger.warning(f"opcua_reconnect() - Error: {err}...Retrying connection")
+            except Exception as err:
+                if "BadTooManySessions" in str(err):
+                    time.sleep(constants.SESSION_TIMEOUT / 1000)
+                logger.warning(f"opcua_reconnect() - Unexpected Error: {err}...Retrying connection")
+            time.sleep(5)
+
+def opcua_disconnect(client: Client) -> None:
+    with threadlock: # prevents both threads from trying to read at same time
+        try:
+            client.disconnect()
+        except Exception as err:
+            msg = str(err) or str(repr(err)) or "Uknown Error"
+            logger.warning(f"opcua_disconnect() - Error: {msg}")
+        time.sleep(1)
 
 
 def opcua_read(node: Node) -> int | None:
@@ -65,8 +79,7 @@ def opcua_read(node: Node) -> int | None:
             return node.get_value()
         except Exception as err:
             msg = str(err) or str(repr(err)) or "Uknown Error"
-            logging.warning(f"opcua_read() - Error: {msg}")
-        time.sleep(0.2)
+            logger.warning(f"opcua_read() - Error: {msg}")
 
 
 def opcua_write(node: Node, value: int | bool) -> None:
@@ -75,14 +88,14 @@ def opcua_write(node: Node, value: int | bool) -> None:
             node.set_value(value)
         except Exception as err:
             msg = str(err) or str(repr(err)) or "Uknown Error"
-            logging.warning(f"opcua_write() - Error: {msg}")
-        time.sleep(0.2)
+            logger.warning(f"opcua_write() - Error: {msg}")
+        time.sleep(constants.DELAY_BETWEEN_WRITES)
 
 
 def get_mdb_filename() -> str:
     # "nt" means windows otherwise use "-" this is to remove padding zeros from date
     pad = "#" if os.name == "nt" else "-"
-    date = datetime.date.today()
+    date = datetime.datetime.now().astimezone().date()
     mdb_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")
     return mdb_filename
 
@@ -97,13 +110,13 @@ def get_file_path(directory: str, file_name: str) -> str:
             f"get_file_path() - Error: Cannot read {file_name} as it is outside"
             f"the permitted working directory"
         )
-        logging.warning(msg)
+        logger.warning(msg)
         raise FatalConfigError(msg)
 
     target_isfile = os.path.isfile(target_path)
     if not target_isfile:
         msg = f"get_file_path() - Error: {file_name} is not a file"
-        logging.warning(msg)
+        logger.warning(msg)
         raise FatalConfigError(msg)
     return target_path
 
@@ -133,24 +146,21 @@ def main() -> None:
             client = opcua_connect(constants.OPCUA_URL)
 
         # load up the nodeid variables
-        press_write_complete_node = client.get_node(constants.FROM_PLC_PRESS_WRITE_CMPLT_NODE)
-        heartbeat_node = client.get_node(constants.TO_PLC_HEARTBEAT_NODE)
-        file_write_detected_node = client.get_node(constants.TO_PLC_FILE_WRITE_DETECTED_NODE)
-        opcua_server_state_node = client.get_node(constants.OPCUA_SERVER_STATE)
-
+        heartbeat_node: Node = client.get_node(constants.TO_PLC_HEARTBEAT_NODE)
+        file_write_detected_node: Node = client.get_node(constants.TO_PLC_FILE_WRITE_DETECTED_NODE)
+        opcua_server_state_node: Node = client.get_node(constants.OPCUA_SERVER_STATE)
         # -------Start heartbeat thread in the background------
-        heartbeart_thread = threading.Thread(target=heartbeat_opcua, args=(heartbeat_node, 3, opcua_server_state_node), daemon=True)
+        heartbeart_thread = threading.Thread(target=heartbeat_opcua, args=(heartbeat_node, client, opcua_server_state_node, constants.HEART_BEAT_INTERVAL), daemon=True)
         heartbeart_thread.start()
         # ------------------------------------------------------
 
-
         opcua_write(file_write_detected_node, False) #initiliaze write_detect to False
         last_check_status_time = time.monotonic()
+        # MainLoop
         while True:
             # get server state and reconnect if required by check status interval time.
             time_now = time.monotonic()
-            if time_now - last_check_status_time >= constants.CHECK_STATUS_INTERVAL:
-                print("test")
+            if (time_now - last_check_status_time) >= constants.CHECK_STATUS_INTERVAL:
                 last_check_status_time = time_now
                 opcua_server_state = opcua_read(opcua_server_state_node)
                 if opcua_server_state is None:
@@ -163,7 +173,7 @@ def main() -> None:
             if modified_time != last_modified_time:
                 last_modified_time = modified_time
                 date_st_mtime = datetime.datetime.fromtimestamp(last_modified_time)
-                logging.info(f"File: {mdb_filename}, last modified = {date_st_mtime}")
+                logger.info(f"File: {mdb_filename}, last modified = {date_st_mtime}")
                 opcua_write(file_write_detected_node, True)
 
     except KeyboardInterrupt:
@@ -176,5 +186,5 @@ if __name__ == "__main__":
         # error already logged so exit
         sys.exit(1)
     except Exception:
-        logging.exception("Exception caught after main")
+        logger.exception("Exception caught after main")
         sys.exit(1)

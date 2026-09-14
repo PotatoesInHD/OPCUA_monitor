@@ -1,5 +1,6 @@
 import os
 import logging
+
 from logging.handlers import RotatingFileHandler
 
 def setup_logger():
@@ -8,7 +9,7 @@ def setup_logger():
     target_path = os.path.normpath(os.path.join(working_directory, "logs"))
     try:
         os.mkdir(target_path)
-    except FileExistsError as err:
+    except FileExistsError:
         pass
     except FileNotFoundError as err:
         print(f"Error: {err}")
@@ -17,7 +18,7 @@ def setup_logger():
 
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s %(message)s')
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
 
     # my info handler - logs anything less than WARNING
     log_file_path = os.path.normpath(os.path.join(target_path, "Info_Logs.log"))

@@ -23,7 +23,7 @@ def setup_logger():
     log_file_path = os.path.normpath(os.path.join(target_path, "Info_Logs.log"))
     my_info_handler = RotatingFileHandler(
         log_file_path,
-        maxBytes=1_000_000,
+        maxBytes=10_000_000,
         backupCount=1,
         encoding='utf-8',
     )
@@ -38,7 +38,7 @@ def setup_logger():
     err_log_file_path = os.path.normpath(os.path.join(target_path, "Error_Logs.log"))
     err_handler = RotatingFileHandler(
         err_log_file_path,
-        maxBytes=1_000_000,
+        maxBytes=10_000_000,
         backupCount=1,
         encoding='utf-8',
     )

@@ -6,19 +6,15 @@ import datetime
 import constants
 import threading
 import debug_tools
-from opcua import Client, Node
 from logger import setup_logger
 
-# sets up logging from logger.py
-setup_logger()
-# lock to prevent threads from read/write at same time
-threadlock = threading.Lock()
 
-class FatalConfigError(Exception):
-    """Raised when critical startup data is missing."""
-    pass
+from opcua import Client, Node
+# if I decide to read file contents when going to windows will have to
+# use pyodbc and Microsoft Access Database Engine
+from mdb_parser import MDBParser, MDBTable
 
-
+threadlock = threading.Lock()   # lock to prevent threads from read/write at same time
 # -------------background thread-----------
 def heartbeat_opcua(node: Node, interval=3, opcua_server_state_node: str="") -> None:
     state = False
@@ -28,6 +24,9 @@ def heartbeat_opcua(node: Node, interval=3, opcua_server_state_node: str="") -> 
         opcua_write(node, state)
         time.sleep(interval)
 # ------------------------------------------
+
+# sets up logging from logger.py
+setup_logger()
 
 def opcua_connect(url: str)-> "Client":
     try:
@@ -41,12 +40,12 @@ def opcua_connect(url: str)-> "Client":
         if "BadTooManySessions" in str(err):
             time.sleep(constants.SESSION_TIMEOUT / 1000)
         logging.warning(f"opcua_connect() - Unexpected Error: {err}...Retrying connection")
-    time.sleep(5)
 
 
 def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
    opcua_server_state = None
    while opcua_server_state is None:
+        time.sleep(5)
         try:
             client.connect()
             opcua_server_state = opcua_read(opcua_server_state_node)
@@ -56,7 +55,6 @@ def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
             if "BadTooManySessions" in str(err):
                 time.sleep(constants.SESSION_TIMEOUT / 1000)
             logging.warning(f"opcua_reconnect() - Unexpected Error: {err}...Retrying connection")
-        time.sleep(5)
 
 
 def opcua_read(node: Node) -> int | None:
@@ -66,8 +64,6 @@ def opcua_read(node: Node) -> int | None:
         except Exception as err:
             msg = str(err) or str(repr(err)) or "Uknown Error"
             logging.warning(f"opcua_read() - Error: {msg}")
-        time.sleep(0.2)
-
 
 def opcua_write(node: Node, value: int | bool) -> None:
     with threadlock: # prevents both threads from trying to write at same time
@@ -76,11 +72,10 @@ def opcua_write(node: Node, value: int | bool) -> None:
         except Exception as err:
             msg = str(err) or str(repr(err)) or "Uknown Error"
             logging.warning(f"opcua_write() - Error: {msg}")
-        time.sleep(0.2)
 
 
 def get_mdb_filename() -> str:
-    # "nt" means windows otherwise use "-" this is to remove padding zeros from date
+    # "nt" means windows otherwise use "-"
     pad = "#" if os.name == "nt" else "-"
     date = datetime.date.today()
     mdb_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")
@@ -88,70 +83,67 @@ def get_mdb_filename() -> str:
 
 
 def get_file_path(directory: str, file_name: str) -> str:
-    working_dir_abs = os.path.abspath(directory)
-    target_path = os.path.normpath(os.path.join(working_dir_abs, file_name))
-    valid_target_dir = os.path.commonpath([working_dir_abs, target_path]) == working_dir_abs
+    #https://pyinstaller.org/en/stable/runtime-information.html
+    #look into this when using pyinstaller for determining path of
+    # where the exe is can use it to get path to mdb files if in same folder
+    try:
+        working_dir_abs = os.path.abspath(directory)
+        target_path = os.path.normpath(os.path.join(working_dir_abs, file_name))
 
-    if not valid_target_dir:
-        msg = (
-            f"get_file_path() - Error: Cannot read {file_name} as it is outside"
-            f"the permitted working directory"
-        )
-        logging.warning(msg)
-        raise FatalConfigError(msg)
+        valid_target_dir = os.path.commonpath([working_dir_abs, target_path]) == working_dir_abs
+        if not valid_target_dir:
+            logging.warning(
+                f"get_file_path() - Error: Cannot read {file_name} as it is outside"
+                f"the permitted working directory"
+            )
+            return f'Error: Cannot read "{file_name}" as it is outside the permitted working directory'
 
-    target_isfile = os.path.isfile(target_path)
-    if not target_isfile:
-        msg = f"get_file_path() - Error: {file_name} is not a file"
-        logging.warning(msg)
-        raise FatalConfigError(msg)
-    return target_path
+        target_isfile = os.path.isfile(target_path)
+        if not target_isfile:
+            logging.warning(f"get_file_path() - Error: {file_name} is not a file")
+            return f'Error: "{file_name}" is not a file'
 
-def close_program(client) -> None:
-    if client:
-        try:
-            client.disconnect()
-            sys.exit(130)
-        except Exception:
-            pass
-    os._exit(130)
+        return target_path
+    except Exception as err:
+        logging.warning(f"get_file_path() - Error: {err}")
+        return f"Error: {err}"
+
 
 def main() -> None:
-    client: Client | None = None
+    client = None
     try:
         mdb_filename: str = get_mdb_filename()
         # file_path = get_file_path(constants.MDB_DIR_PATH, mdb_filename)
         # swap these file_path = later.
         file_path: str = get_file_path(constants.MDB_DIR_PATH, "test_file.txt")
+        #print(file_path, "filepathtest------------------------")
 
         # initialize time variables for monitoring file modified time
         last_modified_time: float = os.stat(file_path).st_mtime
         modified_time: float = last_modified_time
 
         # Connect to OPCUA server
+        client: Client = None
         while client is None:
             client = opcua_connect(constants.OPCUA_URL)
+            time.sleep(5)
 
-        # load up the nodeid variables
         press_write_complete_node = client.get_node(constants.FROM_PLC_PRESS_WRITE_CMPLT_NODE)
         heartbeat_node = client.get_node(constants.TO_PLC_HEARTBEAT_NODE)
-        file_write_detected_node = client.get_node(constants.TO_PLC_FILE_WRITE_DETECTED_NODE)
+        write_detected_node = client.get_node(constants.TO_PLC_FILE_WRITE_DETECTED_NODE)
         opcua_server_state_node = client.get_node(constants.OPCUA_SERVER_STATE)
 
         # -------Start heartbeat thread in the background------
         heartbeart_thread = threading.Thread(target=heartbeat_opcua, args=(heartbeat_node, 3, opcua_server_state_node), daemon=True)
         heartbeart_thread.start()
         # ------------------------------------------------------
-
-
-        opcua_write(file_write_detected_node, False) #initiliaze write_detect to False
-        last_check_status_time = time.monotonic()
+        write_counter = 0
+        counter = 0
+        opcua_write(write_detected_node, False) #initiliaze to write_detect to False
         while True:
-            # get server state and reconnect if required by check status interval time.
-            time_now = time.monotonic()
-            if time_now - last_check_status_time >= constants.CHECK_STATUS_INTERVAL:
-                print("test")
-                last_check_status_time = time_now
+            # get server state and reconnect if required
+            counter = (counter + 1) % 500
+            if counter == 499:
                 opcua_server_state = opcua_read(opcua_server_state_node)
                 if opcua_server_state is None:
                     opcua_reconnect(client, opcua_server_state_node)
@@ -159,22 +151,31 @@ def main() -> None:
             # creates mdb database file name based on date.
             mdb_filename = get_mdb_filename()
 
+            press_write_complete = opcua_read(press_write_complete_node)
+
+            prev_val = press_write_complete
             modified_time = os.stat(file_path).st_mtime
             if modified_time != last_modified_time:
                 last_modified_time = modified_time
                 date_st_mtime = datetime.datetime.fromtimestamp(last_modified_time)
                 logging.info(f"File: {mdb_filename}, last modified = {date_st_mtime}")
-                opcua_write(file_write_detected_node, True)
+            opcua_write(write_detected_node, True)
+
+            time.sleep(0.2)
+
 
     except KeyboardInterrupt:
-        close_program(client)
+        if client:
+            try:
+                client.disconnect()
+                sys.exit(130)
+            except Exception:
+                pass
+        os._exit(130)
 
 if __name__ == "__main__":
     try:
         main()
-    except FatalConfigError:
-        # error already logged so exit
-        sys.exit(1)
     except Exception:
         logging.exception("Exception caught after main")
         sys.exit(1)

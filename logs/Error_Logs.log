@@ -1,3 +1,30 @@
-2026-09-13 18:59:08,236 get_file_path() - Error: test_file.txt is not a file
-2026-09-13 18:59:40,438 get_file_path() - Error: test_file.txt is not a file
-2026-09-13 19:00:15,284 get_file_path() - Error: Cannot read test_file.txt as it is outsidethe permitted working directory
+2026-09-13 23:16:56,813 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:01,813 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:06,814 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:11,815 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:16,815 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:21,815 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:26,816 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:31,816 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:36,817 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:41,817 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:46,817 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:51,818 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:17:56,818 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:18:01,818 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:18:06,819 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:18:11,819 opcua_connect() - Unexpected Error: 'Client' object has no attribute 'constants'...Retrying connection
+2026-09-13 23:18:23,379 opcua_connect() - Error: timed out...Retrying connection
+2026-09-13 23:19:32,966 Exception caught after main
+Traceback (most recent call last):
+  File "/home/testies/opcuaproj/opcua_mon.py", line 175, in <module>
+    main()
+    ~~~~^^
+  File "/home/testies/opcuaproj/opcua_mon.py", line 113, in main
+    mdb_filename: str = get_mdb_filename()
+                        ~~~~~~~~~~~~~~~~^^
+  File "/home/testies/opcuaproj/opcua_mon.py", line 77, in get_mdb_filename
+    pad = "#" if os.name == "nt" else "-"
+                 ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+2026-09-13 23:23:42,072 opcua_write() - Error: "The access level does not allow writing to the Node."(BadNotWritable)

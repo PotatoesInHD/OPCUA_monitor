@@ -1,7 +1,6 @@
 2- maybe try and write some unit tests for logging etc. make sure all works and for file path and everything.
 also unit tests that update a file for testing?
 
--make disconnect on exit. keyboardinterrupt
 
 5-https://pyinstaller.org/en/stable/runtime-information.html
 look into this when using pyinstaller for determining path of where the exe is can use it to get path to mdb files if in same folder

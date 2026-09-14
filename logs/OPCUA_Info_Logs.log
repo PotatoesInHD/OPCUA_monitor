@@ -1,23 +1,161 @@
-2026-09-13 18:53:11,809 opening connection
-2026-09-13 18:53:11,834 Thread started
-2026-09-13 18:53:11,835 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
-2026-09-13 18:53:11,835 open_secure_channel
-2026-09-13 18:53:11,836 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:24)
-2026-09-13 18:53:11,836 create_session
-2026-09-13 18:53:11,977 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:24)
-2026-09-13 18:53:11,978 activate_session
-2026-09-13 18:53:11,982 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:24)
-2026-09-13 18:53:11,983 read
-2026-09-13 18:53:11,983 read
-2026-09-13 18:53:11,986 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:24)
-2026-09-13 18:53:12,001 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:24)
-2026-09-13 18:53:12,001 read
-2026-09-13 18:53:12,004 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:24)
-2026-09-13 18:53:14,004 read
-2026-09-13 18:53:14,008 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:24)
-2026-09-13 18:53:14,009 read
-2026-09-13 18:53:14,013 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:24)
-2026-09-13 18:53:16,013 read
-2026-09-13 18:53:16,016 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:24)
-2026-09-13 18:53:16,017 read
-2026-09-13 18:53:16,020 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:24)
+2026-09-13 22:56:09,347 opening connection
+2026-09-13 22:56:09,365 Thread started
+2026-09-13 22:56:09,366 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-13 22:56:09,366 open_secure_channel
+2026-09-13 22:56:09,367 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:128)
+2026-09-13 22:56:09,368 create_session
+2026-09-13 22:56:09,494 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:128)
+2026-09-13 22:56:09,495 activate_session
+2026-09-13 22:56:09,499 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:128)
+2026-09-13 22:56:11,588 close_session
+2026-09-13 22:56:11,633 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:128)
+2026-09-13 22:56:11,633 close_secure_channel
+2026-09-13 22:56:11,633 Request to close socket received
+2026-09-13 22:56:11,633 Socket closed, waiting for receiver thread to terminate...
+2026-09-13 22:56:11,633 Socket has closed connection
+2026-09-13 22:56:11,633 Cancelling request 5
+2026-09-13 22:56:11,633 Thread ended
+2026-09-13 22:56:11,634 Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-13 23:18:19,374 opening connection
+2026-09-13 23:18:28,380 opening connection
+2026-09-13 23:18:28,589 Thread started
+2026-09-13 23:18:28,590 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-13 23:18:28,590 open_secure_channel
+2026-09-13 23:18:28,591 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:129)
+2026-09-13 23:18:28,592 create_session
+2026-09-13 23:18:28,872 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:129)
+2026-09-13 23:18:28,873 activate_session
+2026-09-13 23:18:28,877 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:129)
+2026-09-13 23:18:33,878 read
+2026-09-13 23:18:33,882 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:129)
+2026-09-13 23:18:33,882 read
+2026-09-13 23:18:33,885 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:129)
+2026-09-13 23:18:35,886 read
+2026-09-13 23:18:35,889 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:129)
+2026-09-13 23:18:36,883 read
+2026-09-13 23:18:36,887 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:129)
+2026-09-13 23:18:37,890 read
+2026-09-13 23:18:37,893 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:129)
+2026-09-13 23:18:39,887 read
+2026-09-13 23:18:39,891 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:129)
+2026-09-13 23:18:39,893 read
+2026-09-13 23:18:39,897 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:129)
+2026-09-13 23:18:41,897 read
+2026-09-13 23:18:41,900 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:129)
+2026-09-13 23:18:42,891 read
+2026-09-13 23:18:42,894 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:129)
+2026-09-13 23:18:43,900 read
+2026-09-13 23:18:43,903 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:129)
+2026-09-13 23:18:45,895 read
+2026-09-13 23:18:45,898 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:129)
+2026-09-13 23:18:45,904 read
+2026-09-13 23:18:45,907 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:129)
+2026-09-13 23:18:47,908 read
+2026-09-13 23:18:47,911 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:129)
+2026-09-13 23:18:48,128 close_session
+2026-09-13 23:18:48,160 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:129)
+2026-09-13 23:18:48,160 close_secure_channel
+2026-09-13 23:18:48,160 Request to close socket received
+2026-09-13 23:18:48,160 Socket closed, waiting for receiver thread to terminate...
+2026-09-13 23:18:48,160 Socket has closed connection
+2026-09-13 23:18:48,160 Cancelling request 18
+2026-09-13 23:18:48,160 Thread ended
+2026-09-13 23:18:48,160 Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-13 23:18:59,120 opening connection
+2026-09-13 23:18:59,204 Thread started
+2026-09-13 23:18:59,206 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-13 23:18:59,206 open_secure_channel
+2026-09-13 23:18:59,208 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:130)
+2026-09-13 23:18:59,208 create_session
+2026-09-13 23:18:59,326 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:130)
+2026-09-13 23:18:59,327 activate_session
+2026-09-13 23:18:59,331 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:130)
+2026-09-13 23:19:04,332 read
+2026-09-13 23:19:04,336 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:130)
+2026-09-13 23:19:04,336 read
+2026-09-13 23:19:04,339 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:130)
+2026-09-13 23:19:06,340 read
+2026-09-13 23:19:06,343 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:130)
+2026-09-13 23:19:07,336 read
+2026-09-13 23:19:07,340 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:130)
+2026-09-13 23:19:08,343 read
+2026-09-13 23:19:08,346 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:130)
+2026-09-13 23:19:10,341 read
+2026-09-13 23:19:10,346 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:130)
+2026-09-13 23:19:10,347 read
+2026-09-13 23:19:10,350 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:130)
+2026-09-13 23:19:12,351 read
+2026-09-13 23:19:12,354 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:130)
+2026-09-13 23:19:13,346 read
+2026-09-13 23:19:13,350 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:130)
+2026-09-13 23:19:14,355 read
+2026-09-13 23:19:14,358 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:130)
+2026-09-13 23:19:15,869 close_session
+2026-09-13 23:19:15,930 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:130)
+2026-09-13 23:19:15,930 close_secure_channel
+2026-09-13 23:19:15,930 Request to close socket received
+2026-09-13 23:19:15,930 Socket closed, waiting for receiver thread to terminate...
+2026-09-13 23:19:15,931 Socket has closed connection
+2026-09-13 23:19:15,931 Cancelling request 15
+2026-09-13 23:19:15,931 Thread ended
+2026-09-13 23:19:15,931 Done closing socket: Receiving thread terminated, socket disconnected
+2026-09-13 23:23:20,535 opening connection
+2026-09-13 23:23:20,729 Thread started
+2026-09-13 23:23:20,731 received header: Header(type:b'ACK', chunk_type:b'F', body_size:20, channel:0)
+2026-09-13 23:23:20,731 open_secure_channel
+2026-09-13 23:23:20,732 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:131)
+2026-09-13 23:23:20,732 create_session
+2026-09-13 23:23:21,017 received header: Header(type:b'MSG', chunk_type:b'F', body_size:2464, channel:131)
+2026-09-13 23:23:21,018 activate_session
+2026-09-13 23:23:21,024 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:131)
+2026-09-13 23:23:26,025 read
+2026-09-13 23:23:26,029 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:131)
+2026-09-13 23:23:26,030 read
+2026-09-13 23:23:26,033 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:28,033 read
+2026-09-13 23:23:28,036 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:29,031 read
+2026-09-13 23:23:29,035 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:131)
+2026-09-13 23:23:30,037 read
+2026-09-13 23:23:30,040 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:32,036 read
+2026-09-13 23:23:32,040 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:131)
+2026-09-13 23:23:32,040 read
+2026-09-13 23:23:32,043 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:34,043 read
+2026-09-13 23:23:34,046 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:35,040 read
+2026-09-13 23:23:35,044 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:131)
+2026-09-13 23:23:36,047 read
+2026-09-13 23:23:36,050 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:38,045 read
+2026-09-13 23:23:38,048 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:131)
+2026-09-13 23:23:38,051 read
+2026-09-13 23:23:38,055 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:40,055 read
+2026-09-13 23:23:40,061 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:41,049 read
+2026-09-13 23:23:41,052 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:131)
+2026-09-13 23:23:42,018 open_secure_channel
+2026-09-13 23:23:42,020 received header: Header(type:b'OPN', chunk_type:b'F', body_size:123, channel:131)
+2026-09-13 23:23:42,020 read
+2026-09-13 23:23:42,024 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:42,062 read
+2026-09-13 23:23:42,065 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:42,065 read
+2026-09-13 23:23:42,068 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:42,069 read
+2026-09-13 23:23:42,072 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:131)
+2026-09-13 23:23:44,052 read
+2026-09-13 23:23:44,056 received header: Header(type:b'MSG', chunk_type:b'F', body_size:52, channel:131)
+2026-09-13 23:23:44,072 read
+2026-09-13 23:23:44,075 received header: Header(type:b'MSG', chunk_type:b'F', body_size:62, channel:131)
+2026-09-13 23:23:45,471 close_session
+2026-09-13 23:23:45,529 received header: Header(type:b'MSG', chunk_type:b'F', body_size:40, channel:131)
+2026-09-13 23:23:45,530 close_secure_channel
+2026-09-13 23:23:45,530 Request to close socket received
+2026-09-13 23:23:45,530 Socket closed, waiting for receiver thread to terminate...
+2026-09-13 23:23:45,530 Socket has closed connection
+2026-09-13 23:23:45,530 Cancelling request 26
+2026-09-13 23:23:45,530 Thread ended
+2026-09-13 23:23:45,530 Done closing socket: Receiving thread terminated, socket disconnected

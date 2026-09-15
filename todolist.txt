@@ -1,6 +1,5 @@
+1- revisit dataclass and trying to remove extra constants at top of config
 
-
--make it so we can edit a file to pass the url, opcua node name space and values into the pyinstaller. this way we can change things without having to redo pyinstaller. also pass in file path. this way we can have our exe and config file in a fodler and then logs in child folder. and we can have it on desktop or something and put the filepath in the config
 
 2- maybe try and write some unit tests for logging etc. make sure all works and for file path and everything.
 also unit tests that update a file for testing?
@@ -26,62 +25,3 @@ When inspecting or reading non-text files (like .mdb databases, images, .exe fil
 - try and make it so if plc power cycle will reconnect. also maybe make it autostart on windows pc incase computer reboots. should hopefully be able to reconnect on its own no matter what.
 
 -not sure ill need a gui but maybe worth trying out tkinkter and maybe could display recent lines of mdb and logs and like conn status, write bit statuses etc.
-
-
---- see bewlow for boots tips for reading a config file.
-An external configuration file is a massive win when packaging with PyInstaller.
-
-Once your script is compiled into an .exe, modifying a Python constant requires rebuilding the entire binary. With an external config file sitting right next to the executable, anyone can change the PLC IP address, node IDs, directory paths, or heartbeat intervals using Notepad without recompiling.
-
-File Format Tips
-While a plain .txt works, two built-in Python options make this effortless:
-
-1. .ini format via Python's built-in configparser
-This is standard for Windows automation tools:
-
-# config.ini
-[plc]
-url = opc.tcp://192.168.1.50:4840
-heartbeat_node = ns=2;s=CLICK.Heartbeat
-trigger_node = ns=2;s=CLICK.FileUpdated
-
-[paths]
-mdb_dir = C:\PlantData
-mdb_filename = production.mdb
-
-Python reads it with zero external dependencies:
-
-import configparser
-
-config = configparser.ConfigParser()
-config.read("config.ini")
-
-url = config.get("plc", "url")
-
-2. .json format via Python's built-in json
-Also zero dependencies, maps directly to Python dictionaries:
-
-{
-  "plc_url": "opc.tcp://192.168.1.50:4840",
-  "heartbeat_node": "ns=2;s=CLICK.Heartbeat",
-  "trigger_node": "ns=2;s=CLICK.FileUpdated"
-}
-
-The PyInstaller Gotcha for Config Files
-When bundled with PyInstaller, os.getcwd() might point to wherever the terminal was opened, not where the .exe lives.
-
-To always load the config file from right next to the .exe:
-
-import sys
-import os
-
-if getattr(sys, 'frozen', False):
-    # Running inside PyInstaller bundle
-    app_dir = os.path.dirname(sys.executable)
-else:
-    # Running as normal .py script
-    app_dir = os.path.dirname(os.path.abspath(__file__))
-
-config_path = os.path.join(app_dir, "config.ini")
-
-That ensures it always finds config.ini in the exact same folder as the .exe!

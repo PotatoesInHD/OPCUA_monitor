@@ -18,8 +18,8 @@ def setup_logger():
 
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
-
+    info_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
+    err_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s')
     # my info handler - logs anything less than WARNING
     log_file_path = os.path.normpath(os.path.join(target_path, "Info_Logs.log"))
     my_info_handler = RotatingFileHandler(
@@ -32,7 +32,7 @@ def setup_logger():
     my_info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
     my_info_handler.addFilter(lambda record: "opcua" not in record.name)
     # my_info_handler.addFilter(inspect_filter)
-    my_info_handler.setFormatter(formatter)
+    my_info_handler.setFormatter(info_formatter)
     logger.addHandler(my_info_handler)
 
     # err handler - logs anything >= WARNING
@@ -43,7 +43,7 @@ def setup_logger():
         backupCount=1,
         encoding='utf-8',
     )
-    err_handler.setFormatter(formatter)
+    err_handler.setFormatter(err_formatter)
     # err_handler.addFilter(inspect_filter)
     err_handler.addFilter(lambda record: record.levelno >= logging.WARNING)
     logger.addHandler(err_handler)
@@ -59,5 +59,5 @@ def setup_logger():
     opcua_info_handler.setLevel(logging.INFO)
     opcua_info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
     opcua_info_handler.addFilter(lambda record: "opcua" in record.name)
-    opcua_info_handler.setFormatter(formatter)
+    opcua_info_handler.setFormatter(info_formatter)
     logger.addHandler(opcua_info_handler)

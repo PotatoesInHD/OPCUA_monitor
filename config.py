@@ -4,7 +4,7 @@ import logging
 import configparser
 from configparser import NoSectionError, NoOptionError
 
-from utils import get_file_path, FatalConfigError
+from utils import get_file_path
 
 
 TO_PLC_HEARTBEAT_NODE = "ns=1;i=2000"
@@ -13,7 +13,7 @@ OPCUA_SERVER_STATE = "ns=0;i=2259"
 OPCUA_URL = "opc.tcp://10.0.0.129:4840"
 SESSION_TIMEOUT = 30_000  # 30s
 MDB_DIR_PATH  = "."
-CHECK_STATUS_INTERVAL = 5.0 #seconds
+CHECK_SERVER_STATUS_INTERVAL = 5.0 #seconds
 DELAY_BETWEEN_WRITES = 0.2 #seconds
 HEART_BEAT_INTERVAL = 3.0
 MAIN_LOOP_DELAY = 0.2
@@ -36,7 +36,7 @@ def setup_config():
 
         # [OPCUA_CONFIG]
         SESSION_TIMEOUT = config.getint("OPCUA_CONFIG", "SESSION_TIMEOUT", fallback=30_000)
-        CHECK_STATUS_INTERVAL = config.getfloat("OPCUA_CONFIG", "CHECK_STATUS_INTERVAL", fallback=5.0)
+        CHECK_SERVER_STATUS_INTERVAL = config.getfloat("OPCUA_CONFIG", "CHECK_SERVER_STATUS_INTERVAL", fallback=5.0)
         HEART_BEAT_INTERVAL = config.getfloat("OPCUA_CONFIG", "HEART_BEAT_INTERVAL", fallback=3.0)
         DELAY_BETWEEN_WRITES = config.getfloat("OPCUA_CONFIG", "DELAY_BETWEEN_WRITES", fallback=0.2)
         MAIN_LOOP_DELAY = config.getfloat("OPCUA_CONFIG", "MAIN_LOOP_DELAY", fallback=0.2)

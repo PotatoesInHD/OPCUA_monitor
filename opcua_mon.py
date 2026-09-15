@@ -141,7 +141,7 @@ def main() -> None:
         while True:
             # get server state and reconnect if required by check status interval time.
             time_now = time.monotonic()
-            if (time_now - last_check_status_time) >= config.CHECK_STATUS_INTERVAL:
+            if (time_now - last_check_status_time) >= config.CHECK_SERVER_STATUS_INTERVAL:
                 last_check_status_time = time_now
                 opcua_server_state = opcua_read(opcua_server_state_node)
                 if opcua_server_state is None:

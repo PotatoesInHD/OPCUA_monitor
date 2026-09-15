@@ -1,5 +1,7 @@
 1- revisit dataclass and trying to remove extra constants at top of config
 
+1.2-add limits to config ini values coming in. ini file updated., just neeed to do the config.py
+maybe  use max and min. or a ternary operator? sleep on it.
 
 2- maybe try and write some unit tests for logging etc. make sure all works and for file path and everything.
 also unit tests that update a file for testing?

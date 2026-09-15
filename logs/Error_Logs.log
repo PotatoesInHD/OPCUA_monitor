@@ -108,3 +108,12 @@ AttributeError: module 'config' has no attribute 'MAIN_LOOP_DELAY'
 2026-09-14 23:23:08,803 - WARNING - [opcua_mon.py:92 in opcua_write()] - __main__ - Error: TimeoutError()
 2026-09-14 23:23:13,004 - WARNING - [opcua_mon.py:83 in opcua_read()] - __main__ - Error: TimeoutError()
 2026-09-14 23:23:17,004 - WARNING - [opcua_mon.py:92 in opcua_write()] - __main__ - Error: TimeoutError()
+2026-09-14 23:45:05,780 - ERROR - __main__ - [opcua_mon.py:173 in <module>()] - Exception caught after main
+Traceback (most recent call last):
+  File "/home/testies/opcuaproj/opcua_mon.py", line 168, in <module>
+    main()
+    ~~~~^^
+  File "/home/testies/opcuaproj/opcua_mon.py", line 119, in main
+    file_path: str = get_file_path(config.MDB_DIR_PATH, "test_file.txt")
+                                   ^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'config' has no attribute 'MDB_DIR_PATH'

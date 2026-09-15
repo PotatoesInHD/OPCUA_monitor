@@ -1,1 +1,0 @@
-2026-09-15 14:59:03,460 - WARNING - __main__ - [opcua_mon.py:96 in opcua_write()] - Error: CancelledError()

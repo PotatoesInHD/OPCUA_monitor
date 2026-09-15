@@ -7,18 +7,21 @@ import threading
 
 from opcua import Client, Node
 
-import config
-from config import setup_config
-from logger import setup_logger
+from config import Config
+from logger_cfg import Logger
 from utils import get_file_path, FatalConfigError
 
-
 logger = logging.getLogger(__name__)
-# sets up logging from logger.py
-setup_logger()
 
-# sets up config from config.py
-setup_config()
+# sets up logging from logger_cfg.py
+setup_log = Logger()
+setup_log.setup_logger()
+
+# setup config
+cfg = Config()
+
+#updates opcua inf log filter with value from config
+setup_log.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
 
 # lock to prevent threads from read/write at same time
 threadlock = threading.Lock()
@@ -35,14 +38,14 @@ def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, in
 def opcua_connect(url: str)-> "Client":
         try:
             client = Client(url)
-            client.session_timeout = config.SESSION_TIMEOUT
+            client.session_timeout = cfg.SESSION_TIMEOUT
             client.connect()
             return client
         except TimeoutError as err:
             logger.warning(f"Error: {err}...Retrying connection")
         except Exception as err:
             if "BadTooManySessions" in str(err):
-                time.sleep(config.SESSION_TIMEOUT / 1000)
+                time.sleep(cfg.SESSION_TIMEOUT / 1000)
             logger.warning(f"Unexpected Error: {err}...Retrying connection")
         time.sleep(5)
 
@@ -60,7 +63,7 @@ def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
                 logger.warning(f"Error: {err}...Retrying connection")
             except Exception as err:
                 if "BadTooManySessions" in str(err):
-                    time.sleep(config.SESSION_TIMEOUT / 1000)
+                    time.sleep(cfg.SESSION_TIMEOUT / 1000)
                 logger.warning(f"Unexpected Error: {err}...Retrying connection")
             time.sleep(5)
 
@@ -90,7 +93,7 @@ def opcua_write(node: Node, value: int | bool) -> None:
         except Exception as err:
             msg = str(err) or str(repr(err)) or "Uknown Error"
             logger.warning(f"Error: {msg}")
-        time.sleep(config.DELAY_BETWEEN_WRITES)
+        time.sleep(cfg.DELAY_BETWEEN_WRITES)
 
 
 def get_mdb_filename() -> str:
@@ -114,9 +117,9 @@ def main() -> None:
     client: Client | None = None
     try:
         mdb_filename: str = get_mdb_filename()
-        # file_path = get_file_path(config.MDB_DIR_PATH, mdb_filename)
+        # file_path = get_file_path(cfg.MDB_DIR_PATH, mdb_filename)
         # swap these file_path = later.
-        file_path: str = get_file_path(config.MDB_DIR_PATH, "test_file.txt")
+        file_path: str = get_file_path(cfg.MDB_DIR_PATH, "test_file.txt")
 
         # initialize time variables for monitoring file modified time
         last_modified_time: float = os.stat(file_path).st_mtime
@@ -124,14 +127,14 @@ def main() -> None:
 
         # Connect to OPCUA server
         while client is None:
-            client = opcua_connect(config.OPCUA_URL)
+            client = opcua_connect(cfg.OPCUA_URL)
 
         # load up the nodeid variables
-        heartbeat_node: Node = client.get_node(config.TO_PLC_HEARTBEAT_NODE)
-        file_write_detected_node: Node = client.get_node(config.TO_PLC_FILE_WRITE_DETECTED_NODE)
-        opcua_server_state_node: Node = client.get_node(config.OPCUA_SERVER_STATE)
+        heartbeat_node: Node = client.get_node(cfg.TO_PLC_HEARTBEAT_NODE)
+        file_write_detected_node: Node = client.get_node(cfg.TO_PLC_FILE_WRITE_DETECTED_NODE)
+        opcua_server_state_node: Node = client.get_node(cfg.OPCUA_SERVER_STATE)
         # -------Start heartbeat thread in the background------
-        heartbeart_thread = threading.Thread(target=heartbeat_opcua, args=(heartbeat_node, client, opcua_server_state_node, config.HEART_BEAT_INTERVAL), daemon=True)
+        heartbeart_thread = threading.Thread(target=heartbeat_opcua, args=(heartbeat_node, client, opcua_server_state_node, cfg.HEART_BEAT_INTERVAL), daemon=True)
         heartbeart_thread.start()
         # ------------------------------------------------------
 
@@ -141,7 +144,7 @@ def main() -> None:
         while True:
             # get server state and reconnect if required by check status interval time.
             time_now = time.monotonic()
-            if (time_now - last_check_status_time) >= config.CHECK_SERVER_STATUS_INTERVAL:
+            if (time_now - last_check_status_time) >= cfg.CHECK_SERVER_STATUS_INTERVAL:
                 last_check_status_time = time_now
                 opcua_server_state = opcua_read(opcua_server_state_node)
                 if opcua_server_state is None:
@@ -158,7 +161,7 @@ def main() -> None:
                 opcua_write(file_write_detected_node, True)
 
             # Main Loop Delay
-            time.sleep(config.MAIN_LOOP_DELAY)
+            time.sleep(cfg.MAIN_LOOP_DELAY)
 
     except KeyboardInterrupt:
         close_program(client)

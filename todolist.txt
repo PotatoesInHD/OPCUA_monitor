@@ -1,12 +1,9 @@
-1- revisit dataclass and trying to remove extra constants at top of config
 
-1.2-add limits to config ini values coming in. ini file updated., just neeed to do the config.py
-maybe  use max and min. or a ternary operator? sleep on it.
 
 2- maybe try and write some unit tests for logging etc. make sure all works and for file path and everything.
 also unit tests that update a file for testing?
 
-3-figure out how to use pyinstaller - so can make executable and dont have to install python on the servo logging computer.
+3-figure out how to use pyinstaller - so can make executable and dont have to install python on the servo logging computer.  apparently using --onedir causes less issues with windows detecvting malware. innosetup is another more complicated option it seems. and theres a thing with pyinstaller boots explained compiling C binaries or somin urself so they look different to windows.
 https://pyinstaller.org/en/stable/runtime-information.html
 look into this when using pyinstaller for determining path of where the exe is can use it to get path to mdb files if in same folder
 

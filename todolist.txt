@@ -1,15 +1,12 @@
-
+1-some opcua logs are still coming through to cli when testing d/c and reconnects.  everything reconnects ok but
+would prefer if they didnt show there so info text stays there. seems to be issue with error handling on thread 2
+when a disconnect happens at a bad time when its writing.
 
 2- maybe try and write some unit tests for logging etc. make sure all works and for file path and everything.
 also unit tests that update a file for testing?
 
-3-figure out how to use pyinstaller - so can make executable and dont have to install python on the servo logging computer.  apparently using --onedir causes less issues with windows detecvting malware. innosetup is another more complicated option it seems. and theres a thing with pyinstaller boots explained compiling C binaries or somin urself so they look different to windows.
-https://pyinstaller.org/en/stable/runtime-information.html
-look into this when using pyinstaller for determining path of where the exe is can use it to get path to mdb files if in same folder
-
-4- get working on windows.
-
-6-maybe bring home sysmac plc for testing too since thats what i connecting to at work.
+6-maybe bring home sysmac plc for testing too since thats what i connecting to at work and this way
+i dont have to guess the node ids or install uaexpert at work.
 
 last-even if reading file modified time works out - see if can actually read lines of mdb file.  probly have to get a microsoft access subscription for a month or 2. then instead of time stamps can read if and what presses are actually writing the data to mdb file. then can tell plc if theres an issue. ******look into mdb parser. looks like it shoudl do what i need... *** on linux use mdb-parser and mdbtools.  On windows we need pyodbc https://discuss.python.org/t/whats-the-best-way-to-read-a-mdb-file/60145, https://github.com/mkleehammer/pyodbc  and we also need Microsoft Access Database Engine 2016 Redistributable driver thing.
 ---------------
@@ -21,6 +18,5 @@ When inspecting or reading non-text files (like .mdb databases, images, .exe fil
 **also need to do try except blocks when opening for reading incase it is locked out.
 **need to make sure having file open doesnt mess up press. if so may need to detect when its not writing and make a copy or something along those lines.
 
-- try and make it so if plc power cycle will reconnect. also maybe make it autostart on windows pc incase computer reboots. should hopefully be able to reconnect on its own no matter what.
 
 -not sure ill need a gui but maybe worth trying out tkinkter and maybe could display recent lines of mdb and logs and like conn status, write bit statuses etc.

@@ -12,7 +12,14 @@ logger = logging.getLogger(__name__)
 
 class Config:
     def __init__(self):
-        working_directory = os.path.dirname(os.path.abspath(__file__))
+        # If running compiled inside PyInstaller:
+        if getattr(sys, "frozen", False):
+            # if running as exe then working directory is where sys.executable is
+            working_directory = os.path.dirname(os.path.abspath(sys.executable))
+        else:
+            # if running as py script then working directory is where script is
+            working_directory = os.path.dirname(os.path.abspath(__file__))
+
         config_path = get_file_path(working_directory, "config.ini")
         config = configparser.ConfigParser()
         config.read(config_path, encoding="utf-8")

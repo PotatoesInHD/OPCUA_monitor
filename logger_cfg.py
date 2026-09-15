@@ -1,4 +1,5 @@
 import os
+import sys
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -7,8 +8,16 @@ class Logger:
     def __init__(self) -> None:
         self.opcua_info_handler: RotatingFileHandler
 
-    def setup_logger(self) -> None:
-        working_directory = os.path.dirname(os.path.abspath(__file__))
+    def setup_logger(self) -> str:
+
+        # If running compiled inside PyInstaller:
+        if getattr(sys, "frozen", False):
+            # if running as exe then working directory is where sys.executable is
+            working_directory = os.path.dirname(os.path.abspath(sys.executable))
+        else:
+            # if running as py script then working directory is where script is
+            working_directory = os.path.dirname(os.path.abspath(__file__))
+
         target_path = os.path.normpath(os.path.join(working_directory, "logs"))
         os.makedirs(target_path, exist_ok=True)
 
@@ -54,6 +63,8 @@ class Logger:
         self.opcua_info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
         self.opcua_info_handler.setFormatter(info_formatter)
         logger.addHandler(self.opcua_info_handler)
+
+        return target_path
 
     def update_log_filter(self, enable_opcua_info_logs: bool) ->None:
         self.opcua_info_handler.addFilter(lambda record: enable_opcua_info_logs and "opcua" in record.name)

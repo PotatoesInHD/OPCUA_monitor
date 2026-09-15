@@ -10,12 +10,13 @@ from opcua import Client, Node
 from config import Config
 from logger_cfg import Logger
 from utils import get_file_path, FatalConfigError
+from infodisplay import print_console_info
 
 logger = logging.getLogger(__name__)
 
 # sets up logging from logger_cfg.py
 setup_log = Logger()
-setup_log.setup_logger()
+log_path = setup_log.setup_logger()
 
 # setup config
 cfg = Config()
@@ -128,6 +129,7 @@ def main() -> None:
         # Connect to OPCUA server
         while client is None:
             client = opcua_connect(cfg.OPCUA_URL)
+        print_console_info(cfg, log_path)
 
         # load up the nodeid variables
         heartbeat_node: Node = client.get_node(cfg.TO_PLC_HEARTBEAT_NODE)

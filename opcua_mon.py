@@ -1,3 +1,4 @@
+from ctypes import sizeof
 import os
 import sys
 import time
@@ -6,11 +7,15 @@ import datetime
 import threading
 
 from opcua import Client, Node
+import tkinter as tk
 
 from config import Config
 from logger_cfg import Logger, thread_exception_hook
 from utils import get_file_path, FatalConfigError
-from infodisplay import print_console_info
+from infodisplay import Window
+
+#remove this later. just for testing. this forces to print right away
+sys.stdout.reconfigure(line_buffering=True) #remove later
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +33,10 @@ setup_log.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
 threading.excepthook = thread_exception_hook
 # lock to prevent threads from read/write at same time
 threadlock = threading.Lock()
+
+#open gui from infodisplay.py
+gui = Window(cfg, log_path)
+
 # -------------background thread-----------
 def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, interval: float=3) -> None:
     state = False
@@ -36,6 +45,7 @@ def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, in
         opcua_write(node, state)
         time.sleep(interval)
 # ------------------------------------------
+
 
 def opcua_connect(url: str)-> "Client":
         try:
@@ -134,15 +144,15 @@ def main() -> None:
         modified_time: float = last_modified_time
 
         # Connect to OPCUA server
-        print_console_info(cfg, log_path)
+        gui.print_console_info()
         while client is None:
             client = opcua_connect(cfg.OPCUA_URL)
-
 
         # load up the nodeid variables
         heartbeat_node: Node = client.get_node(cfg.TO_PLC_HEARTBEAT_NODE)
         file_write_detected_node: Node = client.get_node(cfg.TO_PLC_FILE_WRITE_DETECTED_NODE)
         opcua_server_state_node: Node = client.get_node(cfg.OPCUA_SERVER_STATE)
+
 
         # -------Start heartbeat thread in the background------
         heartbeart_thread = threading.Thread(
@@ -163,7 +173,9 @@ def main() -> None:
                 last_check_status_time = time_now
                 opcua_server_state = opcua_read(opcua_server_state_node)
                 if opcua_server_state is None:
+                    gui.window_update(opcua_server_state)
                     opcua_reconnect(client, opcua_server_state_node)
+                gui.window_update(opcua_server_state)
 
             # creates mdb database file name based on date.
             mdb_filename = get_mdb_filename()
@@ -175,10 +187,11 @@ def main() -> None:
                 logger.info(f"File: {mdb_filename}, last modified = {date_st_mtime}")
                 opcua_write(file_write_detected_node, True)
 
+            gui.window_refresh()
             # Main Loop Delay
             time.sleep(cfg.MAIN_LOOP_DELAY)
 
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, tk.TclError):
         close_program(client)
 
 if __name__ == "__main__":

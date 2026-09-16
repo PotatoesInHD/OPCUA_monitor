@@ -1,8 +1,10 @@
 import os
 import sys
 import logging
+import threading
 from logging.handlers import RotatingFileHandler
 
+logger = logging.getLogger(__name__)
 
 class Logger:
     def __init__(self) -> None:
@@ -68,3 +70,10 @@ class Logger:
 
     def update_log_filter(self, enable_opcua_info_logs: bool) ->None:
         self.opcua_info_handler.addFilter(lambda record: enable_opcua_info_logs and "opcua" in record.name)
+
+
+def thread_exception_hook(args) -> None:
+    if issubclass(args.exc_type, (AttributeError, OSError)):
+        logger.warning(f"Error: {args.thread.name} - {args.exc_type} - {args.exc_value}")
+        return
+    logger.error(f"Background thread crash in {args.thread.name}", exc_info=(args.exc_type, args.exc_value, args.exc_traceback))

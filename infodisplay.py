@@ -3,7 +3,7 @@ from config import Config
 
 def print_console_info(cfg: Config, log_path: str) -> None:
     print("=" * 60)
-    print(f"{' ' * 20}OPC UA MONITORING")
+    print(f"{' ' * 20}OPCUA MONITORING")
     print("=" * 60)
     print(f" Target Server : {cfg.OPCUA_URL}")
     print(f" Status        : Running")

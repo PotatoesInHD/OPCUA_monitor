@@ -1,6 +1,3 @@
-1-some opcua logs are still coming through to cli when testing d/c and reconnects.  everything reconnects ok but
-would prefer if they didnt show there so info text stays there. seems to be issue with error handling on thread 2
-when a disconnect happens at a bad time when its writing.
 
 2- maybe try and write some unit tests for logging etc. make sure all works and for file path and everything.
 also unit tests that update a file for testing?

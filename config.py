@@ -33,23 +33,26 @@ class Config:
 
             # [OPCUA_CONFIG]
             self.SESSION_TIMEOUT = config.getint("OPCUA_CONFIG", "SESSION_TIMEOUT", fallback=30_000)
-            self.CHECK_SERVER_STATUS_INTERVAL = config.getfloat("OPCUA_CONFIG", "CHECK_SERVER_STATUS_INTERVAL", fallback=5.0)
+            self.POLL_SERVER_STATUS_RATE = config.getfloat("OPCUA_CONFIG", "POLL_SERVER_STATUS_RATE", fallback=5.0)
             self.HEART_BEAT_INTERVAL = config.getfloat("OPCUA_CONFIG", "HEART_BEAT_INTERVAL", fallback=3.0)
             self.DELAY_BETWEEN_WRITES = config.getfloat("OPCUA_CONFIG", "DELAY_BETWEEN_WRITES", fallback=0.2)
             self.MAIN_LOOP_DELAY = config.getfloat("OPCUA_CONFIG", "MAIN_LOOP_DELAY", fallback=0.2)
 
-            # [MDB_FILE_PATH]
-            self.MDB_DIR_PATH = config.get("MDB_FILE_PATH", "MDB_DIR_PATH", fallback=r"C:\users\user\desktop\servodaata")
+            # [MDB_DIR_PATH]
+            self.MDB_DIR_PATH = config.get("MDB_DIR_PATH", "MDB_DIR_PATH", fallback=r"C:\users\user\desktop\servodaata")
 
             # [LOG_CONFIG]
             self.ENABLE_OPCUA_INFO_LOGS = config.getboolean("LOG_CONFIG", "ENABLE_OPCUA_INFO_LOGS", fallback=True)
 
             # Clamps config values
             self.SESSION_TIMEOUT = max(20_000, min(self.SESSION_TIMEOUT, 60_000))
-            self.CHECK_SERVER_STATUS_INTERVAL = max(2.0, min(self.CHECK_SERVER_STATUS_INTERVAL, 10.0))
+            self.POLL_SERVER_STATUS_RATE = max(2.0, min(self.POLL_SERVER_STATUS_RATE, 10.0))
             self.HEART_BEAT_INTERVAL = max(1.0, min(self.HEART_BEAT_INTERVAL, 5.0))
             self.DELAY_BETWEEN_WRITES = max(0.2, min(self.DELAY_BETWEEN_WRITES, 2.0))
             self.MAIN_LOOP_DELAY = max(0.2, min(self.MAIN_LOOP_DELAY, 2.0))
+
+            self.TEST_FILE = config.get("TEST", "TEST_FILE", fallback="test_file.txt")
+            self.TEST_MODE = config.getboolean("TEST", "TEST_MODE", fallback=False)
 
         except (NoSectionError, NoOptionError) as err:
             logger.warning(f"Error: {err}")

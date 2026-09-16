@@ -43,8 +43,8 @@ def opcua_connect(url: str)-> "Client":
             client.session_timeout = cfg.SESSION_TIMEOUT
             client.connect()
             return client
-        except TimeoutError as err:
-            logger.warning(f"Time Out Error: ...Retrying connection")
+        except TimeoutError:
+            logger.warning("Time Out Error: ...Retrying connection")
         except OSError as err:
             logger.warning(f"Network Error: {err}...Retrying connection")
         except Exception as err:
@@ -63,8 +63,8 @@ def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
             try:
                 client.connect()
                 opcua_server_state = opcua_read(opcua_server_state_node)
-            except TimeoutError as err:
-                logger.warning(f"Time Out Error: ...Retrying connection")
+            except TimeoutError:
+                logger.warning("Time Out Error: ...Retrying connection")
             except OSError as err:
                 logger.warning(f"Network Error: {err}...Retrying connection")
             except Exception as err:
@@ -124,9 +124,10 @@ def main() -> None:
     client: Client | None = None
     try:
         mdb_filename: str = get_mdb_filename()
-        # file_path = get_file_path(cfg.MDB_DIR_PATH, mdb_filename)
-        # swap these file_path = later.
-        file_path: str = get_file_path(cfg.MDB_DIR_PATH, "test_file.txt")
+        if cfg.TEST_MODE is False:
+            file_path = get_file_path(cfg.MDB_DIR_PATH, mdb_filename)
+        else:
+            file_path: str = get_file_path(cfg.MDB_DIR_PATH, cfg.TEST_FILE)
 
         # initialize time variables for monitoring file modified time
         last_modified_time: float = os.stat(file_path).st_mtime
@@ -144,7 +145,11 @@ def main() -> None:
         opcua_server_state_node: Node = client.get_node(cfg.OPCUA_SERVER_STATE)
 
         # -------Start heartbeat thread in the background------
-        heartbeart_thread = threading.Thread(target=heartbeat_opcua, args=(heartbeat_node, client, opcua_server_state_node, cfg.HEART_BEAT_INTERVAL), daemon=True)
+        heartbeart_thread = threading.Thread(
+            target=heartbeat_opcua,
+            args=(heartbeat_node, client, opcua_server_state_node, cfg.HEART_BEAT_INTERVAL),
+            daemon=True
+        )
         heartbeart_thread.start()
         # ------------------------------------------------------
 
@@ -154,7 +159,7 @@ def main() -> None:
         while True:
             # get server state and reconnect if required by check status interval time.
             time_now = time.monotonic()
-            if (time_now - last_check_status_time) >= cfg.CHECK_SERVER_STATUS_INTERVAL:
+            if (time_now - last_check_status_time) >= cfg.POLL_SERVER_STATUS_RATE:
                 last_check_status_time = time_now
                 opcua_server_state = opcua_read(opcua_server_state_node)
                 if opcua_server_state is None:

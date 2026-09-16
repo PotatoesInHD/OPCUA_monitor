@@ -76,4 +76,7 @@ def thread_exception_hook(args) -> None:
     if issubclass(args.exc_type, (AttributeError, OSError)):
         logger.warning(f"Error: {args.thread.name} - {args.exc_type} - {args.exc_value}")
         return
-    logger.error(f"Background thread crash in {args.thread.name}", exc_info=(args.exc_type, args.exc_value, args.exc_traceback))
+    logger.error(
+        f"Background thread crash in {args.thread.name}",
+        exc_info=(args.exc_type, args.exc_value, args.exc_traceback)
+    )

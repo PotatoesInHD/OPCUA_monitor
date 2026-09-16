@@ -1,10 +1,10 @@
-from ctypes import sizeof
 import os
 import sys
 import time
 import logging
 import datetime
 import threading
+import cryptography # imported so pyinstaller doesn't complain
 
 from opcua import Client, Node
 import tkinter as tk
@@ -14,8 +14,8 @@ from logger_cfg import Logger, thread_exception_hook
 from utils import get_file_path, FatalConfigError
 from infodisplay import Window
 
-#remove this later. just for testing. this forces to print right away
-sys.stdout.reconfigure(line_buffering=True) #remove later
+#comment this out. this just for testing. this forces to print right away
+#sys.stdout.reconfigure(line_buffering=True)
 
 logger = logging.getLogger(__name__)
 
@@ -192,6 +192,7 @@ def main() -> None:
             time.sleep(cfg.MAIN_LOOP_DELAY)
 
     except (KeyboardInterrupt, tk.TclError):
+        logger.warning("Program closed by user")
         close_program(client)
 
 if __name__ == "__main__":

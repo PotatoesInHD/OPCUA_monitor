@@ -14,6 +14,3 @@ b = Binary (reads raw bytes directly from disk without trying to interpret them 
 When inspecting or reading non-text files (like .mdb databases, images, .exe files, or PDFs), you always use binary mode ("rb") so Python doesn't crash or alter line endings (\r\n vs \n).'''''-------------------
 **also need to do try except blocks when opening for reading incase it is locked out.
 **need to make sure having file open doesnt mess up press. if so may need to detect when its not writing and make a copy or something along those lines.
-
-
--not sure ill need a gui but maybe worth trying out tkinkter and maybe could display recent lines of mdb and logs and like conn status, write bit statuses etc.

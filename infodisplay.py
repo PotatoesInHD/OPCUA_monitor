@@ -2,8 +2,11 @@ import tkinter as tk
 import logging
 from config import Config
 
+
 logger = logging.getLogger(__name__)
 
+class WindowCloseError(Exception):
+    """Raised when gui window closes but doesnt give tk.tclerror"""
 
 class Window:
     def __init__(self, cfg: Config, log_path: str):
@@ -15,12 +18,12 @@ class Window:
         self.label_space = tk.Label(bg="black")
         self.label_space = tk.Label(bg="black")
         self.label_Title = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
-        self.label_A = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 20))
-        self.label_B = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 20))
-        self.label_C = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 20))
-        self.label_D = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 20))
-        self.label_E = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 20))
-        self.label_F = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 20))
+        self.label_A = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
+        self.label_B = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
+        self.label_C = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
+        self.label_D = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
+        self.label_E = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
+        self.label_F = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
 
         self.label_space.pack(pady=30, fill="both")
         self.label_Title.pack(padx=17, fill="x")
@@ -57,6 +60,8 @@ class Window:
         self.window_refresh()
 
     def window_refresh(self) -> None:
+        if not self.window.winfo_exists():
+            raise WindowCloseError("Program closed by user but had WindowCloseError")
         self.window.update()
 
     def print_console_info(self) -> None:

@@ -6,7 +6,6 @@ from configparser import NoSectionError, NoOptionError
 
 from utils import get_file_path
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -37,6 +36,7 @@ class Config:
             self.HEART_BEAT_INTERVAL = config.getfloat("OPCUA_CONFIG", "HEART_BEAT_INTERVAL", fallback=3.0)
             self.DELAY_BETWEEN_WRITES = config.getfloat("OPCUA_CONFIG", "DELAY_BETWEEN_WRITES", fallback=0.2)
             self.MAIN_LOOP_DELAY = config.getfloat("OPCUA_CONFIG", "MAIN_LOOP_DELAY", fallback=0.2)
+            self.SOCKET_TIMEOUT = config.getfloat("OPCUA_CONFIG", "SOCKET_TIMEOUT", fallback=2)
 
             # [MDB_DIR_PATH]
             self.MDB_DIR_PATH = config.get("MDB_DIR_PATH", "MDB_DIR_PATH", fallback=r"C:\users\user\desktop\servodaata")
@@ -50,9 +50,11 @@ class Config:
             self.HEART_BEAT_INTERVAL = max(1.0, min(self.HEART_BEAT_INTERVAL, 5.0))
             self.DELAY_BETWEEN_WRITES = max(0.2, min(self.DELAY_BETWEEN_WRITES, 2.0))
             self.MAIN_LOOP_DELAY = max(0.2, min(self.MAIN_LOOP_DELAY, 2.0))
+            self.SOCKET_TIMEOUT = max(1.0, min(self.SOCKET_TIMEOUT, 4.0))
 
             self.TEST_FILE = config.get("TEST", "TEST_FILE", fallback="test_file.txt")
             self.TEST_MODE = config.getboolean("TEST", "TEST_MODE", fallback=False)
+
 
         except (NoSectionError, NoOptionError) as err:
             logger.warning(f"Error: {err}")

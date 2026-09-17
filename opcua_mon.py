@@ -12,7 +12,7 @@ import tkinter as tk
 from config import Config
 from logger_cfg import Logger, thread_exception_hook
 from utils import get_file_path, FatalConfigError
-from infodisplay import Window
+from infodisplay import Window, WindowCloseError
 
 #comment this out. this just for testing. this forces to print right away
 #sys.stdout.reconfigure(line_buffering=True)
@@ -48,8 +48,9 @@ def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, in
 
 
 def opcua_connect(url: str)-> "Client":
+        client = None
         try:
-            client = Client(url)
+            client = Client(url, cfg.SOCKET_TIMEOUT)
             client.session_timeout = cfg.SESSION_TIMEOUT
             client.connect()
             return client
@@ -59,9 +60,9 @@ def opcua_connect(url: str)-> "Client":
             logger.warning(f"Network Error: {err}...Retrying connection")
         except Exception as err:
             if "BadTooManySessions" in str(err):
-                time.sleep(cfg.SESSION_TIMEOUT / 1000)
+                sleep_helper(cfg.SESSION_TIMEOUT / 1000)
             logger.warning(f"Unexpected Error: {err}...Retrying connection")
-        time.sleep(5)
+        sleep_helper(5)
 
 
 def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
@@ -79,18 +80,18 @@ def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
                 logger.warning(f"Network Error: {err}...Retrying connection")
             except Exception as err:
                 if "BadTooManySessions" in str(err):
-                    time.sleep(cfg.SESSION_TIMEOUT / 1000)
+                    sleep_helper(cfg.SESSION_TIMEOUT / 1000)
                 logger.warning(f"Unexpected Error: {err}...Retrying connection")
-            time.sleep(5)
+            sleep_helper(5)
+
 
 def opcua_disconnect(client: Client) -> None:
-    with threadlock: # prevents both threads from trying to read at same time
         try:
             client.disconnect()
         except Exception as err:
             msg = str(err) or str(repr(err)) or "Uknown Error"
             logger.warning(f"Error: {msg}")
-        time.sleep(1)
+        sleep_helper(1)
 
 
 def opcua_read(node: Node) -> int | None:
@@ -128,6 +129,14 @@ def close_program(client) -> None:
         except Exception:
             pass
     os._exit(130)
+
+
+def sleep_helper(seconds: float) -> None:
+    start_time = time.time()
+
+    while time.time() - start_time < seconds:
+        gui.window_refresh()
+        time.sleep(0.05)
 
 
 def main() -> None:
@@ -189,10 +198,13 @@ def main() -> None:
 
             gui.window_refresh()
             # Main Loop Delay
-            time.sleep(cfg.MAIN_LOOP_DELAY)
+            sleep_helper(cfg.MAIN_LOOP_DELAY)
 
+    except WindowCloseError as err:
+        logger.warning(f"Program closed by user but had WindowCloseError: {err}", exc_info=True)
+        close_program(client)
     except (KeyboardInterrupt, tk.TclError):
-        logger.warning("Program closed by user")
+        logger.warning(f"Program closed by user")
         close_program(client)
 
 if __name__ == "__main__":

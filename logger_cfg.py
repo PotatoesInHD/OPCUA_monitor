@@ -4,7 +4,9 @@ import logging
 import threading
 from logging.handlers import RotatingFileHandler
 
+
 logger = logging.getLogger(__name__)
+
 
 class Logger:
     def __init__(self) -> None:
@@ -57,7 +59,7 @@ class Logger:
         opcua_log_file_path = os.path.normpath(os.path.join(target_path, "OPCUA_Info_Logs.log"))
         self.opcua_info_handler = RotatingFileHandler(
             opcua_log_file_path,
-            maxBytes=1_000_000,
+            maxBytes=10_000_000,
             backupCount=1,
             encoding='utf-8',
         )

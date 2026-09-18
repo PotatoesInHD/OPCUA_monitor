@@ -5,6 +5,7 @@ from config import Config
 
 logger = logging.getLogger(__name__)
 
+
 class WindowCloseError(Exception):
     """Raised when gui window closes but doesnt give tk.tclerror"""
 
@@ -37,7 +38,7 @@ class Window:
         self.window.configure(background='black')
         self.window.title("OPCUA STATUS")
         self.window.geometry("800x640")
-        self.window.resizable(False, False)
+        #self.window.resizable(False, False)
 
         self.window_update(None)
 

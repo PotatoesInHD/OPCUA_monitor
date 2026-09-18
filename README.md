@@ -20,7 +20,7 @@ These log files are created automatically in a logs folder where the script or .
 Once a log reaches 10MB it will create another "log.1" and keep rotating.  So 20MB and 2 files each per log type
 <br><br>
 ## Config.ini
-Log file must be in same folder as opcua_mon !<br>
+Log file must be in same folder as opcua_mon.py/exe !<br>
 This is utilized so settings can be changed easily even after bundling with pyinstaller.<br>
 Limits in the config.ini are hard coded into config.py file to help prevent any fat finger issues. 
 

@@ -83,7 +83,7 @@ There is a simple GUI made with tkinter that will display "Connecting..."" in re
 This is based on the OPCUA server connection status.  The monitor program checks the server status node on<br>
 a defined interval from CHECK_SERVER_STATUS_INTERVAL in the config.ini.
 
-![tkinter.jpg](jb-image:img_1789688849506_dcc5f640141bd8)
+<img width="757" height="525" alt="Image" src="https://github.com/user-attachments/assets/5e6c7ae6-8bc2-4054-afca-742e2fe3bf42" />
 
 The GUI was a bit of an afterthought.  I already have a background thread for running the heart beat pulse and<br>
 didn't want to refactor everything else onto another background thread so that tkinter could run its own mainloop().<br>

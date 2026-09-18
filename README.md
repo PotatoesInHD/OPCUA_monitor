@@ -89,11 +89,11 @@ a defined interval from "CHECK_SERVER_STATUS_INTERVAL" in the config.ini.
 <img width="757" height="525" alt="Image" src="https://github.com/user-attachments/assets/5e6c7ae6-8bc2-4054-afca-742e2fe3bf42" />
 
 The GUI was a bit of an afterthought.  I already have a background thread for running the heart beat pulse and<br>
-didn't want to refactor everything else onto another background thread so that tkinter could run its own mainloop().<br>
-So the GUI willsometimes hang for 1-2 seconds if the PLC is trying to connect/reconnect because it is busy working its magic.<br>
-The SOCKET_TIMEOUT value in the config.ini is set to 2 seconds to help with this issue.  time.sleep() instructions were also<br>
+didn't want to refactor everything else onto another background thread so that tkinter could run its own mainloop().
+So the GUI willsometimes hang for 1-2 seconds if the PLC is trying to connect/reconnect because it is busy working its magic.
+The SOCKET_TIMEOUT value in the config.ini is set to 2 seconds to help with this issue.  time.sleep() instructions were also
 avoided to prevent GUI "not responding". In their place I added a sleep_helper() function that that will constantly call window.update() as it runs.<br>
 
-In the future I might refactor the threading for the tkinter GUI to run better or maybe just go to a CLI interface since its not displaying anything fancy.
+In the future I might refactor the threading for the tkinter GUI to run better or maybe just go to a CLI interface since its not displaying anything fancy.<br>
 
 **Once connected though, the GUI is smooth as eggs.**<br><br>

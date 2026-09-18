@@ -9,7 +9,7 @@
 - It will display connection status to the GUI.
 - It will handle and log all errors to the log files.
 <br><br>
-## It's Log its Log its better than bad its good!
+## It's Log it's Log it's better than bad it's good!
 
 There are three separate logging files 
 - Log for timestamps of when the monitored file was modified

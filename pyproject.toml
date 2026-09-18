@@ -4,4 +4,12 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "cryptography>=50.0.1",
+    "opcua>=0.98.13",
+]
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.22.3",
+]

@@ -13,8 +13,11 @@
 
 There are three separate logging files 
 - Log for timestamps of when the monitored file was modified
+  <img width="1002" height="25" alt="Image" src="https://github.com/user-attachments/assets/c2e1d89e-6854-4853-9109-771a66e014a6" />
 - Log for Warnings/Errors
+  <img width="1104" height="46" alt="Image" src="https://github.com/user-attachments/assets/eebf4dd4-cab5-4a50-859b-996930d26034" />
 - Log for OPCUA communication info/traffic shenanigans.  This one can be disabled via the Config.ini file "ENABLE_OPCUA_INFO_LOGS"
+  <img width="1172" height="46" alt="Image" src="https://github.com/user-attachments/assets/67ba7a30-8515-42f4-ad70-6a3e31a4e7e0" />
 
 These log files are created automatically in a logs folder where the script or .exe lives, if made into .exe using pyinstaller.
 Once a log reaches 10MB it will create another "log.1" and keep rotating.  So 20MB and 2 files each per log type

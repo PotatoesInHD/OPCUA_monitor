@@ -1,8 +1,9 @@
-## OPCUA FILE MONITOR
+## OPCUA FILE MONITOR - WIP still needs more testing.
 
 ### What does it do?
 - This python program connects to a PLC by OPCUA and monitors a files modified time stamps for changes.  I made this with monitoring .MDB files in mind but it can monitor any files timestamps.
 - If a change is detected it writes to an OPCUA node that the PLC can monitor.
+- File its monitoring changes name every new day with the date as its name.  So program creates the new file name to monitor each day.
 - It also writes a heart beat signal to an OPCUA node so the PLC knows when communication is lost.
 - It will run on windows/linux and as a script or as an exe.  It handles windows/linux pathing differences on its own. 
 - If there is a disconnection such as a network cable unplugged or PLC power cycle the monitoring program will continue to attempt reconnecting.

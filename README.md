@@ -4,7 +4,7 @@
 - This python program connects to a PLC by OPCUA and monitors a files modified time stamps for changes.  I made this with monitoring .MDB files in mind but it can monitor any files timestamps.
 - If a change is detected it writes to an OPCUA node that the PLC can monitor.
 - It also writes a heart beat signal to an OPCUA node so the PLC knows when communication is lost.
-- It will run on windows or linux and as a script or as an exe.  It handles any pathing or file location issues on its own. 
+- It will run on windows/linux and as a script or as an exe.  It handles windows/linux pathing differences on its own. 
 - If there is a disconnection such as a network cable unplugged or PLC power cycle the monitoring program will continue to attempt reconnecting.
 - It will display connection status to the GUI.
 - It will handle and log all errors to the log files.
@@ -16,7 +16,7 @@ There are three separate logging files
 - Log for Warnings/Errors
 - Log for OPCUA communication info/traffic shenanigans.  This one can be disabled via the Config.ini file.
 
-These log files are created automatically in a logs folder where the script or .exe us, if made into .exe using pyinstaller.
+These log files are created automatically in a logs folder where the script or .exe lives, if made into .exe using pyinstaller.
 Once a log reaches 10MB it will create another "log.1" and keep rotating.  So 20MB and 2 files each per log type
 <br><br>
 ## Config.ini
@@ -80,14 +80,14 @@ TEST_MODE = True<br>
 <br><br>
 ## GUI
 There is a simple GUI made with tkinter that will display "Connecting..."" in red or "Connected!"" in green.<br>
-This is based on the OPCUA server connection status.  The monitor program checks the server status node on<br>
+This status is based on the OPCUA server connection status.  The monitor program checks the server status node on<br>
 a defined interval from CHECK_SERVER_STATUS_INTERVAL in the config.ini.
 
 <img width="757" height="525" alt="Image" src="https://github.com/user-attachments/assets/5e6c7ae6-8bc2-4054-afca-742e2fe3bf42" />
 
 The GUI was a bit of an afterthought.  I already have a background thread for running the heart beat pulse and<br>
 didn't want to refactor everything else onto another background thread so that tkinter could run its own mainloop().<br>
-So the gui willsometimes hang for 1-2 seconds if the PLC is trying to connect/reconnect because it is busy working its magic.<br>
+So the GUI willsometimes hang for 1-2 seconds if the PLC is trying to connect/reconnect because it is busy working its magic.<br>
 The SOCKET_TIMEOUT value in the config.ini is set to 2 seconds to help with this issue.  time.sleep() instructions were also<br>
-avoided to prevent gui "not responding". In their place I added a sleep_helper() function that that will constantly call window.update() as it runs.<br>
-Once connected though GUI is smooth as eggs.<br><br>
+avoided to prevent GUI "not responding". In their place I added a sleep_helper() function that that will constantly call window.update() as it runs.<br>
+**Once connected though, the GUI is smooth as eggs.**<br><br>

@@ -14,13 +14,13 @@
 There are three separate logging files 
 - Log for timestamps of when the monitored file was modified
 - Log for Warnings/Errors
-- Log for OPCUA communication info/traffic shenanigans.  This one can be disabled via the Config.ini file.
+- Log for OPCUA communication info/traffic shenanigans.  This one can be disabled via the Config.ini file "ENABLE_OPCUA_INFO_LOGS"
 
 These log files are created automatically in a logs folder where the script or .exe lives, if made into .exe using pyinstaller.
 Once a log reaches 10MB it will create another "log.1" and keep rotating.  So 20MB and 2 files each per log type
 <br><br>
 ## Config.ini
-Log file must be in same folder as opcua_mon.py/exe !<br>
+Config.ini file must be in same folder as opcua_mon.py/exe !<br>
 This is utilized so settings can be changed easily even after bundling with pyinstaller.<br>
 Limits in the config.ini are hard coded into config.py file to help prevent any fat finger issues. 
 
@@ -81,7 +81,7 @@ TEST_MODE = True<br>
 ## GUI
 There is a simple GUI made with tkinter that will display "Connecting..."" in red or "Connected!"" in green.<br>
 This status is based on the OPCUA server connection status.  The monitor program checks the server status node on<br>
-a defined interval from CHECK_SERVER_STATUS_INTERVAL in the config.ini.
+a defined interval from "CHECK_SERVER_STATUS_INTERVAL" in the config.ini.
 
 <img width="757" height="525" alt="Image" src="https://github.com/user-attachments/assets/5e6c7ae6-8bc2-4054-afca-742e2fe3bf42" />
 

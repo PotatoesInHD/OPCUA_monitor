@@ -1,7 +1,6 @@
 import os
 import sys
 import logging
-import threading
 from logging.handlers import RotatingFileHandler
 
 

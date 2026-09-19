@@ -4,18 +4,17 @@ import time
 import logging
 import datetime
 import threading
+import tkinter as tk
 import cryptography # imported so pyinstaller doesn't complain
 
 from opcua import Client, Node
-import tkinter as tk
 
 from config import Config
 from logger_cfg import Logger, thread_exception_hook
 from utils import get_file_path, FatalConfigError
 from infodisplay import Window, WindowCloseError
 
-#comment this out. this just for testing. this forces to print right away
-#sys.stdout.reconfigure(line_buffering=True)
+#sys.stdout.reconfigure(line_buffering=True) this just for testing. this forces to print right away
 
 logger = logging.getLogger(__name__)
 
@@ -141,8 +140,9 @@ class Mtime:
 
 def close_program(client) -> None:
     if client:
-        opcua_disconnect(client)
         try:
+            # Dont swap this for opcua_disconnect(). Sometimes hangs and extra unnecessary logs when closing program
+            client.disconnect()
             sys.exit(130)
         except Exception as err:
             logger.warning(f"Error: {err} while program closing")
@@ -174,7 +174,6 @@ def main() -> None:
         modified_time: float | None = last_modified_time
 
         # Connect to OPCUA server
-
         gui.print_console_info()
         while client is None:
             client = opcua_connect(cfg.OPCUA_URL)
@@ -208,11 +207,10 @@ def main() -> None:
                     opcua_reconnect(client, opcua_server_state_node)
                 gui.window_update(opcua_server_state)
 
-            # creates mdb database file name based on date.
+            # creates monitored file name based on date.
             monitored_filename = get_monitored_filename()
 
             modified_time = modtime.get_modified_time(file_path)
-
             if modified_time and modified_time != last_modified_time:
                 last_modified_time = modified_time
                 date_st_mtime = datetime.datetime.fromtimestamp(last_modified_time)
@@ -222,8 +220,8 @@ def main() -> None:
             elif last_modified_time:
                 gui.timestamp = str(datetime.datetime.fromtimestamp(last_modified_time))
 
+            # Main Loop Delay and GUI update
             gui.window_refresh()
-            # Main Loop Delay
             sleep_helper(cfg.MAIN_LOOP_DELAY)
 
     except WindowCloseError as err:

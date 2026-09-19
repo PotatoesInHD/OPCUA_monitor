@@ -81,7 +81,6 @@ ENABLE_OPCUA_INFO_LOGS = True<br>
 **\# --------FOR MONITORING STATIC FILE THAT DOESN'T CHANGE NAME-----------<br>**
 *\# Still uses MONITORED_DIR_PATH<br>*
 **[STATIC_FILE_NAME]<br>**
-*\# Still uses MONITORED_DIR_PATH
 *\# Example: test_file.txt<br>*
 STATIC_MONITORED_FILE = test_file.txt<br>
 *\# True or False<br>*

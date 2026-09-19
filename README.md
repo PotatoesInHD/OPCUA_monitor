@@ -30,6 +30,7 @@ Once a log reaches 10MB it will create another "log.1" and keep rotating.  So 20
 ## Config.ini
 - Config.ini file must be in same folder as opcua_mon.py/exe !
 - This is utilized so settings can be changed easily even after bundling with pyinstaller.
+- Can configure OPCUA and file settings
 - Limits in the config.ini are hard coded into config.py file to help prevent any fat finger issues. 
 <br><br>
 ## GUI

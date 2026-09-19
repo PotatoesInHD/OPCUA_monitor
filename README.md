@@ -2,15 +2,17 @@
 
 ### What does it do?
 - This python program connects to a PLC by OPCUA and monitors a files modified time stamps for changes.  
-  - I made this with monitoring .MDB files in mind but it can monitor any files timestamps in STATIC_FILE_MODE. 
+  - I made this to monitor .MDB files with a specific name format but it can monitor any files timestamps in STATIC_FILE_MODE. 
 - If a change is detected it writes to an OPCUA node that the PLC can monitor.
-- File its monitoring changes name every new day with the date as its name.  So program creates the new file name to monitor each day.
-  - using this format "9-15-2026-BS.mdb".  Static file mode and file name can be configured in config.ini.
-- It also writes a heart beat signal to an OPCUA node so the PLC knows when communication is lost.
-- It will run on windows/linux and as a script or as an exe.  It handles windows/linux and script/exe pathing differences on its own. 
-- If there is a disconnection such as a network cable unplugged or PLC power cycle the monitoring program will continue to attempt reconnecting.
-- It will display connection status to the GUI.
+- If not in STATIC_MODE, the monitored file changes name every new day with the date as its name.
+  - So program creates the new file name to monitor each day example: "9-15-2026-BS.mdb"
+  - Static file mode and file name can be configured in config.ini.
+- It writes a heart beat signal to an OPCUA node so the PLC knows when communication is lost.
+- If there is a disconnection such as a network cable unplugged or PLC power cycle it will continue to log errors and attempt reconnecting.
+- It will display connection status, path to log files and most recent file timestamp to the GUI.
 - It will handle and log all errors to the log files.
+- It will run on windows/linux and as a script or as an exe.
+  - It handles windows/linux and script/exe pathing differences on its own.
 <br><br>
 ## It's Log it's Log it's better than bad it's good!
 
@@ -94,10 +96,10 @@ a defined interval from "CHECK_SERVER_STATUS_INTERVAL" in the config.ini.
 
 The GUI was a bit of an afterthought.  I already have a background thread for running the heart beat pulse and<br>
 didn't want to refactor everything else onto another background thread so that tkinter could run its own mainloop().
-So the GUI willsometimes hang for 1-2 seconds if the PLC is trying to connect/reconnect because it is busy working its magic.
+So the GUI will sometimes hang for 1-2 seconds if the PLC is trying to connect/reconnect because it is busy working its magic.
 The SOCKET_TIMEOUT value in the config.ini is set to 2 seconds to help with this issue.  time.sleep() instructions were also
-avoided to prevent GUI "not responding". In their place I added a sleep_helper() function that that will constantly call window.update() as it runs.<br>
+avoided to prevent GUI "not responding". In their place I added a sleep_helper() function that that will constantly call window.update() as it runs/sleeps.<br>
 
-In the future I might refactor the threading for the tkinter GUI to run better or maybe just go to a CLI interface since its not displaying anything fancy.<br>
+In the future I might refactor the threading for the tkinter GUI to run better or maybe just go to a CLI interface since its not displaying anything fancy anyways.<br>
 
-**Once connected though, the GUI is smooth as eggs.**<br><br>
+**Once OPCUA connects though, the GUI is smooth as eggs.**<br><br>

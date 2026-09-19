@@ -66,23 +66,24 @@ DELAY_BETWEEN_WRITES = 0.2<br>
 MAIN_LOOP_DELAY = 0.2<br>
 
 **\# -------------------------FILE SETUP-----------------------------------<br>**
-**[MDB_DIR_PATH]<br>**
-\# Path to .MDB files, where servopress data is stored.<br>
+**[MONITORED_DIR_PATH]<br>**
+\# Path to monitored files, where servopress data is stored.<br>
 \# Example: C:\Users\user\desktop\servodaata<br>
-MDB_DIR_PATH = .<br>
+MONITORED_DIR_PATH = .<br>
 
 **[LOG_CONFIG]<br>**
 *\# Enable or disable OPCUA_info_logs<br>*
 *\# True or False<br>*
 ENABLE_OPCUA_INFO_LOGS = True<br>
 
-**\# ------------------------TESTING ONLY-----------------------------------<br>**
-*\# Test file must be in same directory as opcua_mon<br>*
-**[TEST]<br>**
+**\# --------FOR MONITORING STATIC FILE THAT DOESN'T CHANGE NAME-----------<br>**
+*\# Still uses MONITORED_DIR_PATH<br>*
+**[STATIC_FILE_NAME]<br>**
+*\# Still uses MONITORED_DIR_PATH
 *\# Example: test_file.txt<br>*
-TEST_FILE = test_file.txt<br>
+STATIC_MONITORED_FILE = test_file.txt<br>
 *\# True or False<br>*
-TEST_MODE = True<br>
+STATIC_FILE_MODE = True<br>
 <br><br>
 ## GUI
 There is a simple GUI made with tkinter that will display "Connecting..."" in red or "Connected!"" in green.<br>

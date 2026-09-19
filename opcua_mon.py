@@ -131,7 +131,7 @@ class Mtime:
             self.warning_logged_mem = False
         except OSError as err:
             if self.warning_logged_mem is False:
-                msg = f"Monitored file at '{file_path}' doesn't exist yet"
+                msg = f"Error: {err} - Monitored file at '{file_path}' doesn't exist yet"
                 logger.warning(msg)
                 logger.info(msg)
                 self.warning_logged_mem = True
@@ -141,11 +141,11 @@ class Mtime:
 
 def close_program(client) -> None:
     if client:
+        opcua_disconnect(client)
         try:
-            client.disconnect()
             sys.exit(130)
-        except Exception:
-            pass
+        except Exception as err:
+            logger.warning(f"Error: {err} while program closing")
     os._exit(130)
 
 
@@ -239,7 +239,7 @@ if __name__ == "__main__":
     try:
         main()
     except FatalConfigError:
-        # error already logged so exit
+        # error already logged in utils.py get_file_path(), so exit
         sys.exit(1)
     except Exception:
         logger.exception("Exception caught after main")

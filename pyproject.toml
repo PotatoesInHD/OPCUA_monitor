@@ -13,3 +13,6 @@ dependencies = [
 dev = [
     "pyinstaller>=6.22.3",
 ]
+
+[tool.ruff.lint]
+ignore = ["F541", "I001"]

@@ -151,7 +151,6 @@ def close_program(client) -> None:
 
 def sleep_helper(seconds: float) -> None:
     start_time = time.time()
-
     while time.time() - start_time < seconds:
         gui.window_refresh()
         time.sleep(0.05)

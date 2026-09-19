@@ -28,63 +28,9 @@ These log files are created automatically in a logs folder where the script or .
 Once a log reaches 10MB it will create another "log.1" and keep rotating.  So 20MB and 2 files each per log type
 <br><br>
 ## Config.ini
-Config.ini file must be in same folder as opcua_mon.py/exe !<br>
-This is utilized so settings can be changed easily even after bundling with pyinstaller.<br>
-Limits in the config.ini are hard coded into config.py file to help prevent any fat finger issues. 
-
-**\# -----------------------ConfigFile-------------------------------------<br>**
-\# config.ini file must stay in same directory as opcua_mon.exe
-
-**\# -----------------------OPCUA SETUP-------------------------------<br>**
-**[OPCUA_NODE]**<br>
-*\# Example: ns=1;i=2000<br>*
-TO_PLC_HEARTBEAT_NODE = ns=1;i=2000<br>
-TO_PLC_FILE_WRITE_DETECTED_NODE = ns=1;i=2002<br>
-OPCUA_SERVER_STATE = ns=0;i=2259<br>
-*\# Example: opc.tcp://192.168.2.199:4840<br>*
-OPCUA_URL = opc.tcp://IPADDRESS:4840<br>
-
-**[OPCUA_CONFIG]<br>**
-*\# Limited from 20_000-60_000ms<br>*
-SESSION_TIMEOUT = 30_000<br>
-
-*\# Default 4 but causes not responding on gui so made 2s<br>
-\# Limited from 1.0-4.0s<br>*
-SOCKET_TIMEOUT = 2<br>
-
-*\# If server status check fails it initiates reconnect sequence<br>
-\# Limited from 2.0-10.0s<br>*
-CHECK_SERVER_STATUS_INTERVAL = 5.0<br>
-
-*\# Heart beat signal to PLC<br>
-\# Limited from 1.0-5.0s<br>*
-HEART_BEAT_INTERVAL = 3.0<br>
-
-*\# Limited from 0.2-2.0s<br>*
-DELAY_BETWEEN_WRITES = 0.2<br>
-
-*\# Prevents looping faster than necessary<br>*
-*\# Limited from 0.2-2.0s<br>*
-MAIN_LOOP_DELAY = 0.2<br>
-
-**\# -------------------------FILE SETUP-----------------------------------<br>**
-**[MONITORED_DIR_PATH]<br>**
-\# Path to monitored files, where servopress data is stored.<br>
-\# Example: C:\Users\user\desktop\servodaata<br>
-MONITORED_DIR_PATH = .<br>
-
-**[LOG_CONFIG]<br>**
-*\# Enable or disable OPCUA_info_logs<br>*
-*\# True or False<br>*
-ENABLE_OPCUA_INFO_LOGS = True<br>
-
-**\# --------FOR MONITORING STATIC FILE THAT DOESN'T CHANGE NAME-----------<br>**
-*\# Still uses MONITORED_DIR_PATH<br>*
-**[STATIC_FILE_NAME]<br>**
-*\# Example: test_file.txt<br>*
-STATIC_MONITORED_FILE = test_file.txt<br>
-*\# True or False<br>*
-STATIC_FILE_MODE = True<br>
+- Config.ini file must be in same folder as opcua_mon.py/exe !
+- This is utilized so settings can be changed easily even after bundling with pyinstaller.
+- Limits in the config.ini are hard coded into config.py file to help prevent any fat finger issues. 
 <br><br>
 ## GUI
 There is a simple GUI made with tkinter that will display "Connecting..."" in red or "Connected!"" in green.<br>

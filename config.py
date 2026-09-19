@@ -39,11 +39,15 @@ class Config:
             self.MAIN_LOOP_DELAY = config.getfloat("OPCUA_CONFIG", "MAIN_LOOP_DELAY", fallback=0.2)
             self.SOCKET_TIMEOUT = config.getfloat("OPCUA_CONFIG", "SOCKET_TIMEOUT", fallback=2)
 
-            # [MDB_DIR_PATH]
-            self.MDB_DIR_PATH = config.get("MDB_DIR_PATH", "MDB_DIR_PATH", fallback=r"C:\users\user\desktop\servodaata")
+            # [MONITORED_DIR_PATH]
+            self.MONITORED_DIR_PATH = config.get("MONITORED_DIR_PATH", "MONITORED_DIR_PATH", fallback=r"C:\users\user\desktop\servodaata")
 
             # [LOG_CONFIG]
             self.ENABLE_OPCUA_INFO_LOGS = config.getboolean("LOG_CONFIG", "ENABLE_OPCUA_INFO_LOGS", fallback=True)
+
+            # [STATIC_FILE_NAME]
+            self.STATIC_MONITORED_FILE = config.get("STATIC_FILE_NAME", "STATIC_MONITORED_FILE", fallback="test_file.txt")
+            self.STATIC_FILE_MODE = config.getboolean("STATIC_FILE_NAME", "STATIC_FILE_MODE", fallback=False)
 
             # Clamps config values
             self.SESSION_TIMEOUT = max(20_000, min(self.SESSION_TIMEOUT, 60_000))
@@ -52,9 +56,6 @@ class Config:
             self.DELAY_BETWEEN_WRITES = max(0.2, min(self.DELAY_BETWEEN_WRITES, 2.0))
             self.MAIN_LOOP_DELAY = max(0.2, min(self.MAIN_LOOP_DELAY, 2.0))
             self.SOCKET_TIMEOUT = max(1.0, min(self.SOCKET_TIMEOUT, 4.0))
-
-            self.TEST_FILE = config.get("TEST", "TEST_FILE", fallback="test_file.txt")
-            self.TEST_MODE = config.getboolean("TEST", "TEST_MODE", fallback=False)
 
 
         except (NoSectionError, NoOptionError) as err:

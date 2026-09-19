@@ -1,6 +1,4 @@
-1- thought of a bug.  i need to sweeeten up utils.py get_file_path. currently if the date switches and it tries to get the path
-at a bad time jsut before files been created it will crash.
-need to make it so it will fail if when getting config file path wrong but not the file its monitoring.
+
 
 2- maybe try and write some unit tests for logging etc. make sure all works and for file path and everything.
 also unit tests that update a file for testing?

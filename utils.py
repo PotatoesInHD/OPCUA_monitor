@@ -22,8 +22,8 @@ def get_file_path(directory: str, file_name: str) -> str:
         raise FatalConfigError(msg)
 
     target_isfile = os.path.isfile(target_path)
-    if not target_isfile:
-        msg = f"Error: {file_name} is not a file"
+    if not target_isfile and file_name == "config.ini":
+        msg = f"Error: Config.ini File Missing. Config.ini file must stay in same directory as opcua_mon.py/exe"
         logger.warning(msg)
         raise FatalConfigError(msg)
     return target_path

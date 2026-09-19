@@ -37,6 +37,7 @@ threadlock = threading.Lock()
 #open gui from infodisplay.py
 gui = Window(cfg, log_path)
 
+
 # -------------background thread-----------
 def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, interval: float=3) -> None:
     state = False
@@ -113,12 +114,29 @@ def opcua_write(node: Node, value: int | bool) -> None:
         time.sleep(cfg.DELAY_BETWEEN_WRITES)
 
 
-def get_mdb_filename() -> str:
+def get_monitored_filename() -> str:
     # "nt" means windows otherwise use "-" this is to remove padding zeros from date
     pad = "#" if os.name == "nt" else "-"
     date = datetime.datetime.now().astimezone().date()
-    mdb_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")
-    return mdb_filename
+    monitored_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")
+    return monitored_filename
+
+
+class Mtime:
+    def __init__(self):
+        self.warning_logged_mem = False
+    def get_modified_time(self, file_path: str) -> float | None:
+        try:
+            return os.stat(file_path).st_mtime
+            self.warning_logged_mem = False
+        except OSError as err:
+            if self.warning_logged_mem is False:
+                msg = f"Monitored file at '{file_path}' doesn't exist yet"
+                logger.warning(msg)
+                logger.info(msg)
+                self.warning_logged_mem = True
+                print(self.warning_logged_mem)
+            return
 
 
 def close_program(client) -> None:
@@ -140,19 +158,24 @@ def sleep_helper(seconds: float) -> None:
 
 
 def main() -> None:
+    modtime = Mtime()
     client: Client | None = None
     try:
-        mdb_filename: str = get_mdb_filename()
-        if cfg.TEST_MODE is False:
-            file_path = get_file_path(cfg.MDB_DIR_PATH, mdb_filename)
+        monitored_filename: str = get_monitored_filename()
+
+        if cfg.STATIC_FILE_MODE is False:
+            file_path = get_file_path(cfg.MONITORED_DIR_PATH, monitored_filename)
         else:
-            file_path: str = get_file_path(cfg.MDB_DIR_PATH, cfg.TEST_FILE)
+            file_path: str = get_file_path(cfg.MONITORED_DIR_PATH, cfg.STATIC_MONITORED_FILE)
+
+        gui.file_path = file_path
 
         # initialize time variables for monitoring file modified time
-        last_modified_time: float = os.stat(file_path).st_mtime
-        modified_time: float = last_modified_time
+        last_modified_time: float | None = modtime.get_modified_time(file_path)
+        modified_time: float | None = last_modified_time
 
         # Connect to OPCUA server
+
         gui.print_console_info()
         while client is None:
             client = opcua_connect(cfg.OPCUA_URL)
@@ -187,14 +210,18 @@ def main() -> None:
                 gui.window_update(opcua_server_state)
 
             # creates mdb database file name based on date.
-            mdb_filename = get_mdb_filename()
+            monitored_filename = get_monitored_filename()
 
-            modified_time = os.stat(file_path).st_mtime
-            if modified_time != last_modified_time:
+            modified_time = modtime.get_modified_time(file_path)
+
+            if modified_time and modified_time != last_modified_time:
                 last_modified_time = modified_time
                 date_st_mtime = datetime.datetime.fromtimestamp(last_modified_time)
-                logger.info(f"File: {mdb_filename}, last modified = {date_st_mtime}")
+                logger.info(f"File: {monitored_filename}, last modified = {date_st_mtime}")
+                gui.timestamp = str(date_st_mtime)
                 opcua_write(file_write_detected_node, True)
+            elif last_modified_time:
+                gui.timestamp = str(datetime.datetime.fromtimestamp(last_modified_time))
 
             gui.window_refresh()
             # Main Loop Delay
@@ -206,6 +233,7 @@ def main() -> None:
     except (KeyboardInterrupt, tk.TclError):
         logger.warning(f"Program closed by user")
         close_program(client)
+
 
 if __name__ == "__main__":
     try:

@@ -5,11 +5,12 @@ from exceptions import WindowCloseError
 
 
 class Window:
-    def __init__(self, cfg: Config, log_path: str, file_path: str="Facticulating...", timestamp: str="Unknown..."):
+    def __init__(self, cfg: Config, log_path: str, file_path: str="Facticulating...", timestamp: str="Unknown...", opcua_server_state: int | None=None):
         self.cfg = cfg
         self.log_path = log_path
         self.file_path = file_path
         self.timestamp = timestamp
+        self.opcua_server_state = opcua_server_state
 
         self.window = tk.Tk()
 
@@ -40,10 +41,10 @@ class Window:
         self.window.geometry("800x640")
         #self.window.resizable(False, False)
 
-        self.window_update(None)
+        self.window_update()
 
-    def window_update(self, opcua_server_state: int | None) -> None:
-        if opcua_server_state is None:
+    def window_update(self) -> None:
+        if self.opcua_server_state is None:
             text = "Connecting..."
             self.label_3.config(fg="Red")
         else:
@@ -60,9 +61,6 @@ class Window:
         self.label_7.config(text=f"Instructions    : Close Window to stop program safely.")
         self.label_8.config(text=f"{f'=' * 60}")
 
-        self.window_refresh()
-
-    def window_refresh(self) -> None:
         if not self.window.winfo_exists():
             raise WindowCloseError("Program closed by user but had WindowCloseError")
         self.window.update()

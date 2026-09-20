@@ -3,7 +3,6 @@ import logging
 from exceptions import FatalConfigError
 
 
-
 def get_file_path(directory: str, file_name: str) -> str:
     working_dir_abs = os.path.abspath(directory)
     target_path = os.path.normpath(os.path.join(working_dir_abs, file_name))
@@ -21,3 +20,9 @@ def get_file_path(directory: str, file_name: str) -> str:
         msg = f"Config.ini File Missing. Config.ini file must stay in same directory as opcua_mon.py/exe"
         raise FatalConfigError(msg)
     return target_path
+
+
+def update_file_path(file_path: str, monitored_filename) -> str:
+    dir = os.path.dirname(file_path)
+    new_path = os.path.normpath(os.path.join(dir, monitored_filename))
+    return new_path

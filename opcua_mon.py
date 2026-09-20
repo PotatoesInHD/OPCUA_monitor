@@ -1,4 +1,5 @@
 import os
+from socket import timeout
 import sys
 import time
 import logging
@@ -13,7 +14,7 @@ from opcua import Client, Node
 from exceptions import FatalConfigError
 from config import Config
 from logger_cfg import Logger, thread_exception_hook
-from utils import get_file_path
+from utils import get_file_path, update_file_path
 from infodisplay import Window, WindowCloseError
 
 #sys.stdout.reconfigure(line_buffering=True) this just for testing. this forces to print right away
@@ -44,6 +45,8 @@ setup_log.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
 threading.excepthook = thread_exception_hook
 # lock to prevent threads from read/write at same time
 threadlock = threading.Lock()
+# Stop even to tell the background thread when its time to stop so doesn't hang after closing tkinter
+stop_event = threading.Event()
 
 #open gui from infodisplay.py
 gui = Window(cfg, log_path)
@@ -52,14 +55,14 @@ gui = Window(cfg, log_path)
 # -------------background thread-----------
 def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, interval: float=3) -> None:
     state = False
-    while True:
+    while not stop_event.is_set():
         state = not state
         opcua_write(node, state)
-        time.sleep(interval)
+        stop_event.wait(timeout=interval)
 # ------------------------------------------
 
 
-def opcua_connect(url: str)-> "Client":
+def opcua_connect(url: str) -> Client | None:
         client = None
         try:
             client = Client(url, cfg.SOCKET_TIMEOUT)
@@ -78,14 +81,14 @@ def opcua_connect(url: str)-> "Client":
 
 
 def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
-        opcua_server_state: int | None = opcua_read(opcua_server_state_node)
-        if opcua_server_state:
+        gui.opcua_server_state = opcua_read(opcua_server_state_node)
+        if gui.opcua_server_state:
             opcua_disconnect(client)
 
-        while opcua_server_state is None:
+        while gui.opcua_server_state is None:
             try:
                 client.connect()
-                opcua_server_state = opcua_read(opcua_server_state_node)
+                gui.opcua_server_state = opcua_read(opcua_server_state_node)
             except TimeoutError:
                 logger.warning("Time Out Error: ...Retrying connection")
             except OSError as err:
@@ -154,17 +157,19 @@ def close_program(client: Client | None) -> None:
     if client:
         try:
             # Dont swap this for opcua_disconnect(). Sometimes hangs and extra unnecessary logs when closing program
+            stop_event.set()
             client.disconnect()
             sys.exit(130)
         except Exception as err:
             logger.warning(f"Error: {err} while program closing")
+    stop_event.set()
     os._exit(130)
 
 
 def sleep_helper(seconds: float) -> None:
     start_time = time.time()
     while time.time() - start_time < seconds:
-        gui.window_refresh()
+        gui.window_update()
         time.sleep(0.05)
 
 
@@ -195,33 +200,35 @@ def main() -> None:
         file_write_detected_node: Node = client.get_node(cfg.TO_PLC_FILE_WRITE_DETECTED_NODE)
         opcua_server_state_node: Node = client.get_node(cfg.OPCUA_SERVER_STATE)
 
-
         # -------Start heartbeat thread in the background------
-        heartbeart_thread = threading.Thread(
+        heartbeat_thread = threading.Thread(
             target=heartbeat_opcua,
             args=(heartbeat_node, client, opcua_server_state_node, cfg.HEART_BEAT_INTERVAL),
             daemon=True
         )
-        heartbeart_thread.start()
+        heartbeat_thread.start()
         # ------------------------------------------------------
 
         opcua_write(file_write_detected_node, False) #initiliaze write_detect to False
-        last_check_status_time = time.monotonic()
+        last_check_status_time = 0
         # MainLoop
         while True:
             # get server state and reconnect if required by check status interval time.
             time_now = time.monotonic()
             if (time_now - last_check_status_time) >= cfg.POLL_SERVER_STATUS_RATE:
                 last_check_status_time = time_now
-                opcua_server_state = opcua_read(opcua_server_state_node)
-                if opcua_server_state is None:
-                    gui.window_update(opcua_server_state)
+                gui.opcua_server_state = opcua_read(opcua_server_state_node)
+                if gui.opcua_server_state is None:
+                    gui.window_update()
                     opcua_reconnect(client, opcua_server_state_node)
-                gui.window_update(opcua_server_state)
+                gui.window_update()
 
-            # creates monitored file name based on date.
+            # update monitored file name and path
             monitored_filename = get_monitored_filename()
+            file_path = update_file_path(file_path, monitored_filename)
+            gui.file_path = file_path
 
+            # Monitor the files modified time
             modified_time = modtime.get_modified_time(file_path)
             if modified_time and modified_time != last_modified_time:
                 last_modified_time = modified_time
@@ -233,7 +240,7 @@ def main() -> None:
                 gui.timestamp = str(datetime.datetime.fromtimestamp(last_modified_time))
 
             # Main Loop Delay and GUI update
-            gui.window_refresh()
+            gui.window_update()
             sleep_helper(cfg.MAIN_LOOP_DELAY)
 
     except WindowCloseError as err:
@@ -249,7 +256,9 @@ if __name__ == "__main__":
         main()
     except FatalConfigError as err:
         logger.warning(f"Error: {err}")
+        stop_event.set()
         sys.exit(1)
     except Exception:
         logger.exception("Exception caught after main")
+        stop_event.set()
         sys.exit(1)

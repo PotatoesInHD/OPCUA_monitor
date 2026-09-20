@@ -6,6 +6,7 @@ import datetime
 import threading
 import tkinter as tk
 import cryptography # imported so pyinstaller doesn't complain
+from configparser import NoSectionError, NoOptionError
 
 from opcua import Client, Node
 
@@ -23,7 +24,14 @@ setup_log = Logger()
 log_path = setup_log.setup_logger()
 
 # setup config
-cfg = Config()
+try:
+    cfg = Config()
+except (NoSectionError, NoOptionError) as err:
+    logger.warning(f"Error in Config.ini file: {err}")
+    sys.exit(1)
+except Exception as err:
+    logger.warning(f"Error in Config.ini file: {err}")
+    sys.exit(1)
 
 #updates opcua inf log filter with value from config
 setup_log.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
@@ -138,7 +146,7 @@ class Mtime:
             return
 
 
-def close_program(client) -> None:
+def close_program(client: Client | None) -> None:
     if client:
         try:
             # Dont swap this for opcua_disconnect(). Sometimes hangs and extra unnecessary logs when closing program

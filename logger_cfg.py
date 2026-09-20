@@ -27,7 +27,8 @@ class Logger:
         logger = logging.getLogger()
         logger.setLevel(logging.INFO)
         info_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
-        err_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s')
+        format_str = '%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s'
+        err_formatter = logging.Formatter(format_str)
         # my info handler - logs anything less than WARNING
         log_file_path = os.path.normpath(os.path.join(target_path, "Info_Logs.log"))
         my_info_handler = RotatingFileHandler(

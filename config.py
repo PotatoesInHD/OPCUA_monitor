@@ -1,13 +1,9 @@
 import os
 import sys
-import logging
 import configparser
 
-
+from exceptions import FatalConfigError
 from utils import get_file_path
-
-
-logger = logging.getLogger(__name__)
 
 
 class Config:
@@ -31,12 +27,12 @@ class Config:
         self.OPCUA_URL = c.get("OPCUA_NODE", "OPCUA_URL")
 
         # [OPCUA_CONFIG]
-        self.SESSION_TIMEOUT = c.getint("OPCUA_CONFIG", "SESSION_TIMEOUT", fallback=30_000) or 30_000
+        self.SESSION_TIMEOUT = c.getint("OPCUA_CONFIG", "SESSION_TIMEOUT", fallback=30_000)
+        self.SOCKET_TIMEOUT = c.getfloat("OPCUA_CONFIG", "SOCKET_TIMEOUT", fallback=2)
         self.POLL_SERVER_STATUS_RATE = c.getfloat("OPCUA_CONFIG", "POLL_SERVER_STATUS_RATE", fallback=5.0)
         self.HEART_BEAT_INTERVAL = c.getfloat("OPCUA_CONFIG", "HEART_BEAT_INTERVAL", fallback=3.0)
         self.DELAY_BETWEEN_WRITES = c.getfloat("OPCUA_CONFIG", "DELAY_BETWEEN_WRITES", fallback=0.2)
         self.MAIN_LOOP_DELAY = c.getfloat("OPCUA_CONFIG", "MAIN_LOOP_DELAY", fallback=0.2)
-        self.SOCKET_TIMEOUT = c.getfloat("OPCUA_CONFIG", "SOCKET_TIMEOUT", fallback=2)
 
         # [MONITORED_DIR_PATH]
         mon_path_fallback = r"C:\users\user\desktop\servodaata"
@@ -51,8 +47,22 @@ class Config:
 
         # Clamps config values
         self.SESSION_TIMEOUT = max(20_000, min(self.SESSION_TIMEOUT, 60_000))
+        self.SOCKET_TIMEOUT = max(1.0, min(self.SOCKET_TIMEOUT, 4.0))
         self.POLL_SERVER_STATUS_RATE = max(2.0, min(self.POLL_SERVER_STATUS_RATE, 10.0))
         self.HEART_BEAT_INTERVAL = max(1.0, min(self.HEART_BEAT_INTERVAL, 5.0))
         self.DELAY_BETWEEN_WRITES = max(0.2, min(self.DELAY_BETWEEN_WRITES, 2.0))
         self.MAIN_LOOP_DELAY = max(0.2, min(self.MAIN_LOOP_DELAY, 2.0))
-        self.SOCKET_TIMEOUT = max(1.0, min(self.SOCKET_TIMEOUT, 4.0))
+
+        self.TO_PLC_HEARTBEAT_NODE = c.get("OPCUA_NODE", "TO_PLC_HEARTBEAT_NODE")
+        self.TO_PLC_FILE_WRITE_DETECTED_NODE = c.get("OPCUA_NODE", "TO_PLC_FILE_WRITE_DETECTED_NODE")
+        self.OPCUA_SERVER_STATE = c.get("OPCUA_NODE", "OPCUA_SERVER_STATE")
+        self.OPCUA_URL = c.get("OPCUA_NODE", "OPCUA_URL")
+
+        if not self.TO_PLC_HEARTBEAT_NODE:
+            raise FatalConfigError(f"Config.ini - TO_PLC_HEARTBEAT_NODE value missing")
+        if not self.TO_PLC_FILE_WRITE_DETECTED_NODE:
+            raise FatalConfigError(f"Config.ini - TO_PLC_FILE_WRITE_DETECTED_NODE value missing")
+        if not self.OPCUA_SERVER_STATE:
+            raise FatalConfigError(f"Config.ini - OPCUA_SERVER_STATE value missing")
+        if not self.OPCUA_URL:
+            raise FatalConfigError(f"Config.ini - OPCUA_URL value missing")

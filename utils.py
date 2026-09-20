@@ -1,11 +1,7 @@
 import os
 import logging
+from exceptions import FatalConfigError
 
-logger = logging.getLogger(__name__)
-
-
-class FatalConfigError(Exception):
-    """Raised when config data is missing. Such as file path"""
 
 
 def get_file_path(directory: str, file_name: str) -> str:
@@ -15,15 +11,13 @@ def get_file_path(directory: str, file_name: str) -> str:
 
     if not valid_target_dir:
         msg = (
-            f"Error: Cannot read {file_name} as it is outside"
+            f"Cannot read {file_name} as it is outside"
             f"the permitted working directory"
         )
-        logger.warning(msg)
         raise FatalConfigError(msg)
 
     target_isfile = os.path.isfile(target_path)
     if not target_isfile and file_name == "config.ini":
-        msg = f"Error: Config.ini File Missing. Config.ini file must stay in same directory as opcua_mon.py/exe"
-        logger.warning(msg)
+        msg = f"Config.ini File Missing. Config.ini file must stay in same directory as opcua_mon.py/exe"
         raise FatalConfigError(msg)
     return target_path

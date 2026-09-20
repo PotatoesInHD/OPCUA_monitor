@@ -1,13 +1,8 @@
 import tkinter as tk
-import logging
+
 from config import Config
+from exceptions import WindowCloseError
 
-
-logger = logging.getLogger(__name__)
-
-
-class WindowCloseError(Exception):
-    """Raised when gui window closes but doesnt give tk.tclerror"""
 
 class Window:
     def __init__(self, cfg: Config, log_path: str, file_path: str="Facticulating...", timestamp: str="Unknown..."):

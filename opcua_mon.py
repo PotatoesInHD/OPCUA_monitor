@@ -10,9 +10,10 @@ from configparser import NoSectionError, NoOptionError
 
 from opcua import Client, Node
 
+from exceptions import FatalConfigError
 from config import Config
 from logger_cfg import Logger, thread_exception_hook
-from utils import get_file_path, FatalConfigError
+from utils import get_file_path
 from infodisplay import Window, WindowCloseError
 
 #sys.stdout.reconfigure(line_buffering=True) this just for testing. this forces to print right away
@@ -27,10 +28,13 @@ log_path = setup_log.setup_logger()
 try:
     cfg = Config()
 except (NoSectionError, NoOptionError) as err:
-    logger.warning(f"Error in Config.ini file: {err}")
+    logger.warning(f"Error in Config.ini file: {err}", exc_info=True)
+    sys.exit(1)
+except FatalConfigError as err:
+    logger.warning(f"Error: {err}")
     sys.exit(1)
 except Exception as err:
-    logger.warning(f"Error in Config.ini file: {err}")
+    logger.warning(f"Error in Config.ini file: {err}", exc_info=True)
     sys.exit(1)
 
 #updates opcua inf log filter with value from config
@@ -243,8 +247,8 @@ def main() -> None:
 if __name__ == "__main__":
     try:
         main()
-    except FatalConfigError:
-        # error already logged in utils.py get_file_path(), so exit
+    except FatalConfigError as err:
+        logger.warning(f"Error: {err}")
         sys.exit(1)
     except Exception:
         logger.exception("Exception caught after main")

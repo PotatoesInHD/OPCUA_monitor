@@ -165,7 +165,7 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
             client.disconnect()
         except Exception as err:
             logger.warning(f"Error: {err} after program closing")
-            os._exit(130)
+            sys.exit(130)
     sys.exit(130)
 
 
@@ -210,9 +210,7 @@ def main() -> None:
             args=(heartbeat_node, client, opcua_server_state_node, cfg.HEART_BEAT_INTERVAL),
             daemon=True
         )
-
         heartbeat_thread.start()
-
         # ------------------------------------------------------
 
         opcua_write(file_write_detected_node, False) #initiliaze write_detect to False
@@ -229,10 +227,11 @@ def main() -> None:
                     opcua_reconnect(client, opcua_server_state_node)
                 gui.window_update()
 
-            # update monitored file name and path
-            monitored_filename = get_monitored_filename()
-            file_path = update_file_path(file_path, monitored_filename)
-            gui.file_path = file_path
+            # update monitored file name and path if not static mode
+            if cfg.STATIC_FILE_MODE is False:
+                monitored_filename = get_monitored_filename()
+                file_path = update_file_path(file_path, monitored_filename)
+                gui.file_path = file_path
 
             # Monitor the files modified time
             modified_time = modtime.get_modified_time(file_path)

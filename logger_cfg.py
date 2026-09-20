@@ -69,7 +69,8 @@ class Logger:
 
         return target_path
 
-    def update_log_filter(self, enable_opcua_info_logs: bool) ->None:
+
+    def update_log_filter(self, enable_opcua_info_logs: bool) -> None:
         self.opcua_info_handler.addFilter(lambda record: enable_opcua_info_logs and "opcua" in record.name)
 
 

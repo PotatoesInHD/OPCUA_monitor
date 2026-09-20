@@ -5,7 +5,11 @@ from exceptions import WindowCloseError
 
 
 class Window:
-    def __init__(self, cfg: Config, log_path: str, file_path: str="Facticulating...", timestamp: str="Unknown...", opcua_server_state: int | None=None):
+    def __init__(
+        self, cfg: Config, log_path: str, file_path: str="Facticulating...",
+        timestamp: str="Unknown...", opcua_server_state: int | None=None
+    ) -> None:
+
         self.cfg = cfg
         self.log_path = log_path
         self.file_path = file_path
@@ -37,7 +41,7 @@ class Window:
         self.label_8.pack(padx=17, fill="x")
 
         self.window.configure(background='black')
-        self.window.title("OPCUA STATUS")
+        self.window.title("OPCUA FILE MONITOR")
         self.window.geometry("800x640")
         #self.window.resizable(False, False)
 
@@ -51,7 +55,7 @@ class Window:
             text = "Connected!"
             self.label_3.config(fg="Green")
 
-        self.label_Title.config(text=f"{'=' * 60}\nOPCUA MONITORING")
+        self.label_Title.config(text=f"{'=' * 60}\nOPCUA FILE MONITORING STATUS")
         self.label_1.config(text=f"{f'=' * 60}")
         self.label_2.config(text=f"Target Server   : {self.cfg.OPCUA_URL}")
         self.label_3.config(text=f"Status          : {text}")

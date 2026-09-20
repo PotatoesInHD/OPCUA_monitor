@@ -17,7 +17,7 @@ from logger_cfg import Logger, thread_exception_hook
 from utils import get_file_path, update_file_path
 from infodisplay import Window, WindowCloseError
 
-#sys.stdout.reconfigure(line_buffering=True) this just for testing. this forces to print right away
+#sys.stdout.reconfigure(line_buffering=True) # this just for testing. this forces to print right away
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 setup_log = Logger()
 log_path = setup_log.setup_logger()
 
-# setup config
+# setup config, exit if fails
 try:
     cfg = Config()
 except (NoSectionError, NoOptionError) as err:
@@ -38,7 +38,7 @@ except Exception as err:
     logger.warning(f"Error in Config.ini file: {err}", exc_info=True)
     sys.exit(1)
 
-#updates opcua inf log filter with value from config
+# updates opcua info log filter with value from config.ini
 setup_log.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
 
 # overrides threading except hook to capture background thread exceptions and log them
@@ -110,7 +110,6 @@ def opcua_disconnect(client: Client) -> None:
 
 
 def opcua_read(node: Node) -> int | None:
-
     with threadlock: # prevents both threads from trying to read at same time
         try:
             return node.get_value()
@@ -176,17 +175,16 @@ def sleep_helper(seconds: float) -> None:
 
 
 def main() -> None:
-    heartbeat_thread: Thread | None = None
     modtime = Mtime()
+    heartbeat_thread: Thread | None = None
     client: Client | None = None
+
     try:
         monitored_filename: str = get_monitored_filename()
-
         if cfg.STATIC_FILE_MODE is False:
             file_path = get_file_path(cfg.MONITORED_DIR_PATH, monitored_filename)
         else:
             file_path: str = get_file_path(cfg.MONITORED_DIR_PATH, cfg.STATIC_MONITORED_FILE)
-
         gui.file_path = file_path
 
         # initialize time variables for monitoring file modified time
@@ -227,7 +225,7 @@ def main() -> None:
                 gui.window_update()
 
             # update monitored file name and path if not static mode
-            if cfg.STATIC_FILE_MODE is False:
+            if not cfg.STATIC_FILE_MODE:
                 monitored_filename = get_monitored_filename()
                 file_path = update_file_path(file_path, monitored_filename)
                 gui.file_path = file_path

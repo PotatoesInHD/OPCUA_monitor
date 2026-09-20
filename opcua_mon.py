@@ -1,5 +1,4 @@
 import os
-from socket import timeout
 import sys
 import time
 import logging
@@ -112,6 +111,7 @@ def opcua_disconnect(client: Client) -> None:
 
 
 def opcua_read(node: Node) -> int | None:
+
     with threadlock: # prevents both threads from trying to read at same time
         try:
             return node.get_value()
@@ -121,13 +121,14 @@ def opcua_read(node: Node) -> int | None:
 
 
 def opcua_write(node: Node, value: int | bool) -> None:
-    with threadlock: # prevents both threads from trying to write at same time
-        try:
-            node.set_value(value)
-        except Exception as err:
-            msg = str(err) or str(repr(err)) or "Uknown Error"
-            logger.warning(f"Error: {msg}")
-        time.sleep(cfg.DELAY_BETWEEN_WRITES)
+    if gui.opcua_server_state:
+        with threadlock: # prevents both threads from trying to write at same time
+            try:
+                node.set_value(value)
+            except Exception as err:
+                msg = str(err) or str(repr(err)) or "Uknown Error"
+                logger.warning(f"Error: {msg}")
+            time.sleep(cfg.DELAY_BETWEEN_WRITES)
 
 
 def get_monitored_filename() -> str:
@@ -163,9 +164,10 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
         try:
             client.disconnect()
         except Exception as err:
-            logger.warning(f"Error: {err} while program closing")
+            logger.warning(f"Error: {err} after program closing")
             os._exit(130)
     sys.exit(130)
+
 
 def sleep_helper(seconds: float) -> None:
     start_time = time.time()

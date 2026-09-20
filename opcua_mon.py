@@ -5,6 +5,7 @@ import time
 import logging
 import datetime
 import threading
+from threading import Thread
 import tkinter as tk
 import cryptography # imported so pyinstaller doesn't complain
 from configparser import NoSectionError, NoOptionError
@@ -59,6 +60,7 @@ def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, in
         state = not state
         opcua_write(node, state)
         stop_event.wait(timeout=interval)
+
 # ------------------------------------------
 
 
@@ -153,18 +155,17 @@ class Mtime:
             return
 
 
-def close_program(client: Client | None) -> None:
+def close_program(client: Client | None, heartbeat_thread: Thread | None) -> None:
+    if heartbeat_thread:
+        stop_event.set()
+        heartbeat_thread.join(timeout=5)
     if client:
         try:
-            # Dont swap this for opcua_disconnect(). Sometimes hangs and extra unnecessary logs when closing program
-            stop_event.set()
             client.disconnect()
-            sys.exit(130)
         except Exception as err:
             logger.warning(f"Error: {err} while program closing")
-    stop_event.set()
-    os._exit(130)
-
+            os._exit(130)
+    sys.exit(130)
 
 def sleep_helper(seconds: float) -> None:
     start_time = time.time()
@@ -174,6 +175,7 @@ def sleep_helper(seconds: float) -> None:
 
 
 def main() -> None:
+    heartbeat_thread: Thread | None = None
     modtime = Mtime()
     client: Client | None = None
     try:
@@ -206,7 +208,9 @@ def main() -> None:
             args=(heartbeat_node, client, opcua_server_state_node, cfg.HEART_BEAT_INTERVAL),
             daemon=True
         )
+
         heartbeat_thread.start()
+
         # ------------------------------------------------------
 
         opcua_write(file_write_detected_node, False) #initiliaze write_detect to False
@@ -245,10 +249,10 @@ def main() -> None:
 
     except WindowCloseError as err:
         logger.warning(f"Program closed by user but had WindowCloseError: {err}", exc_info=True)
-        close_program(client)
+        close_program(client, heartbeat_thread)
     except (KeyboardInterrupt, tk.TclError):
         logger.warning(f"Program closed by user")
-        close_program(client)
+        close_program(client, heartbeat_thread)
 
 
 if __name__ == "__main__":
@@ -256,9 +260,8 @@ if __name__ == "__main__":
         main()
     except FatalConfigError as err:
         logger.warning(f"Error: {err}")
-        stop_event.set()
-        sys.exit(1)
     except Exception:
         logger.exception("Exception caught after main")
+    finally:
         stop_event.set()
         sys.exit(1)

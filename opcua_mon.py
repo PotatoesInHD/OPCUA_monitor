@@ -59,7 +59,6 @@ def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, in
         state = not state
         opcua_write(node, state)
         stop_event.wait(timeout=interval)
-
 # ------------------------------------------
 
 
@@ -165,7 +164,7 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
             client.disconnect()
         except Exception as err:
             logger.warning(f"Error: {err} after program closing")
-            sys.exit(130)
+            os._exit(130)
     sys.exit(130)
 
 

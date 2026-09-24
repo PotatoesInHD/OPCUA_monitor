@@ -165,7 +165,7 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
         try:
             client.disconnect()
         except Exception as err:
-            logger.warning(f"Error: {err} after program closing")
+            logger.warning(f"Error after program closing: {err}")
             os._exit(130)
     sys.exit(130)
 

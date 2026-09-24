@@ -9,7 +9,7 @@ import tkinter as tk
 import cryptography # imported so pyinstaller doesn't complain
 from configparser import NoSectionError, NoOptionError
 
-from opcua import Client, Node
+from opcua import Client, Node, ua
 
 from exceptions import FatalConfigError
 from config import Config
@@ -66,6 +66,8 @@ def opcua_connect(url: str) -> Client | None:
         client = None
         try:
             client = Client(url, cfg.SOCKET_TIMEOUT)
+            client.set_user(cfg.OPCUA_USERNAME)
+            client.set_password(cfg.OPCUA_PASSWORD)
             client.session_timeout = cfg.SESSION_TIMEOUT
             client.connect()
             return client
@@ -82,7 +84,7 @@ def opcua_connect(url: str) -> Client | None:
 
 def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
         gui.opcua_server_state = opcua_read(opcua_server_state_node)
-        if gui.opcua_server_state:
+        if gui.opcua_server_state is not None:
             opcua_disconnect(client)
 
         while gui.opcua_server_state is None:
@@ -118,11 +120,12 @@ def opcua_read(node: Node) -> int | None:
             logger.warning(f"Error: {msg}")
 
 
-def opcua_write(node: Node, value: int | bool) -> None:
-    if gui.opcua_server_state:
+def opcua_write(node: Node, value: bool) -> None:
+    if gui.opcua_server_state is not None:
         with threadlock: # prevents both threads from trying to write at same time
             try:
-                node.set_value(value)
+                variant_val = ua.DataValue(ua.Variant(value, node.get_data_type_as_variant_type()))
+                node.set_value(variant_val)
             except Exception as err:
                 msg = str(err) or str(repr(err)) or "Uknown Error"
                 logger.warning(f"Error: {msg}")

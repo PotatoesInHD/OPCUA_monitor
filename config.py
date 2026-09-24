@@ -24,7 +24,11 @@ class Config:
         self.TO_PLC_HEARTBEAT_NODE = c.get("OPCUA_NODE", "TO_PLC_HEARTBEAT_NODE")
         self.TO_PLC_FILE_WRITE_DETECTED_NODE = c.get("OPCUA_NODE", "TO_PLC_FILE_WRITE_DETECTED_NODE")
         self.OPCUA_SERVER_STATE = c.get("OPCUA_NODE", "OPCUA_SERVER_STATE")
-        self.OPCUA_URL = c.get("OPCUA_NODE", "OPCUA_URL")
+
+        # [OPCUA_CLIENT]
+        self.OPCUA_URL = c.get("OPCUA_CLIENT", "OPCUA_URL")
+        self.OPCUA_USERNAME = c.get("OPCUA_CLIENT", "OPCUA_USERNAME", fallback="")
+        self.OPCUA_PASSWORD = c.get("OPCUA_CLIENT", "OPCUA_PASSWORD", fallback="")
 
         # [OPCUA_CONFIG]
         self.SESSION_TIMEOUT = c.getint("OPCUA_CONFIG", "SESSION_TIMEOUT", fallback=30_000)
@@ -52,11 +56,6 @@ class Config:
         self.HEART_BEAT_INTERVAL = max(1.0, min(self.HEART_BEAT_INTERVAL, 5.0))
         self.DELAY_BETWEEN_WRITES = max(0.2, min(self.DELAY_BETWEEN_WRITES, 2.0))
         self.MAIN_LOOP_DELAY = max(0.2, min(self.MAIN_LOOP_DELAY, 2.0))
-
-        self.TO_PLC_HEARTBEAT_NODE = c.get("OPCUA_NODE", "TO_PLC_HEARTBEAT_NODE")
-        self.TO_PLC_FILE_WRITE_DETECTED_NODE = c.get("OPCUA_NODE", "TO_PLC_FILE_WRITE_DETECTED_NODE")
-        self.OPCUA_SERVER_STATE = c.get("OPCUA_NODE", "OPCUA_SERVER_STATE")
-        self.OPCUA_URL = c.get("OPCUA_NODE", "OPCUA_URL")
 
         if not self.TO_PLC_HEARTBEAT_NODE:
             raise FatalConfigError(f"Config.ini - TO_PLC_HEARTBEAT_NODE value missing")

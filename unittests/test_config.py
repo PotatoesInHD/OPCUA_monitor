@@ -12,7 +12,13 @@ class TestConfig(unittest.TestCase):
             TO_PLC_HEARTBEAT_NODE = ns=1;i=2000
             TO_PLC_FILE_WRITE_DETECTED_NODE = ns=1;i=2002
             OPCUA_SERVER_STATE = ns=0;i=2259
+
+            [OPCUA_CLIENT]
+            # Example: opc.tcp://192.168.2.199:4840
             OPCUA_URL = opc.tcp://10.0.0.129:4840
+            OPCUA_USERNAME = techweld
+            OPCUA_PASSWORD = Robotic1
+
 
             [OPCUA_CONFIG]
             #testing empty
@@ -31,7 +37,13 @@ class TestConfig(unittest.TestCase):
             TO_PLC_HEARTBEAT_NODE = ns=1;i=2000
             TO_PLC_FILE_WRITE_DETECTED_NODE = ns=1;i=2002
             OPCUA_SERVER_STATE = ns=0;i=2259
+
+            [OPCUA_CLIENT]
+            # Example: opc.tcp://192.168.2.199:4840
             OPCUA_URL = opc.tcp://10.0.0.129:4840
+            OPCUA_USERNAME = techweld
+            OPCUA_PASSWORD = Robotic1
+
 
             [OPCUA_CONFIG]
             SESSION_TIMEOUT = 0
@@ -48,7 +60,12 @@ class TestConfig(unittest.TestCase):
             TO_PLC_HEARTBEAT_NODE = ns=1;i=2000
             TO_PLC_FILE_WRITE_DETECTED_NODE = ns=1;i=2002
             OPCUA_SERVER_STATE = ns=0;i=2259
+
+            [OPCUA_CLIENT]
+            # Example: opc.tcp://192.168.2.199:4840
             OPCUA_URL = opc.tcp://10.0.0.129:4840
+            OPCUA_USERNAME = techweld
+            OPCUA_PASSWORD = Robotic1
 
             [OPCUA_CONFIG]
             SESSION_TIMEOUT = 60_001
@@ -66,7 +83,11 @@ class TestConfig(unittest.TestCase):
             TO_PLC_HEARTBEAT_NODE =
             TO_PLC_FILE_WRITE_DETECTED_NODE = ns=1;i=2002
             OPCUA_SERVER_STATE = ns=0;i=2259
+            [OPCUA_CLIENT]
+            # Example: opc.tcp://192.168.2.199:4840
             OPCUA_URL = opc.tcp://10.0.0.129:4840
+            OPCUA_USERNAME = techweld
+            OPCUA_PASSWORD = Robotic1
             """)
 
 
@@ -76,7 +97,12 @@ class TestConfig(unittest.TestCase):
             TO_PLC_HEARTBEAT_NODE = ns=1;i=2000
             TO_PLC_FILE_WRITE_DETECTED_NODE =
             OPCUA_SERVER_STATE = ns=0;i=2259
+
+            [OPCUA_CLIENT]
+            # Example: opc.tcp://192.168.2.199:4840
             OPCUA_URL = opc.tcp://10.0.0.129:4840
+            OPCUA_USERNAME = techweld
+            OPCUA_PASSWORD = Robotic1
             """)
 
         with open("test_exception3_config.ini", "w") as f:
@@ -85,7 +111,11 @@ class TestConfig(unittest.TestCase):
             TO_PLC_HEARTBEAT_NODE = ns=1;i=2000
             TO_PLC_FILE_WRITE_DETECTED_NODE = ns=1;i=2002
             OPCUA_SERVER_STATE =
+            [OPCUA_CLIENT]
+            # Example: opc.tcp://192.168.2.199:4840
             OPCUA_URL = opc.tcp://10.0.0.129:4840
+            OPCUA_USERNAME = techweld
+            OPCUA_PASSWORD = Robotic1
             """)
 
         with open("test_exception4_config.ini", "w") as f:
@@ -94,7 +124,11 @@ class TestConfig(unittest.TestCase):
             TO_PLC_HEARTBEAT_NODE = ns=1;i=2000
             TO_PLC_FILE_WRITE_DETECTED_NODE = ns=1;i=2002
             OPCUA_SERVER_STATE = ns=0;i=2259
+            [OPCUA_CLIENT]
+            # Example: opc.tcp://192.168.2.199:4840
             OPCUA_URL =
+            OPCUA_USERNAME = techweld
+            OPCUA_PASSWORD = Robotic1
             """)
         return super().setUp()
 

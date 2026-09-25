@@ -48,9 +48,9 @@ threadlock = threading.Lock()
 # Stop even to tell the background thread when its time to stop so doesn't hang after closing tkinter
 stop_event = threading.Event()
 
-#open gui from infodisplay.py
+# open gui from infodisplay.py
 gui = Window(cfg, log_path)
-#pass through gui Window instance
+# setup custom handler for gui to display last error
 setup_log.setup_gui_handler(gui)
 
 
@@ -85,9 +85,7 @@ def opcua_connect(url: str) -> Client | None:
 
 
 def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
-        gui.opcua_server_state = opcua_read(opcua_server_state_node)
-        if gui.opcua_server_state is not None:
-            opcua_disconnect(client)
+        opcua_disconnect(client)
 
         while gui.opcua_server_state is None:
             try:
@@ -145,17 +143,16 @@ def get_monitored_filename() -> str:
 class Mtime:
     def __init__(self):
         self.warning_logged_mem = False
+
     def get_modified_time(self, file_path: str) -> float | None:
         try:
             return os.stat(file_path).st_mtime
-            self.warning_logged_mem = False
         except OSError as err:
             if self.warning_logged_mem is False:
                 msg = f"Error: {err} - Monitored file at '{file_path}' doesn't exist yet"
                 logger.warning(msg)
                 logger.info(msg)
                 self.warning_logged_mem = True
-                print(self.warning_logged_mem)
             return
 
 

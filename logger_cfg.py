@@ -84,8 +84,11 @@ class Logger:
 
 
     def setup_gui_handler(self, gui: Window) -> None:
+        format_str = '%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s'
+        gui_formatter = logging.Formatter(format_str)
         self.gui_handler = GuiErrorHandler(gui)
         self.gui_handler.setLevel(logging.WARNING)
+        self.gui_handler.setFormatter(gui_formatter)
         self.logger.addHandler(self.gui_handler)
 
 

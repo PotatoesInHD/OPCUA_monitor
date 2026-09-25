@@ -9,7 +9,12 @@
   - Static file mode and file name can be configured in config.ini.
 - It writes a heart beat signal to an OPCUA node so the PLC knows when communication is lost.
 - If there is a disconnection such as a network cable unplugged or PLC power cycle it will continue to log errors and attempt reconnecting.
-- It will display connection status, path to log files and most recent file timestamp to the GUI.
+- GUI will display:
+  - Connection status
+  - Path to log files
+  - Path to monitored file
+  - Most recent file timestamp.
+  - Last error log if connection status isn't connected
 - It will handle and log all errors to the log files.
 - It will run on windows/linux and as a script or as an exe.
   - It handles windows/linux and script/exe pathing differences on its own.

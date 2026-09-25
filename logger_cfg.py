@@ -2,9 +2,18 @@ import os
 import sys
 import logging
 from logging.handlers import RotatingFileHandler
-
+from infodisplay import Window
 
 logger = logging.getLogger(__name__)
+
+
+class GuiErrorHandler(logging.Handler):
+    def __init__(self, gui: Window):
+        super().__init__()
+        self.gui = gui
+
+    def emit(self, record: logging.LogRecord):
+        self.gui.last_error = self.format(record)
 
 
 class Logger:
@@ -12,7 +21,6 @@ class Logger:
         self.opcua_info_handler: RotatingFileHandler
 
     def setup_logger(self) -> str:
-
         # If running compiled inside PyInstaller:
         if getattr(sys, "frozen", False):
             # if running as exe then working directory is where sys.executable is
@@ -24,8 +32,8 @@ class Logger:
         target_path = os.path.normpath(os.path.join(working_directory, "logs"))
         os.makedirs(target_path, exist_ok=True)
 
-        logger = logging.getLogger()
-        logger.setLevel(logging.INFO)
+        self.logger = logging.getLogger()
+        self.logger.setLevel(logging.INFO)
         info_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
         format_str = '%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s'
         err_formatter = logging.Formatter(format_str)
@@ -41,7 +49,7 @@ class Logger:
         my_info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
         my_info_handler.addFilter(lambda record: "opcua" not in record.name)
         my_info_handler.setFormatter(info_formatter)
-        logger.addHandler(my_info_handler)
+        self.logger.addHandler(my_info_handler)
 
         # err handler - logs anything >= WARNING
         err_log_file_path = os.path.normpath(os.path.join(target_path, "Error_Logs.log"))
@@ -53,7 +61,7 @@ class Logger:
         )
         err_handler.setFormatter(err_formatter)
         err_handler.addFilter(lambda record: record.levelno >= logging.WARNING)
-        logger.addHandler(err_handler)
+        self.logger.addHandler(err_handler)
 
         # opcua info handler - logs anything less than WARNING - can be enabled/disabled
         opcua_log_file_path = os.path.normpath(os.path.join(target_path, "OPCUA_Info_Logs.log"))
@@ -66,13 +74,19 @@ class Logger:
         self.opcua_info_handler.setLevel(logging.INFO)
         self.opcua_info_handler.addFilter(lambda record: record.levelno < logging.WARNING)
         self.opcua_info_handler.setFormatter(info_formatter)
-        logger.addHandler(self.opcua_info_handler)
+        self.logger.addHandler(self.opcua_info_handler)
 
         return target_path
 
 
     def update_log_filter(self, enable_opcua_info_logs: bool) -> None:
         self.opcua_info_handler.addFilter(lambda record: enable_opcua_info_logs and "opcua" in record.name)
+
+
+    def setup_gui_handler(self, gui: Window) -> None:
+        self.gui_handler = GuiErrorHandler(gui)
+        self.gui_handler.setLevel(logging.WARNING)
+        self.logger.addHandler(self.gui_handler)
 
 
 def thread_exception_hook(args) -> None:

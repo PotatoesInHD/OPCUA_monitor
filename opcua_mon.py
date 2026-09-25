@@ -50,6 +50,8 @@ stop_event = threading.Event()
 
 #open gui from infodisplay.py
 gui = Window(cfg, log_path)
+#pass through gui Window instance
+setup_log.setup_gui_handler(gui)
 
 
 # -------------background thread-----------
@@ -124,8 +126,8 @@ def opcua_write(node: Node, value: bool) -> None:
     if gui.opcua_server_state is not None:
         with threadlock: # prevents both threads from trying to write at same time
             try:
-                variant_val = ua.DataValue(ua.Variant(value, node.get_data_type_as_variant_type()))
-                node.set_value(variant_val)
+                data_value = ua.DataValue(ua.Variant(value, node.get_data_type_as_variant_type()))
+                node.set_value(data_value)
             except Exception as err:
                 msg = str(err) or str(repr(err)) or "Uknown Error"
                 logger.warning(f"Error: {msg}")

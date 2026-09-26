@@ -69,7 +69,7 @@ class Window:
         self.label_7.config(text=f"Instructions    : Close Window to stop program safely.")
         self.label_8.config(text=f"{f'=' * 80}")
         if self.last_error and self.opcua_server_state is None:
-            self.label_9.config(text=f"Last Error log  : {self.last_error}")
+            self.label_9.config(text=f"Last Error log  : {self.last_error}", fg="Red")
         else:
             self.label_9.config(text=f"")
 

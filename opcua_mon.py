@@ -45,7 +45,7 @@ setup_log.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
 threading.excepthook = thread_exception_hook
 # lock to prevent threads from read/write at same time
 threadlock = threading.Lock()
-# Stop even to tell the background thread when its time to stop so doesn't hang after closing tkinter
+# Stop event to tell the background thread when its time to stop so doesn't hang after closing tkinter
 stop_event = threading.Event()
 
 # open gui from infodisplay.py
@@ -106,7 +106,7 @@ def opcua_disconnect(client: Client) -> None:
         try:
             client.disconnect()
         except Exception as err:
-            msg = str(err) or str(repr(err)) or "Uknown Error"
+            msg = str(err) or str(repr(err)) or "Unknown Error"
             logger.warning(f"Error: {msg}")
         sleep_helper(1)
 
@@ -133,7 +133,7 @@ def opcua_write(node: Node, value: bool) -> None:
 
 
 def get_monitored_filename() -> str:
-    # "nt" means windows otherwise use "-" this is to remove padding zeros from date
+    # windows use "#". "nt" means windows otherwise use "-" this is to remove padding zeros from date
     pad = "#" if os.name == "nt" else "-"
     date = datetime.datetime.now().astimezone().date()
     monitored_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")

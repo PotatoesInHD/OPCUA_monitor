@@ -11,9 +11,10 @@ wheels/
 .venv
 
 # User-generated files
-opcua_mon_sep13_415pm_mdb_stuff_may_want.py
-opcua_mon_sep14_bu_before_cleaning.py
+zopcua_mon_sep13_415pm_mdb_stuff_may_want.py
+zopcua_mon_sep14_bu_before_cleaning.py
 debug_tools.py
 logs/
 *.mdb
 todolist.txt
+zlogger_cfg_buoct4_2026.py

@@ -15,6 +15,7 @@
   - Path to monitored file
   - Most recent file timestamp.
   - Last error log if connection status isn't connected
+  - Background heartbeat thread status if it has crashed
 - It will handle and log all errors to the log files.
 - It will run on windows/linux and as a script or as an exe.
   - It handles windows/linux and script/exe pathing differences on its own.

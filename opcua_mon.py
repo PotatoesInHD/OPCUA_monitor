@@ -242,9 +242,8 @@ def main() -> None:
             elif last_modified_time:
                 gui.timestamp = str(datetime.datetime.fromtimestamp(last_modified_time))
 
-            gui.heartbeat_thread_status = heartbeat_thread.is_alive()
-
             # Main Loop Delay and GUI update
+            gui.heartbeat_thread_status = heartbeat_thread.is_alive()
             gui.window_update()
             sleep_helper(cfg.MAIN_LOOP_DELAY)
 

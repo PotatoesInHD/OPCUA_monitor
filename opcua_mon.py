@@ -86,7 +86,6 @@ def opcua_connect(url: str) -> Client | None:
 
 def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
         opcua_disconnect(client)
-
         while gui.opcua_server_state is None:
             try:
                 client.connect()
@@ -242,6 +241,8 @@ def main() -> None:
                 opcua_write(file_write_detected_node, True)
             elif last_modified_time:
                 gui.timestamp = str(datetime.datetime.fromtimestamp(last_modified_time))
+
+            gui.heartbeat_thread_status = heartbeat_thread.is_alive()
 
             # Main Loop Delay and GUI update
             gui.window_update()

@@ -5,17 +5,15 @@ from exceptions import WindowCloseError
 
 
 class Window:
-    def __init__(
-        self, cfg: Config, log_path: str, file_path: str="Facticulating...",
-        timestamp: str="Unknown...", opcua_server_state: int | str | None=None,
-    ) -> None:
+    def __init__(self, cfg: Config, log_path: str) -> None:
 
         self.cfg = cfg
         self.log_path = log_path
-        self.file_path = file_path
-        self.timestamp = timestamp
-        self.opcua_server_state = opcua_server_state
+        self.file_path: str = "Facticulating..."
+        self.timestamp: str = "Unknown..."
+        self.opcua_server_state: int | str | None = None
         self.last_error: str | None = None
+        self.heartbeat_thread_status: bool | None = None
 
         self.window = tk.Tk()
 
@@ -30,7 +28,7 @@ class Window:
         self.label_7 = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
         self.label_8 = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
         self.label_9 = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
-
+        self.label_10 = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
 
         self.label_space.pack(pady=30, fill="both")
         self.label_Title.pack(padx=17, fill="x")
@@ -43,6 +41,7 @@ class Window:
         self.label_7.pack(padx=55, fill="x")
         self.label_8.pack(padx=17, fill="x")
         self.label_9.pack(padx=55, fill="x")
+        self.label_10.pack(padx=55, fill="x")
 
         self.window.configure(background='black')
         self.window.title("OPCUA FILE MONITOR")
@@ -72,6 +71,10 @@ class Window:
             self.label_9.config(text=f"Last Error log  : {self.last_error}", fg="Red")
         else:
             self.label_9.config(text=f"")
+        if self.heartbeat_thread_status is False:
+            self.label_10.config(text=f"Background Thread Status:  Heartbeat_thread crashed!", fg="Red")
+        else:
+            self.label_10.config(text=f"")
 
         if not self.window.winfo_exists():
             raise WindowCloseError("Program closed by user but had WindowCloseError")

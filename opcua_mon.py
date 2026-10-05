@@ -11,11 +11,11 @@ from configparser import NoSectionError, NoOptionError
 
 from opcua import Client, Node, ua
 
-from exceptions import FatalConfigError
 from config import Config
-from logger_cfg import Logger, thread_exception_hook
-from utils import get_file_path, update_file_path
+from exceptions import FatalConfigError
 from infodisplay import Window, WindowCloseError
+from utils import get_file_path, update_file_path
+from logger_cfg import Logger, thread_exception_hook
 
 #sys.stdout.reconfigure(line_buffering=True) # this just for testing. this forces to print right away
 
@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 # sets up logging from logger_cfg.py
 setup_log = Logger()
-log_path = setup_log.setup_logger()
+log_path: str = setup_log.setup_logger()
 
 # setup config, exit if fails
 try:
@@ -53,7 +53,6 @@ gui = Window(cfg, log_path)
 # setup custom handler for gui to display last error
 setup_log.setup_gui_handler(gui)
 
-
 # -------------background thread-----------
 def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, interval: float=3) -> None:
     state = False
@@ -62,7 +61,6 @@ def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, in
         opcua_write(node, state)
         stop_event.wait(timeout=interval)
 # ------------------------------------------
-
 
 def opcua_connect(url: str) -> Client | None:
         client = None
@@ -73,10 +71,8 @@ def opcua_connect(url: str) -> Client | None:
             client.session_timeout = cfg.SESSION_TIMEOUT
             client.connect()
             return client
-        except TimeoutError:
-            logger.warning("Time Out Error: ...Retrying connection")
         except OSError as err:
-            logger.warning(f"Network Error: {err}...Retrying connection")
+            logger.warning(f"Error: {err}...Retrying connection")
         except Exception as err:
             if "BadTooManySessions" in str(err):
                 sleep_helper(cfg.SESSION_TIMEOUT / 1000)
@@ -90,10 +86,8 @@ def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
             try:
                 client.connect()
                 gui.opcua_server_state = opcua_read(opcua_server_state_node)
-            except TimeoutError:
-                logger.warning("Time Out Error: ...Retrying connection")
             except OSError as err:
-                logger.warning(f"Network Error: {err}...Retrying connection")
+                logger.warning(f"Error: {err}...Retrying connection")
             except Exception as err:
                 if "BadTooManySessions" in str(err):
                     sleep_helper(cfg.SESSION_TIMEOUT / 1000)
@@ -132,7 +126,7 @@ def opcua_write(node: Node, value: bool) -> None:
 
 
 def get_monitored_filename() -> str:
-    # windows use "#". "nt" means windows otherwise use "-" this is to remove padding zeros from date
+    # windows uses "#". "nt" means windows otherwise use "-" this is to remove padding zeros from date
     pad = "#" if os.name == "nt" else "-"
     date = datetime.datetime.now().astimezone().date()
     monitored_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")

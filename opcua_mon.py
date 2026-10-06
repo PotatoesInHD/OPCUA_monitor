@@ -139,7 +139,9 @@ class Mtime:
 
     def get_modified_time(self, file_path: str) -> float | None:
         try:
-            return os.stat(file_path).st_mtime
+            modified_time = os.stat(file_path).st_mtime
+            self.warning_logged_mem = False
+            return modified_time
         except OSError as err:
             if self.warning_logged_mem is False:
                 msg = f"Error: {err} - Monitored file at '{file_path}' doesn't exist yet"

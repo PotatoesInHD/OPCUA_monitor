@@ -143,7 +143,7 @@ class TestConfig(unittest.TestCase):
         self.assertEqual(cfg_fallback.DELAY_BETWEEN_WRITES, 0.2)
         self.assertEqual(cfg_fallback.MAIN_LOOP_DELAY, 0.2)
         # [MONITORED_DIR_PATH]
-        self.assertEqual(cfg_fallback.MONITORED_DIR_PATH, r"C:\users\user\desktop\servodaata")
+        self.assertEqual(cfg_fallback.MONITORED_DIR_PATH, r"C:\Users\User\Desktop\servodaata")
         self.assertEqual(cfg_fallback.ENABLE_OPCUA_INFO_LOGS, True)
         # [STATIC_FILE_NAME]
         self.assertEqual(cfg_fallback.STATIC_MONITORED_FILE, "static_file.txt")

@@ -205,7 +205,7 @@ def main() -> None:
         heartbeat_thread.start()
         # ------------------------------------------------------
 
-        opcua_write(file_write_detected_node, False) #initiliaze write_detect to False
+        opcua_write(file_write_detected_node, False) # initiliaze write_detect to False
         last_check_status_time = 0
         # MainLoop
         while True:

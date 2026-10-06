@@ -39,7 +39,7 @@ class Config:
         self.MAIN_LOOP_DELAY = c.getfloat("OPCUA_CONFIG", "MAIN_LOOP_DELAY", fallback=0.2)
 
         # [MONITORED_DIR_PATH]
-        mon_path_fallback = r"C:\users\user\desktop\servodaata"
+        mon_path_fallback = r"C:\Users\User\Desktop\servodaata"
         self.MONITORED_DIR_PATH = c.get("MONITORED_DIR_PATH", "MONITORED_DIR_PATH", fallback=mon_path_fallback)
 
         # [LOG_CONFIG]

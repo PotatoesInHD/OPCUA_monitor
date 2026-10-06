@@ -6,7 +6,6 @@ from exceptions import WindowCloseError
 
 class Window:
     def __init__(self, cfg: Config, log_path: str) -> None:
-
         self.cfg = cfg
         self.log_path = log_path
         self.file_path: str = "Facticulating..."
@@ -46,9 +45,9 @@ class Window:
         self.window.configure(background='black')
         self.window.title("OPCUA FILE MONITOR")
         self.window.geometry("800x640")
-        #self.window.resizable(False, False)
 
         self.window_update()
+
 
     def window_update(self) -> None:
         if self.opcua_server_state is None:
@@ -72,13 +71,14 @@ class Window:
         else:
             self.label_9.config(text=f"")
         if self.heartbeat_thread_status is False:
-            self.label_10.config(text=f"Background Thread Status:  Heartbeat_thread crashed!", fg="Red")
+            self.label_10.config(text=f"Background Thread Status: Heartbeat_thread crashed!", fg="Red")
         else:
             self.label_10.config(text=f"")
 
         if not self.window.winfo_exists():
             raise WindowCloseError("Program closed by user but had WindowCloseError")
         self.window.update()
+
 
     def print_console_info(self) -> None:
         print("=" * 60)

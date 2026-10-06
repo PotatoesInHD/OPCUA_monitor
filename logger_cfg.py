@@ -8,11 +8,11 @@ logger = logging.getLogger(__name__)
 
 
 class GuiErrorHandler(logging.Handler):
-    def __init__(self, gui: Window):
+    def __init__(self, gui: Window) -> None:
         super().__init__()
         self.gui = gui
 
-    def emit(self, record: logging.LogRecord):
+    def emit(self, record: logging.LogRecord) -> None:
         self.gui.last_error = self.format(record)
 
 

@@ -125,14 +125,6 @@ def opcua_write(node: Node, value: bool) -> None:
             time.sleep(cfg.DELAY_BETWEEN_WRITES)
 
 
-def get_monitored_filename() -> str:
-    # windows uses "#". "nt" means windows otherwise use "-" this is to remove padding zeros from date
-    pad = "#" if os.name == "nt" else "-"
-    date = datetime.datetime.now().astimezone().date()
-    monitored_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")
-    return monitored_filename
-
-
 class Mtime:
     def __init__(self) -> None:
         self.warning_logged_mem = False
@@ -149,6 +141,14 @@ class Mtime:
                 logger.info(msg)
                 self.warning_logged_mem = True
             return
+
+
+def get_monitored_filename() -> str:
+    # windows uses "#". "nt" means windows otherwise use "-" this is to remove padding zeros from date
+    pad = "#" if os.name == "nt" else "-"
+    date = datetime.datetime.now().astimezone().date()
+    monitored_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")
+    return monitored_filename
 
 
 def close_program(client: Client | None, heartbeat_thread: Thread | None) -> None:

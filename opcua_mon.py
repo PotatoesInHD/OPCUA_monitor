@@ -54,7 +54,7 @@ gui = Window(cfg, log_path)
 setup_log.setup_gui_handler(gui)
 
 # -------------background thread-----------
-def heartbeat_opcua(node: Node, client: Client, opcua_server_state_node: str, interval: float=3) -> None:
+def heartbeat_opcua(node: Node, interval: float=3) -> None:
     state = False
     while not stop_event.is_set():
         state = not state
@@ -201,7 +201,7 @@ def main() -> None:
         # -------Start heartbeat thread in the background------
         heartbeat_thread = threading.Thread(
             target=heartbeat_opcua,
-            args=(heartbeat_node, client, opcua_server_state_node, cfg.HEART_BEAT_INTERVAL),
+            args=(heartbeat_node, cfg.HEART_BEAT_INTERVAL),
             daemon=True
         )
         heartbeat_thread.start()

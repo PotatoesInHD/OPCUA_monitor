@@ -134,7 +134,7 @@ def get_monitored_filename() -> str:
 
 
 class Mtime:
-    def __init__(self):
+    def __init__(self) -> None:
         self.warning_logged_mem = False
 
     def get_modified_time(self, file_path: str) -> float | None:

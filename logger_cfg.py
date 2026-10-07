@@ -4,6 +4,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 from infodisplay import Window
 
+
 logger = logging.getLogger(__name__)
 
 

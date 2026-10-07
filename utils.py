@@ -19,7 +19,7 @@ def get_file_path(directory: str, file_name: str) -> str:
     return target_path
 
 
-def update_file_path(file_path: str, monitored_filename) -> str:
+def update_file_path(file_path: str, monitored_filename: str) -> str:
     dir = os.path.dirname(file_path)
     new_path = os.path.normpath(os.path.join(dir, monitored_filename))
     return new_path

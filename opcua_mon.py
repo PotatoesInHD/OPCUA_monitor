@@ -17,41 +17,15 @@ from infodisplay import Window, WindowCloseError
 from utils import get_file_path, update_file_path
 from logger_cfg import Logger, thread_exception_hook
 
-#sys.stdout.reconfigure(line_buffering=True) # this just for testing. this forces to print right away
 
 logger = logging.getLogger(__name__)
-
-# sets up logging from logger_cfg.py
-setup_log = Logger()
-log_path: str = setup_log.setup_logger()
-
-# setup config, exit if fails
-try:
-    cfg = Config()
-except (NoSectionError, NoOptionError) as err:
-    logger.warning(f"Error in Config.ini file: {err}", exc_info=True)
-    sys.exit(1)
-except FatalConfigError as err:
-    logger.warning(f"Error: {err}")
-    sys.exit(1)
-except Exception as err:
-    logger.warning(f"Error in Config.ini file: {err}", exc_info=True)
-    sys.exit(1)
-
-# updates opcua info log filter with value from config.ini
-setup_log.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
-
-# overrides threading except hook to capture background thread exceptions and log them
-threading.excepthook = thread_exception_hook
-# lock to prevent threads from read/write at same time
+# Global lock to prevent threads from read/write at same time
 threadlock = threading.Lock()
-# Stop event to tell the background thread when its time to stop so doesn't hang after closing tkinter
+# Global Stop event to tell the background thread when its time to stop
 stop_event = threading.Event()
-
-# open gui from infodisplay.py
-gui = Window(cfg, log_path)
-# setup custom handler for gui to display last error
-setup_log.setup_gui_handler(gui)
+# Globals - Instance created in main
+gui: Window
+cfg: Config
 
 # -------------background thread-----------
 def heartbeat_opcua(node: Node, interval: float=3) -> None:
@@ -171,12 +145,45 @@ def sleep_helper(seconds: float) -> None:
         time.sleep(0.05)
 
 
+def initialize_logger() -> tuple[str, Logger]:
+    log_instance = Logger()
+    log_path: str = log_instance.setup_logger()
+    return (log_path, log_instance)
+
+
+def initialize_config():
+    global cfg        # setup config, exit if fails
+    try:
+        cfg = Config()
+    except (NoSectionError, NoOptionError) as err:
+        logger.warning(f"Error in Config.ini file: {err}", exc_info=True)
+        sys.exit(1)
+    except FatalConfigError as err:
+        logger.warning(f"Error: {err}")
+        sys.exit(1)
+    except Exception as err:
+        logger.warning(f"Error in Config.ini file: {err}", exc_info=True)
+        sys.exit(1)
+
+
+def initiliaze_gui(log_path: str, log_instance: Logger) -> None:
+    global gui
+    gui = Window(cfg, log_path)
+    log_instance.setup_gui_handler(gui)
+
+
 def main() -> None:
+    # Initiliazing
     modtime = Mtime()
     heartbeat_thread: Thread | None = None
     client: Client | None = None
+    log_path, log_instance = initialize_logger()
+    initialize_config()
+    log_instance.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
+    initiliaze_gui(log_path, log_instance)
 
     try:
+        # Get filename and get different file path depending on STATIC_FILE_MODE
         monitored_filename: str = get_monitored_filename()
         if cfg.STATIC_FILE_MODE is False:
             file_path = get_file_path(cfg.MONITORED_DIR_PATH, monitored_filename)
@@ -204,11 +211,14 @@ def main() -> None:
             args=(heartbeat_node, cfg.HEART_BEAT_INTERVAL),
             daemon=True
         )
+        # overrides threading except hook to capture background thread exceptions and log them
+        threading.excepthook = thread_exception_hook
         heartbeat_thread.start()
         # ------------------------------------------------------
 
         opcua_write(file_write_detected_node, False) # initiliaze write_detect to False
         last_check_status_time = 0
+        # End of Initializing
         # MainLoop
         while True:
             # get server state and reconnect if required by check status interval time.

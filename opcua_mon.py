@@ -37,7 +37,6 @@ def heartbeat_opcua(node: Node, interval: float=3) -> None:
 # ------------------------------------------
 
 def opcua_connect(url: str) -> Client | None:
-        client = None
         try:
             client = Client(url, cfg.SOCKET_TIMEOUT)
             client.set_user(cfg.OPCUA_USERNAME)

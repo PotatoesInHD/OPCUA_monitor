@@ -43,6 +43,7 @@ def opcua_connect(client: Client) -> None:
             client.set_password(cfg.OPCUA_PASSWORD)
             client.session_timeout = cfg.SESSION_TIMEOUT
             client.connect()
+            return
         except OSError as err:
             logger.warning(f"Error: {err}...Retrying connection")
         except Exception as err:

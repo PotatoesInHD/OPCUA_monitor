@@ -50,7 +50,7 @@ def opcua_connect(client: Client) -> None:
             if "BadTooManySessions" in str(err):
                 sleep_helper(cfg.SESSION_TIMEOUT / 1000)
             logger.warning(f"Unexpected Error: {err}...Retrying connection")
-        sleep_helper(5)
+        sleep_helper(3)
 
 
 def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
@@ -124,6 +124,21 @@ def get_monitored_filename() -> str:
     return monitored_filename
 
 
+def file_modified_check(modified_time: float | None, last_modified_time: float | None,
+    monitored_filename: str) -> tuple[float | None, bool]:
+    modified: bool = False
+    if modified_time and modified_time != last_modified_time:
+        last_modified_time = modified_time
+        date_st_mtime = datetime.datetime.fromtimestamp(last_modified_time)
+        logger.info(f"File: {monitored_filename}, last modified = {date_st_mtime}")
+        gui.timestamp = str(date_st_mtime)
+        modified = True
+    elif last_modified_time:
+        gui.timestamp = str(datetime.datetime.fromtimestamp(last_modified_time))
+        modified = False
+    return last_modified_time, modified
+
+
 def close_program(client: Client | None, heartbeat_thread: Thread | None) -> None:
     if heartbeat_thread:
         stop_event.set()
@@ -173,12 +188,12 @@ def initiliaze_gui(log_path: str, log_instance: Logger) -> None:
 
 def main() -> None:
     # Initiliazing
-    modtime = Mtime()
-    heartbeat_thread: Thread | None = None
     log_path, log_instance = initialize_logger()
     initialize_config()
     log_instance.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
     initiliaze_gui(log_path, log_instance)
+    modtime = Mtime()
+    heartbeat_thread: Thread | None = None
     client: Client = Client(cfg.OPCUA_URL, cfg.SOCKET_TIMEOUT)
 
     try:
@@ -237,14 +252,9 @@ def main() -> None:
 
             # Monitor the files modified time
             modified_time = modtime.get_modified_time(file_path)
-            if modified_time and modified_time != last_modified_time:
-                last_modified_time = modified_time
-                date_st_mtime = datetime.datetime.fromtimestamp(last_modified_time)
-                logger.info(f"File: {monitored_filename}, last modified = {date_st_mtime}")
-                gui.timestamp = str(date_st_mtime)
+            last_modified_time, file_modified = file_modified_check(modified_time, last_modified_time, monitored_filename)
+            if file_modified:
                 opcua_write(file_write_detected_node, True)
-            elif last_modified_time:
-                gui.timestamp = str(datetime.datetime.fromtimestamp(last_modified_time))
 
             # Main Loop Delay and GUI update
             gui.heartbeat_thread_status = heartbeat_thread.is_alive()

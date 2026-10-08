@@ -36,14 +36,13 @@ def heartbeat_opcua(node: Node, interval: float=3) -> None:
         stop_event.wait(timeout=interval)
 # ------------------------------------------
 
-def opcua_connect(url: str) -> Client | None:
+def opcua_connect(client: Client) -> None:
+    while True:
         try:
-            client = Client(url, cfg.SOCKET_TIMEOUT)
             client.set_user(cfg.OPCUA_USERNAME)
             client.set_password(cfg.OPCUA_PASSWORD)
             client.session_timeout = cfg.SESSION_TIMEOUT
             client.connect()
-            return client
         except OSError as err:
             logger.warning(f"Error: {err}...Retrying connection")
         except Exception as err:
@@ -175,11 +174,11 @@ def main() -> None:
     # Initiliazing
     modtime = Mtime()
     heartbeat_thread: Thread | None = None
-    client: Client | None = None
     log_path, log_instance = initialize_logger()
     initialize_config()
     log_instance.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
     initiliaze_gui(log_path, log_instance)
+    client: Client = Client(cfg.OPCUA_URL, cfg.SOCKET_TIMEOUT)
 
     try:
         # Get filename and get different file path depending on STATIC_FILE_MODE
@@ -196,8 +195,7 @@ def main() -> None:
 
         # Connect to OPCUA server
         gui.print_console_info()
-        while client is None:
-            client = opcua_connect(cfg.OPCUA_URL)
+        opcua_connect(client)
 
         # load up the nodeid variables
         heartbeat_node: Node = client.get_node(cfg.TO_PLC_HEARTBEAT_NODE)

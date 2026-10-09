@@ -19,9 +19,9 @@ from logger_cfg import Logger, thread_exception_hook
 
 
 logger = logging.getLogger(__name__)
-# Global lock to prevent threads from read/write at same time
+# Global - lock to prevent threads from read/write at same time
 threadlock = threading.Lock()
-# Global Stop event to tell the background thread when its time to stop
+# Global - Stop event to tell the background thread when its time to stop
 stop_event = threading.Event()
 # Globals - Instance created in main
 gui: Window
@@ -117,7 +117,7 @@ def opcua_write(node: Node, value: bool) -> None:
             time.sleep(cfg.DELAY_BETWEEN_WRITES)
 
 
-class Mtime:
+class ModifiedTime:
     def __init__(self) -> None:
         self.warning_logged_mem = False
 
@@ -173,8 +173,8 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
 
 def sleep_helper(seconds: float) -> None:
     # allows sleeping while keeping gui responsive
-    start_time = time.time()
-    while time.time() - start_time < seconds:
+    start_time = time.monotonic()
+    while time.monotonic() - start_time < seconds:
         gui.window_update()
         time.sleep(0.05)
 
@@ -212,7 +212,7 @@ def main() -> None:
     initialize_config()
     log_instance.update_log_filter(cfg.ENABLE_OPCUA_INFO_LOGS)
     initiliaze_gui(log_path, log_instance)
-    modtime = Mtime()
+    modtime = ModifiedTime()
     heartbeat_thread: Thread | None = None
     client: Client = Client(cfg.OPCUA_URL, cfg.SOCKET_TIMEOUT)
 

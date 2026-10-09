@@ -27,12 +27,24 @@ stop_event = threading.Event()
 gui: Window
 cfg: Config
 
+
+def start_heartbeat_thread(heartbeat_node: Node) -> Thread:
+    heartbeat_thread = threading.Thread(
+        target=heartbeat_opcua,
+        args=(heartbeat_node, cfg.HEART_BEAT_INTERVAL),
+        daemon=True
+    )
+    # overrides threading except hook to capture background thread exceptions and log them
+    threading.excepthook = thread_exception_hook
+    heartbeat_thread.start()
+    return heartbeat_thread
+
 # -------------background thread-----------
-def heartbeat_opcua(node: Node, interval: float=3) -> None:
+def heartbeat_opcua(heartbeat_node: Node, interval: float=3) -> None:
     state = False
     while not stop_event.is_set():
         state = not state
-        opcua_write(node, state)
+        opcua_write(heartbeat_node, state)
         stop_event.wait(timeout=interval)
 # ------------------------------------------
 
@@ -50,7 +62,7 @@ def opcua_connect(client: Client) -> None:
             if "BadTooManySessions" in str(err):
                 sleep_helper(cfg.SESSION_TIMEOUT / 1000)
             logger.warning(f"Unexpected Error: {err}...Retrying connection")
-        sleep_helper(3)
+        sleep_helper(5)
 
 
 def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
@@ -153,6 +165,7 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
 
 
 def sleep_helper(seconds: float) -> None:
+    # allows sleeping while keeping gui responsive
     start_time = time.time()
     while time.time() - start_time < seconds:
         gui.window_update()
@@ -219,14 +232,7 @@ def main() -> None:
         opcua_server_state_node: Node = client.get_node(cfg.OPCUA_SERVER_STATE)
 
         # -------Start heartbeat thread in the background------
-        heartbeat_thread = threading.Thread(
-            target=heartbeat_opcua,
-            args=(heartbeat_node, cfg.HEART_BEAT_INTERVAL),
-            daemon=True
-        )
-        # overrides threading except hook to capture background thread exceptions and log them
-        threading.excepthook = thread_exception_hook
-        heartbeat_thread.start()
+        heartbeat_thread = start_heartbeat_thread(heartbeat_node)
         # ------------------------------------------------------
 
         opcua_write(file_write_detected_node, False) # initiliaze write_detect to False

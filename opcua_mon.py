@@ -48,6 +48,13 @@ def heartbeat_opcua(heartbeat_node: Node, interval: float=3) -> None:
         stop_event.wait(timeout=interval)
 # ------------------------------------------
 
+class NodeIds:
+    def __init__(self, client: Client) -> None:
+        self.heartbeat: Node = client.get_node(cfg.TO_PLC_HEARTBEAT_NODE)
+        self.file_write_detected: Node = client.get_node(cfg.TO_PLC_FILE_WRITE_DETECTED_NODE)
+        self.opcua_server_state: Node = client.get_node(cfg.OPCUA_SERVER_STATE)
+
+
 def opcua_connect(client: Client) -> None:
     while True:
         try:
@@ -227,15 +234,13 @@ def main() -> None:
         opcua_connect(client)
 
         # load up the nodeid variables
-        heartbeat_node: Node = client.get_node(cfg.TO_PLC_HEARTBEAT_NODE)
-        file_write_detected_node: Node = client.get_node(cfg.TO_PLC_FILE_WRITE_DETECTED_NODE)
-        opcua_server_state_node: Node = client.get_node(cfg.OPCUA_SERVER_STATE)
+        opcua_node = NodeIds(client)
 
         # -------Start heartbeat thread in the background------
-        heartbeat_thread = start_heartbeat_thread(heartbeat_node)
+        heartbeat_thread = start_heartbeat_thread(opcua_node.heartbeat)
         # ------------------------------------------------------
 
-        opcua_write(file_write_detected_node, False) # initiliaze write_detect to False
+        opcua_write(opcua_node.file_write_detected, False) # initiliaze write_detect to False
         last_check_status_time = 0
         # End of Initializing
         # MainLoop
@@ -244,10 +249,10 @@ def main() -> None:
             time_now = time.monotonic()
             if (time_now - last_check_status_time) >= cfg.POLL_SERVER_STATUS_RATE:
                 last_check_status_time = time_now
-                gui.opcua_server_state = opcua_read(opcua_server_state_node)
+                gui.opcua_server_state = opcua_read(opcua_node.opcua_server_state)
                 if gui.opcua_server_state is None:
                     gui.window_update()
-                    opcua_reconnect(client, opcua_server_state_node)
+                    opcua_reconnect(client, opcua_node.opcua_server_state)
                 gui.window_update()
 
             # update monitored file name and path if not static mode
@@ -260,7 +265,7 @@ def main() -> None:
             modified_time = modtime.get_modified_time(file_path)
             last_modified_time, file_modified = file_modified_check(modified_time, last_modified_time, monitored_filename)
             if file_modified:
-                opcua_write(file_write_detected_node, True)
+                opcua_write(opcua_node.file_write_detected, True)
 
             # Main Loop Delay and GUI update
             gui.heartbeat_thread_status = heartbeat_thread.is_alive()

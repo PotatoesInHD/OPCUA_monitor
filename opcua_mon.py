@@ -44,7 +44,7 @@ def heartbeat_opcua(heartbeat_node: Node, interval: float=3) -> None:
     state = False
     while not stop_event.is_set():
         state = not state
-        opcua_write(heartbeat_node, state)
+        opcua_write(heartbeat_node, state, heartbeat_bg_thread_call=True)
         stop_event.wait(timeout=interval)
 # ------------------------------------------
 
@@ -105,7 +105,7 @@ def opcua_read(node: Node) -> int | None:
             logger.warning(f"Error: {msg}")
 
 
-def opcua_write(node: Node, value: bool) -> None:
+def opcua_write(node: Node, value: bool, heartbeat_bg_thread_call: bool=False) -> None:
     if gui.opcua_server_state is not None:
         with threadlock: # prevents both threads from trying to write at same time
             try:
@@ -114,7 +114,9 @@ def opcua_write(node: Node, value: bool) -> None:
             except Exception as err:
                 msg = str(err) or str(repr(err)) or "Uknown Error"
                 logger.warning(f"Error: {msg}")
-            time.sleep(cfg.DELAY_BETWEEN_WRITES)
+            if heartbeat_bg_thread_call:
+                return
+            sleep_helper(cfg.DELAY_BETWEEN_WRITES)
 
 
 class ModifiedTime:
@@ -261,7 +263,7 @@ def main() -> None:
                 file_path = update_file_path(file_path, monitored_filename)
                 gui.file_path = file_path
 
-            # Monitor the files modified time
+            # Monitor the files modified time.  If modified set True. PLC will detect and set back to False.
             modified_time = modtime.get_modified_time(file_path)
             last_modified_time, file_modified = file_modified_check(modified_time, last_modified_time, monitored_filename)
             if file_modified:

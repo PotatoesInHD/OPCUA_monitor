@@ -32,7 +32,7 @@ class Config:
 
         # [OPCUA_CONFIG]
         self.SESSION_TIMEOUT = c.getint("OPCUA_CONFIG", "SESSION_TIMEOUT", fallback=30_000)
-        self.SOCKET_TIMEOUT = c.getfloat("OPCUA_CONFIG", "SOCKET_TIMEOUT", fallback=2)
+        self.SOCKET_TIMEOUT = c.getfloat("OPCUA_CONFIG", "SOCKET_TIMEOUT", fallback=2.0)
         self.POLL_SERVER_STATUS_RATE = c.getfloat("OPCUA_CONFIG", "POLL_SERVER_STATUS_RATE", fallback=5.0)
         self.HEART_BEAT_INTERVAL = c.getfloat("OPCUA_CONFIG", "HEART_BEAT_INTERVAL", fallback=3.0)
         self.DELAY_BETWEEN_WRITES = c.getfloat("OPCUA_CONFIG", "DELAY_BETWEEN_WRITES", fallback=0.2)

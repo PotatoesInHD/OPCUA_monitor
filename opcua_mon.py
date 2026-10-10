@@ -72,7 +72,7 @@ def opcua_connect(client: Client) -> None:
         sleep_helper(5)
 
 
-def opcua_reconnect(client: Client, opcua_server_state_node: str) -> None:
+def opcua_reconnect(client: Client, opcua_server_state_node: Node) -> None:
         opcua_disconnect(client)
         while gui.opcua_server_state is None:
             try:
@@ -137,10 +137,11 @@ class ModifiedTime:
             return
 
 
-def get_monitored_filename() -> str:
+def get_monitored_filename(date: datetime.date | None=None) -> str:
     # windows uses "#". "nt" means windows otherwise use "-" this is to remove padding zeros from date
     pad = "#" if os.name == "nt" else "-"
-    date = datetime.datetime.now().astimezone().date()
+    if not date:
+        date = datetime.datetime.now().astimezone().date()
     monitored_filename = date.strftime(f"%{pad}m-%{pad}d-%Y-BS.mdb")
     return monitored_filename
 

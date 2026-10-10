@@ -32,7 +32,7 @@ class Config:
 
         # [OPCUA_CONFIG]
         self.SESSION_TIMEOUT = c.getint("OPCUA_CONFIG", "SESSION_TIMEOUT", fallback=30_000)
-        self.SOCKET_TIMEOUT = c.getfloat("OPCUA_CONFIG", "SOCKET_TIMEOUT", fallback=2.0)
+        self.SOCKET_TIMEOUT = c.getint("OPCUA_CONFIG", "SOCKET_TIMEOUT", fallback=2)
         self.POLL_SERVER_STATUS_RATE = c.getfloat("OPCUA_CONFIG", "POLL_SERVER_STATUS_RATE", fallback=5.0)
         self.HEART_BEAT_INTERVAL = c.getfloat("OPCUA_CONFIG", "HEART_BEAT_INTERVAL", fallback=3.0)
         self.DELAY_BETWEEN_WRITES = c.getfloat("OPCUA_CONFIG", "DELAY_BETWEEN_WRITES", fallback=0.2)
@@ -51,7 +51,7 @@ class Config:
 
         # Clamps config values
         self.SESSION_TIMEOUT = max(20_000, min(self.SESSION_TIMEOUT, 60_000))
-        self.SOCKET_TIMEOUT = max(1.0, min(self.SOCKET_TIMEOUT, 4.0))
+        self.SOCKET_TIMEOUT = max(1, min(self.SOCKET_TIMEOUT, 4))
         self.POLL_SERVER_STATUS_RATE = max(2.0, min(self.POLL_SERVER_STATUS_RATE, 10.0))
         self.HEART_BEAT_INTERVAL = max(1.0, min(self.HEART_BEAT_INTERVAL, 5.0))
         self.DELAY_BETWEEN_WRITES = max(0.2, min(self.DELAY_BETWEEN_WRITES, 2.0))

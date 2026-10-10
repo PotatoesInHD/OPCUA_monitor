@@ -69,7 +69,7 @@ class TestConfig(unittest.TestCase):
 
             [OPCUA_CONFIG]
             SESSION_TIMEOUT = 60_001
-            SOCKET_TIMEOUT = 4.1
+            SOCKET_TIMEOUT = 4
             POLL_SERVER_STATUS_RATE = 10.1
             HEART_BEAT_INTERVAL = 5.1
             DELAY_BETWEEN_WRITES = 2.1
@@ -175,22 +175,22 @@ class TestConfig(unittest.TestCase):
     def test_exception1_config(self):
         # [OPCUA_NODE]
         with self.assertRaises(FatalConfigError):
-            cfg_exc1 = Config("test_exception1_config.ini")
+            Config("test_exception1_config.ini")
 
     def test_exception2_config(self):
         # [OPCUA_NODE]
         with self.assertRaises(FatalConfigError):
-            cfg_exc2 = Config("test_exception2_config.ini")
+            Config("test_exception2_config.ini")
 
     def test_exception3_config(self):
         # [OPCUA_NODE]
         with self.assertRaises(FatalConfigError):
-            cfg_exc3 = Config("test_exception3_config.ini")
+            Config("test_exception3_config.ini")
 
     def test_exception4_config(self):
         # [OPCUA_NODE]
         with self.assertRaises(FatalConfigError):
-            cfg_exc4 = Config("test_exception4_config.ini")
+            Config("test_exception4_config.ini")
 
 
     def tearDown(self) -> None:

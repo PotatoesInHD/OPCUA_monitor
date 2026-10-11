@@ -28,6 +28,12 @@ gui: Window
 cfg: Config
 
 
+class MainPassThrough:
+    def __init__(self):
+        # this is to be able to sneak heartbeat_thread outside of main to use thread.join(timeout=#s)
+        self.heartbeat_thread: Thread | None = None
+
+
 def start_heartbeat_thread(heartbeat_node: Node) -> Thread:
     heartbeat_thread = threading.Thread(
         target=heartbeat_opcua,
@@ -121,6 +127,8 @@ def opcua_write(node: Node, value: bool, heartbeat_bg_thread_call: bool=False) -
 
 class ModifiedTime:
     def __init__(self) -> None:
+        # This class and instance variable is just to prevent filling logs up if file
+        # hasnt been created yet because line not running or whatever.  Will just log once.
         self.warning_logged_mem = False
 
     def get_modified_time(self, file_path: str) -> float | None:
@@ -211,7 +219,7 @@ def initiliaze_gui(log_path: str, log_instance: Logger) -> None:
     log_instance.setup_gui_handler(gui)
 
 
-def main() -> None:
+def main(main_pass_through) -> None:
     # Initiliazing
     log_path, log_instance = initialize_logger()
     initialize_config()
@@ -240,6 +248,7 @@ def main() -> None:
 
         # -------Start heartbeat thread in the background------
         heartbeat_thread = start_heartbeat_thread(opcua_node.heartbeat)
+        main_pass_through.heartbeat_thread = heartbeat_thread
         # ------------------------------------------------------
 
         opcua_write(opcua_node.file_write_detected, False) # initiliaze write_detect to False
@@ -283,12 +292,15 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    main_pass_through = MainPassThrough()
     try:
-        main()
+        main(main_pass_through)
     except FatalConfigError as err:
         logger.warning(f"Error: {err}")
     except Exception:
         logger.exception("Exception caught after main")
     finally:
         stop_event.set()
+        if main_pass_through.heartbeat_thread:
+            main_pass_through.heartbeat_thread.join(timeout=5)
         sys.exit(1)

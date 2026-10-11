@@ -2,10 +2,14 @@ import os
 import datetime
 import unittest
 
+import opcua_mon
 from opcua_mon import get_monitored_filename
-
+from config import Config
 
 class TestMonitoredFileName(unittest.TestCase):
+    opcua_mon.cfg =  Config()
+    opcua_mon.cfg.STATIC_FILE_MODE = False
+
     def test_monitor_filename_ok(self):
         pad = "#" if os.name == "nt" else "-"
         date = datetime.datetime.now().astimezone().date()

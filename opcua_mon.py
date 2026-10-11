@@ -138,6 +138,8 @@ class ModifiedTime:
 
 
 def get_monitored_filename(date: datetime.date | None=None) -> str:
+    if cfg.STATIC_FILE_MODE:
+        return cfg.STATIC_MONITORED_FILE
     # windows uses "#". "nt" means windows otherwise use "-" this is to remove padding zeros from date
     pad = "#" if os.name == "nt" else "-"
     if not date:
@@ -220,12 +222,9 @@ def main() -> None:
     client: Client = Client(cfg.OPCUA_URL, cfg.SOCKET_TIMEOUT)
 
     try:
-        # Get filename and get different file path depending on STATIC_FILE_MODE
+        # Get monitored filename and filepath
         monitored_filename: str = get_monitored_filename()
-        if cfg.STATIC_FILE_MODE is False:
-            file_path = get_file_path(cfg.MONITORED_DIR_PATH, monitored_filename)
-        else:
-            file_path: str = get_file_path(cfg.MONITORED_DIR_PATH, cfg.STATIC_MONITORED_FILE)
+        file_path: str = get_file_path(cfg.MONITORED_DIR_PATH, monitored_filename)
         gui.file_path = file_path
 
         # initialize time variables for monitoring file modified time

@@ -12,17 +12,18 @@ class GuiErrorHandler(logging.Handler):
     def __init__(self, gui: Window) -> None:
         super().__init__()
         self.gui = gui
-
+    # override emit method to get last error for gui
     def emit(self, record: logging.LogRecord) -> None:
         self.gui.last_error = self.format(record)
 
 
 class Logger:
     def __init__(self) -> None:
+        # opcua info handler instance variable so handler can be setup and then filter updated later in other method
         self.opcua_info_handler: RotatingFileHandler
 
     def setup_logger(self) -> str:
-        # If running compiled inside PyInstaller:
+        # if running compiled inside PyInstaller:
         if getattr(sys, "frozen", False):
             # if running as exe then working directory is where sys.executable is
             working_directory = os.path.dirname(os.path.abspath(sys.executable))
@@ -38,6 +39,7 @@ class Logger:
         info_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
         format_str = '%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s'
         err_formatter = logging.Formatter(format_str)
+
         # my info handler - logs anything less than WARNING
         log_file_path = os.path.normpath(os.path.join(target_path, "Info_Logs.log"))
         my_info_handler = RotatingFileHandler(

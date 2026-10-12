@@ -10,10 +10,10 @@ class Config:
     def __init__(self, file_path: str="config.ini") -> None:
         # Detects if running compiled inside PyInstaller:
         if getattr(sys, "frozen", False):
-            # if running as exe then working directory is where sys.executable is
+            # If running as exe then working directory is where sys.executable is
             working_directory = os.path.dirname(os.path.abspath(sys.executable))
         else:
-            # if running as py script then working directory is where script is
+            # If running as py script then working directory is where script is
             working_directory = os.path.dirname(os.path.abspath(__file__))
 
         config_path = get_file_path(working_directory, file_path)
@@ -57,6 +57,7 @@ class Config:
         self.DELAY_BETWEEN_WRITES = max(0.2, min(self.DELAY_BETWEEN_WRITES, 2.0))
         self.MAIN_LOOP_DELAY = max(0.2, min(self.MAIN_LOOP_DELAY, 2.0))
 
+        # Detects if configs without fallbacks are empty and creates error message for logging.
         if not self.TO_PLC_HEARTBEAT_NODE:
             raise FatalConfigError(f"Config.ini - TO_PLC_HEARTBEAT_NODE value missing")
         if not self.TO_PLC_FILE_WRITE_DETECTED_NODE:

@@ -1,6 +1,8 @@
 
+# Custom Exceptions
 class FatalConfigError(Exception):
-    """Raised when config data is missing. Such as file path"""
+    pass # Raised when config data is missing. Such as file path
+
 
 class WindowCloseError(Exception):
-    """Raised when gui window closes but doesnt give tk.TclError"""
+    pass # Raised when gui window closes but doesnt give tk.TclError

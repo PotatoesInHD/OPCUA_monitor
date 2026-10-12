@@ -23,13 +23,13 @@ logger = logging.getLogger(__name__)
 threadlock = threading.Lock()
 # Global - Stop event to tell the background thread when its time to stop
 stop_event = threading.Event()
-# Globals - Instance created in main
+# Globals - Instances created in main
 gui: Window
 cfg: Config
 
 
 class MainPassThrough:
-    def __init__(self):
+    def __init__(self) -> None:
         # this is to be able to sneak heartbeat_thread outside of main to use thread.join(timeout=#s)
         self.heartbeat_thread: Thread | None = None
 
@@ -62,6 +62,7 @@ class NodeIds:
 
 
 def opcua_connect(client: Client) -> None:
+    # Always try to connect until connected and log the errors. PLC wont have heartbeat and alert us
     while True:
         try:
             client.set_user(cfg.OPCUA_USERNAME)
@@ -79,27 +80,28 @@ def opcua_connect(client: Client) -> None:
 
 
 def opcua_reconnect(client: Client, opcua_server_state_node: Node) -> None:
-        opcua_disconnect(client)
-        while gui.opcua_server_state is None:
-            try:
-                client.connect()
-                gui.opcua_server_state = opcua_read(opcua_server_state_node)
-            except OSError as err:
-                logger.warning(f"Error: {err}...Retrying connection")
-            except Exception as err:
-                if "BadTooManySessions" in str(err):
-                    sleep_helper(cfg.SESSION_TIMEOUT / 1000)
-                logger.warning(f"Unexpected Error: {err}...Retrying connection")
-            sleep_helper(5)
+    # Always try to reconnect and log the errors. PLC will lose heartbeat and alert us
+    opcua_disconnect(client)
+    while gui.opcua_server_state is None:
+        try:
+            client.connect()
+            gui.opcua_server_state = opcua_read(opcua_server_state_node)
+        except OSError as err:
+            logger.warning(f"Error: {err}...Retrying connection")
+        except Exception as err:
+            if "BadTooManySessions" in str(err):
+                sleep_helper(cfg.SESSION_TIMEOUT / 1000)
+            logger.warning(f"Unexpected Error: {err}...Retrying connection")
+        sleep_helper(5)
 
 
 def opcua_disconnect(client: Client) -> None:
-        try:
-            client.disconnect()
-        except Exception as err:
-            msg = str(err) or str(repr(err)) or "Unknown Error"
-            logger.warning(f"Error: {msg}")
-        sleep_helper(1)
+    try:
+        client.disconnect()
+    except Exception as err:
+        msg = str(err) or str(repr(err)) or "Unknown Error"
+        logger.warning(f"Error: {msg}")
+    sleep_helper(1)
 
 
 def opcua_read(node: Node) -> int | None:
@@ -107,6 +109,7 @@ def opcua_read(node: Node) -> int | None:
         try:
             return node.get_value()
         except Exception as err:
+            # Some of the opcua errors from get_value() were coming out blank. This helped display in logs
             msg = str(err) or str(repr(err)) or "Uknown Error"
             logger.warning(f"Error: {msg}")
 
@@ -115,11 +118,14 @@ def opcua_write(node: Node, value: bool, heartbeat_bg_thread_call: bool=False) -
     if gui.opcua_server_state is not None:
         with threadlock: # prevents both threads from trying to write at same time
             try:
+                # data_value format required or sysmac PLC gets angry and gives (BadWriteNotSupported)
+                # "The server does not support writing the combination of value, status and timestamps provided."
                 data_value = ua.DataValue(ua.Variant(value, node.get_data_type_as_variant_type()))
                 node.set_value(data_value)
             except Exception as err:
                 msg = str(err) or str(repr(err)) or "Uknown Error"
                 logger.warning(f"Error: {msg}")
+            # heartbeat_thread has own long delay so just return. Also tkinter not threadsafe to use sleep_helper()
             if heartbeat_bg_thread_call:
                 return
             sleep_helper(cfg.DELAY_BETWEEN_WRITES)
@@ -127,8 +133,7 @@ def opcua_write(node: Node, value: bool, heartbeat_bg_thread_call: bool=False) -
 
 class ModifiedTime:
     def __init__(self) -> None:
-        # This class and instance variable is just to prevent filling logs up if file
-        # hasnt been created yet because line not running or whatever.  Will just log once.
+        # To prevent filling logs up if new file hasnt been created yet.  Will just log once.
         self.warning_logged_mem = False
 
     def get_modified_time(self, file_path: str) -> float | None:
@@ -180,12 +185,14 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
             client.disconnect()
         except Exception as err:
             logger.warning(f"Error after program closing: {err}")
+            # os._exit() or else program often hangs because of open thread from opcua.
+            # recreatable if closing program after disconnecting ethernet cable and using sys.exit(130)
             os._exit(130)
     sys.exit(130)
 
 
 def sleep_helper(seconds: float) -> None:
-    # allows sleeping while keeping gui responsive
+    # allows sleeping while keeping gui responsive by calling gui.window_update()
     start_time = time.monotonic()
     while time.monotonic() - start_time < seconds:
         gui.window_update()
@@ -219,7 +226,7 @@ def initiliaze_gui(log_path: str, log_instance: Logger) -> None:
     log_instance.setup_gui_handler(gui)
 
 
-def main(main_pass_through) -> None:
+def main(main_pass_through: MainPassThrough) -> None:
     # Initiliazing
     log_path, log_instance = initialize_logger()
     initialize_config()
@@ -266,13 +273,13 @@ def main(main_pass_through) -> None:
                     opcua_reconnect(client, opcua_node.opcua_server_state)
                 gui.window_update()
 
-            # update monitored file name and path if not static mode
+            # Update monitored file name and path if not static mode
             if not cfg.STATIC_FILE_MODE:
                 monitored_filename = get_monitored_filename()
                 file_path = update_file_path(file_path, monitored_filename)
                 gui.file_path = file_path
 
-            # Monitor the files modified time.  If modified set True. PLC will detect and set back to False.
+            # Monitor the files modified time.  If modified then set True. PLC will detect and set back to False.
             modified_time = modtime.get_modified_time(file_path)
             last_modified_time, file_modified = file_modified_check(modified_time, last_modified_time, monitored_filename)
             if file_modified:

@@ -20,6 +20,7 @@ def get_file_path(directory: str, file_name: str) -> str:
 
 
 def update_file_path(file_path: str, monitored_filename: str) -> str:
+    # removes old monitored_filename and applies the new monitored_filename to the path
     dir = os.path.dirname(file_path)
     new_path = os.path.normpath(os.path.join(dir, monitored_filename))
     return new_path

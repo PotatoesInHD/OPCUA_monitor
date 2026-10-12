@@ -1,4 +1,4 @@
-## OPCUA FILE MONITOR - WIP still needs more sweetening.
+## OPCUA FILE MONITOR
 
 ### What does it do?
 - This python program connects to a PLC by OPCUA and monitors a files modified time stamps for changes.  

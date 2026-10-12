@@ -7,7 +7,7 @@ from utils import get_file_path
 
 
 class Config:
-    def __init__(self, file_path: str="config.ini") -> None:
+    def __init__(self, file_path: str = "config.ini") -> None:
         # Detects if running compiled inside PyInstaller:
         if getattr(sys, "frozen", False):
             # If running as exe then working directory is where sys.executable is

@@ -37,8 +37,8 @@ class Logger:
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.INFO)
         info_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
-        format_str = '%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s'
-        err_formatter = logging.Formatter(format_str)
+        fmt_str = '%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s'
+        err_formatter = logging.Formatter(fmt_str)
 
         # my info handler - logs anything less than WARNING
         log_file_path = os.path.normpath(os.path.join(target_path, "Info_Logs.log"))
@@ -81,14 +81,12 @@ class Logger:
 
         return target_path
 
-
     def update_log_filter(self, enable_opcua_info_logs: bool) -> None:
         self.opcua_info_handler.addFilter(lambda record: enable_opcua_info_logs and "opcua" in record.name)
 
-
     def setup_gui_handler(self, gui: Window) -> None:
-        format_str = '%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s'
-        gui_formatter = logging.Formatter(format_str)
+        fmt_str = '%(asctime)s - %(levelname)s - %(name)s - [%(filename)s:%(lineno)d in %(funcName)s()] - %(message)s'
+        gui_formatter = logging.Formatter(fmt_str)
         self.gui_handler = GuiErrorHandler(gui)
         self.gui_handler.setLevel(logging.WARNING)
         self.gui_handler.setFormatter(gui_formatter)

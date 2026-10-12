@@ -13,9 +13,9 @@ class Window:
         self.opcua_server_state: int | str | None = None
         self.last_error: str | None = None
         self.heartbeat_thread_status: bool | None = None
-
+        # creates tkinter widget
         self.window = tk.Tk()
-
+        # create all the labels
         self.label_space = tk.Label(bg="black")
         self.label_Title = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
         self.label_1 = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
@@ -28,7 +28,7 @@ class Window:
         self.label_8 = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
         self.label_9 = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
         self.label_10 = tk.Label(anchor="w", bg="black", fg="white", font=("Consolas", 15))
-
+        # pack labels into container
         self.label_space.pack(pady=30, fill="both")
         self.label_Title.pack(padx=17, fill="x")
         self.label_1.pack(padx=17, fill="x")
@@ -41,15 +41,15 @@ class Window:
         self.label_8.pack(padx=17, fill="x")
         self.label_9.pack(padx=55, fill="x")
         self.label_10.pack(padx=55, fill="x")
-
+        # define background colour, title, size
         self.window.configure(background='black')
         self.window.title("OPCUA FILE MONITOR")
         self.window.geometry("800x640")
-
+        # call window update
         self.window_update()
 
-
     def window_update(self) -> None:
+        # configure and update labels text and text colour
         if self.opcua_server_state is None:
             text = "Connecting..."
             self.label_3.config(fg="Red")
@@ -74,12 +74,13 @@ class Window:
             self.label_10.config(text=f"Background Thread Status: Heartbeat_thread crashed!", fg="Red")
         else:
             self.label_10.config(text=f"")
-
+        # if window doesnt exist raise error
         if not self.window.winfo_exists():
             raise WindowCloseError("Program closed by user but had WindowCloseError")
         self.window.update()
 
 
+    # simple console text if using console too.
     def print_console_info(self) -> None:
         print("=" * 60)
         print(f"{' ' * 20}OPCUA MONITORING")

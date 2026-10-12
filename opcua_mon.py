@@ -46,7 +46,7 @@ def start_heartbeat_thread(heartbeat_node: Node) -> Thread:
     return heartbeat_thread
 
 # -------------background thread-----------
-def heartbeat_opcua(heartbeat_node: Node, interval: float=3) -> None:
+def heartbeat_opcua(heartbeat_node: Node, interval: float = 3) -> None:
     state = False
     while not stop_event.is_set():
         state = not state
@@ -115,7 +115,7 @@ def opcua_read(node: Node) -> int | str | None:
             logger.warning(f"Error: {msg}")
 
 
-def opcua_write(node: Node, value: bool, heartbeat_bg_thread_call: bool=False) -> None:
+def opcua_write(node: Node, value: bool, heartbeat_bg_thread_call: bool = False) -> None:
     if gui.opcua_server_state is not None:
         with threadlock: # prevents both threads from trying to write at same time
             try:
@@ -162,7 +162,7 @@ class ModifiedTime:
             return
 
 
-def get_monitored_filename(date: datetime.date | None=None) -> str:
+def get_monitored_filename(date: datetime.date | None = None) -> str:
     if cfg.STATIC_FILE_MODE:
         return cfg.STATIC_MONITORED_FILE
     # windows uses "#". "nt" means windows otherwise use "-" this is to remove padding zeros from date
@@ -173,19 +173,19 @@ def get_monitored_filename(date: datetime.date | None=None) -> str:
     return monitored_filename
 
 
-def file_modified_check(modified_time: float | None, last_modified_time: float | None,
-    monitored_filename: str) -> tuple[float | None, bool]:
+type CheckResult = tuple[float | None, bool]
+def check_if_modified(modified_time: float | None, last_mod_time: float | None, monitored_filename: str) -> CheckResult:
     modified: bool = False
-    if modified_time and modified_time != last_modified_time:
-        last_modified_time = modified_time
-        date_st_mtime = datetime.datetime.fromtimestamp(last_modified_time)
+    if modified_time and modified_time != last_mod_time:
+        last_mod_time = modified_time
+        date_st_mtime = datetime.datetime.fromtimestamp(last_mod_time)
         logger.info(f"File: {monitored_filename}, last modified = {date_st_mtime}")
         gui.timestamp = str(date_st_mtime)
         modified = True
-    elif last_modified_time:
-        gui.timestamp = str(datetime.datetime.fromtimestamp(last_modified_time))
+    elif last_mod_time:
+        gui.timestamp = str(datetime.datetime.fromtimestamp(last_mod_time))
         modified = False
-    return last_modified_time, modified
+    return last_mod_time, modified
 
 
 def close_program(client: Client | None, heartbeat_thread: Thread | None) -> None:
@@ -255,8 +255,8 @@ def main(main_pass_through: MainPassThrough) -> None:
         gui.file_path = file_path
 
         # initialize time variables for monitoring file modified time
-        last_modified_time: float | None = modtime.get_modified_time(file_path)
-        modified_time: float | None = last_modified_time
+        last_mod_time: float | None = modtime.get_modified_time(file_path)
+        modified_time: float | None = last_mod_time
 
         # Connect to OPCUA server
         gui.print_console_info()
@@ -271,7 +271,7 @@ def main(main_pass_through: MainPassThrough) -> None:
         # ------------------------------------------------------
 
         opcua_write(opcua_node.file_write_detected, False)  # initiliaze write_detect to False
-        last_check_status_time = 0  # initiliaze last check status, so will check on first loop
+        last_check_status_time = 0  # initiliaze last check status time, so will check on first loop
         # End of Initializing
         # MainLoop
         while True:
@@ -288,7 +288,7 @@ def main(main_pass_through: MainPassThrough) -> None:
 
             # Monitor the files modified time.  If modified then set True. PLC will detect and set back to False.
             modified_time = modtime.get_modified_time(file_path)
-            last_modified_time, file_modified = file_modified_check(modified_time, last_modified_time, monitored_filename)
+            last_mod_time, file_modified = check_if_modified(modified_time, last_mod_time, monitored_filename)
             if file_modified:
                 opcua_write(opcua_node.file_write_detected, True)
 

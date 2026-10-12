@@ -92,7 +92,8 @@ def opcua_reconnect(client: Client, opcua_server_state_node: Node) -> None:
             if "BadTooManySessions" in str(err):
                 sleep_helper(cfg.SESSION_TIMEOUT / 1000)
             logger.warning(f"Unexpected Error: {err}...Retrying connection")
-        sleep_helper(5)
+        if not gui.opcua_server_state:
+            sleep_helper(5)
 
 
 def opcua_disconnect(client: Client) -> None:
@@ -104,7 +105,7 @@ def opcua_disconnect(client: Client) -> None:
     sleep_helper(1)
 
 
-def opcua_read(node: Node) -> int | None:
+def opcua_read(node: Node) -> int | str | None:
     with threadlock: # prevents both threads from trying to read at same time
         try:
             return node.get_value()
@@ -125,10 +126,21 @@ def opcua_write(node: Node, value: bool, heartbeat_bg_thread_call: bool=False) -
             except Exception as err:
                 msg = str(err) or str(repr(err)) or "Uknown Error"
                 logger.warning(f"Error: {msg}")
-            # heartbeat_thread has own long delay so just return. Also tkinter not threadsafe to use sleep_helper()
+            # bg heartbeat thread has own delay and Tkinter not threadsafe so cant use sleep_helper() - just return.
             if heartbeat_bg_thread_call:
                 return
             sleep_helper(cfg.DELAY_BETWEEN_WRITES)
+
+
+def poll_server_state(last_check_status_time: float, opcua_server_state: Node) -> float:
+    # depending on PLC status may be int or str when connected such as &0 or "run"
+    # None is disconnected because opcua server status couldn't be read
+    time_now = time.monotonic()
+    if (time_now - last_check_status_time) >= cfg.POLL_SERVER_STATUS_RATE:
+        last_check_status_time = time_now
+        gui.opcua_server_state = opcua_read(opcua_server_state)
+        gui.window_update()
+    return last_check_status_time
 
 
 class ModifiedTime:
@@ -192,7 +204,7 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
 
 
 def sleep_helper(seconds: float) -> None:
-    # allows sleeping while keeping gui responsive by calling gui.window_update()
+    # allows sleeping while keeping gui responsive by calling gui.window_update
     start_time = time.monotonic()
     while time.monotonic() - start_time < seconds:
         gui.window_update()
@@ -258,20 +270,15 @@ def main(main_pass_through: MainPassThrough) -> None:
         main_pass_through.heartbeat_thread = heartbeat_thread
         # ------------------------------------------------------
 
-        opcua_write(opcua_node.file_write_detected, False) # initiliaze write_detect to False
-        last_check_status_time = 0
+        opcua_write(opcua_node.file_write_detected, False)  # initiliaze write_detect to False
+        last_check_status_time = 0  # initiliaze last check status, so will check on first loop
         # End of Initializing
         # MainLoop
         while True:
-            # get server state and reconnect if required by check status interval time.
-            time_now = time.monotonic()
-            if (time_now - last_check_status_time) >= cfg.POLL_SERVER_STATUS_RATE:
-                last_check_status_time = time_now
-                gui.opcua_server_state = opcua_read(opcua_node.opcua_server_state)
-                if gui.opcua_server_state is None:
-                    gui.window_update()
-                    opcua_reconnect(client, opcua_node.opcua_server_state)
-                gui.window_update()
+            # get server state if required by check status interval time. Then reconnect if needed
+            last_check_status_time = poll_server_state(last_check_status_time, opcua_node.opcua_server_state)
+            if gui.opcua_server_state is None:
+                opcua_reconnect(client, opcua_node.opcua_server_state)
 
             # Update monitored file name and path if not static mode
             if not cfg.STATIC_FILE_MODE:

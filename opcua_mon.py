@@ -124,7 +124,8 @@ def opcua_write(node: Node, value: bool, heartbeat_bg_thread_call: bool = False)
                 data_value = ua.DataValue(ua.Variant(value, node.get_data_type_as_variant_type()))
                 node.set_value(data_value)
             except Exception as err:
-                msg = str(err) or str(repr(err)) or "Uknown Error"
+                # had some blank errors coming from opcua modules. this msg with or's helps capture them better
+                msg = str(err) or str(repr(err)) or "Unknown Error"
                 logger.warning(f"Error: {msg}")
             # bg heartbeat thread has own delay and Tkinter not threadsafe so cant use sleep_helper() - just return.
             if heartbeat_bg_thread_call:
@@ -196,10 +197,14 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
         try:
             client.disconnect()
         except Exception as err:
-            logger.warning(f"Error after program closing: {err}")
-            # os._exit() or else program often hangs because of open thread from opcua.
-            # recreatable if closing program after disconnecting ethernet cable and using sys.exit(130)
-            os._exit(130)
+            # had some blank errors coming from opcua modules. this msg with or's helps capture them better
+            msg = str(err) or str(repr(err)) or "Unknown Error"
+            logger.warning(f"Error after program closing: {msg}")
+            # os._exit() or else program can hang because of open thread from opcua module after disconnecting cable
+            # if threads get cleaned up and only main thread active then use sys.exit
+            thread_count = threading.active_count()
+            if thread_count > 1:
+                os._exit(130)
     sys.exit(130)
 
 

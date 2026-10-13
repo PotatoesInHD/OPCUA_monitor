@@ -75,7 +75,9 @@ def opcua_connect(client: Client) -> None:
         except Exception as err:
             if "BadTooManySessions" in str(err):
                 sleep_helper(cfg.SESSION_TIMEOUT / 1000)
-            logger.warning(f"Unexpected Error: {err}...Retrying connection")
+            # had some blank errors coming from opcua modules. this msg with or's helps capture them better
+            msg = str(err) or str(repr(err)) or "Unknown Error"
+            logger.warning(f"Unexpected Error: {msg}...Retrying connection")
         sleep_helper(5)
 
 
@@ -91,7 +93,8 @@ def opcua_reconnect(client: Client, opcua_server_state_node: Node) -> None:
         except Exception as err:
             if "BadTooManySessions" in str(err):
                 sleep_helper(cfg.SESSION_TIMEOUT / 1000)
-            logger.warning(f"Unexpected Error: {err}...Retrying connection")
+            msg = str(err) or str(repr(err)) or "Unknown Error"
+            logger.warning(f"Unexpected Error: {msg}...Retrying connection")
         if not gui.opcua_server_state:
             sleep_helper(5)
 
@@ -110,7 +113,6 @@ def opcua_read(node: Node) -> int | str | None:
         try:
             return node.get_value()
         except Exception as err:
-            # Some of the opcua errors from get_value() were coming out blank. This helped display in logs
             msg = str(err) or str(repr(err)) or "Uknown Error"
             logger.warning(f"Error: {msg}")
 
@@ -124,7 +126,6 @@ def opcua_write(node: Node, value: bool, heartbeat_bg_thread_call: bool = False)
                 data_value = ua.DataValue(ua.Variant(value, node.get_data_type_as_variant_type()))
                 node.set_value(data_value)
             except Exception as err:
-                # had some blank errors coming from opcua modules. this msg with or's helps capture them better
                 msg = str(err) or str(repr(err)) or "Unknown Error"
                 logger.warning(f"Error: {msg}")
             # bg heartbeat thread has own delay and Tkinter not threadsafe so cant use sleep_helper() - just return.
@@ -197,7 +198,6 @@ def close_program(client: Client | None, heartbeat_thread: Thread | None) -> Non
         try:
             client.disconnect()
         except Exception as err:
-            # had some blank errors coming from opcua modules. this msg with or's helps capture them better
             msg = str(err) or str(repr(err)) or "Unknown Error"
             logger.warning(f"Error after program closing: {msg}")
             # os._exit() or else program can hang because of open thread from opcua module after disconnecting cable

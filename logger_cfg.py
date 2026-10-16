@@ -82,11 +82,10 @@ class Logger:
     def __init__(self) -> None:
         # opcua info handler instance variable so handler can be setup and then filter updated later in other method
         self.opcua_info_handler: RotatingFileHandler
-        self.target_path: str
 
     def setup_logger(self) -> str:
         # make logs directory and return the target path
-        self.target_path = make_dir_target_path()
+        target_path = make_dir_target_path()
 
         # setup root logger and formatters
         self.logger = logging.getLogger()
@@ -96,15 +95,15 @@ class Logger:
         err_formatter = logging.Formatter(fmt_str)
 
         # setup info handler
-        info_handler = setup_info_handler(info_formatter, self.target_path)
+        info_handler = setup_info_handler(info_formatter, target_path)
         self.logger.addHandler(info_handler)
         # setup err handler
-        err_handler = setup_err_handler(err_formatter, self.target_path)
+        err_handler = setup_err_handler(err_formatter, target_path)
         self.logger.addHandler(err_handler)
         # setup opcua info handler
-        self.opcua_info_handler = setup_opcua_info_handler(info_formatter, self.target_path)
+        self.opcua_info_handler = setup_opcua_info_handler(info_formatter, target_path)
         self.logger.addHandler(self.opcua_info_handler)
-        return self.target_path
+        return target_path
 
     def update_log_filter(self, enable_opcua_info_logs: bool) -> None:
         self.opcua_info_handler.addFilter(lambda record: enable_opcua_info_logs and "opcua" in record.name)

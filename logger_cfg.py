@@ -1,8 +1,8 @@
 import os
-from string import Formatter
 import sys
 import logging
 from logging.handlers import RotatingFileHandler
+
 from infodisplay import Window
 
 
